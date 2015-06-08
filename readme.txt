@@ -7,7 +7,7 @@ Stable tag: 1.0
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Send push notifications to iOS, Android, and Fire OS devices when you publish a new post.
+Send push notifications to iOS, Android, and Fire OS devices when you publish a new post. Without paying fees as it does not use third-party servers.
 
 == Description ==
 
