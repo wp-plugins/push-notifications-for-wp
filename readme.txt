@@ -3,7 +3,7 @@ Contributors: delitestudio
 Tags: amazon, android, apple, Fire OS, google, ios, ipad, iphone, ipod touch, kindle, mobile, newsletter, notifications, post types, push
 Requires at least: 3.5
 Tested up to: 4.2.2
-Stable tag: trunk
+Stable tag: 1.0
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
