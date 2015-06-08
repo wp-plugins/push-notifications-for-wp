@@ -19,8 +19,7 @@ Push Notifications for WordPress (Lite) allows you to focus on building beautifu
 
 > Push Notifications for WordPress (Lite) is our basic solution for small personal blogs. We also offer a full-featured plugin, [Push Notifications for WordPress](http://www.delitestudio.com/wordpress/push-notifications-for-wordpress/), designed for all the other websites. If you’re not sure which plugin is right for you, compare the features [here](http://www.delitestudio.com/wordpress/push-notifications-for-wordpress/what-are-the-differences-between-push-notifications-for-wordpress-and-push-notifications-for-posts/).
 
-Key Features
-------------
+= Key Features =
 
 Push Notifications for WordPress (Lite) natively supports:
 
@@ -42,8 +41,7 @@ Push Notifications for WordPress (Lite) natively supports:
 
 **Android and iOS libraries.** Save hours of work by using our libraries in your Android and iOS apps.
 
-Additional Information
-----------------------
+= Additional Information =
 
 Push Notifications for WordPress (Lite) works exactly as you’d expect:
 
@@ -55,18 +53,15 @@ Push Notifications for WordPress (Lite) works exactly as you’d expect:
 
 > Custom post types are supported only by the premium [Push Notifications for WordPress](http://www.delitestudio.com/wordpress/push-notifications-for-wordpress/).
 
-Who Is This Plugin For?
------------------------
+= Who Is This Plugin For? =
 
 This plugin is primarily intended for mobile developers who do not want to develop their server-side back-end. Supporting push notifications is incredibly complicated. This plugin lets you focus on creating the apps, without the hassle.
 
-Can You Build The Apps For Me?
-------------------------------
+= Can You Build The Apps For Me? =
 
 Yes. We’re a team of mobile developers. We created a [pre-packaged Android app](http://www.delitestudio.com/product/android-app-for-wordpress/), and we put our expertise to work on custom projects for companies that need great apps. Interested? [Contact us](http://www.delitestudio.com/contact/).
 
-Getting Started
----------------
+= Getting Started =
 
 1. Build your iOS, Android, and/or Fire OS apps. Being a mobile developer, you should know how to do that (or use our [pre-packaged Android app](http://www.delitestudio.com/product/android-app-for-wordpress/), or [request a quote from our team](http://www.delitestudio.com/contact/)).
 2. Install this plugin on your WordPress site.
@@ -76,22 +71,19 @@ Getting Started
 
 Now, when users launch the apps, their devices will automatically register to your site. As soon as a new post is published, a push notification is sent to registered devices, with the title of the post.
 
-Detailed documentation
-----------------------
+= Detailed documentation =
 
 You can find detailed documentation on the [official website](http://www.delitestudio.com/wordpress/push-notifications-for-wordpress/documentation/).
 
 > The documentation refers to the premium version. Not everything is applicable to the free version. Compare the features [here](http://www.delitestudio.com/wordpress/push-notifications-for-wordpress/what-are-the-differences-between-push-notifications-for-wordpress-and-push-notifications-for-posts/).
 
-Uninstall Push Notifications for WordPress (Lite)
--------------------------------------------------
+= Uninstall Push Notifications for WordPress (Lite) =
 
 If you deactivate and delete Push Notifications for WordPress (Lite), we leave data created by the plugin. Although WordPress will tell you that we do remove data on uninstall, we don’t.
 
 If you need to remove ALL Push Notifications for WordPress (Lite) data, including tokens, users, and settings, go to: Push Notifications → Settings → Misc, and enable "Remove data on uninstall". Then when you deactivate and delete the plugin from the WordPress plugin admin, it will delete all data.
 
-Support
--------
+= Support =
 
 The Delite Studio team does not provide support for the Push Notifications for WordPress (Lite) plugin on the WordPress.org forums. Ticket support is available to people who bought the premium plugin only. Note that the premium [Push Notifications for WordPress](http://www.delitestudio.com/wordpress/push-notifications-for-wordpress/) has several extra features too, so it might be well worth your investment!
 
