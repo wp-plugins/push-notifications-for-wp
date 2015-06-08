@@ -207,8 +207,12 @@ Let us know, we will do everything to help you. [Contact us →](http://www.deli
 
 == Screenshots ==
 
-1. This is the first screenshot
-2. This is the second screenshot
+1. The settings page.
+2. An example of push notification received on an iOS device.
+3. The Push Notifications widget on Add New Post page.
+4. The Tokens page.
+5. The OAuth page (with OAuth disabled).
+6. The OAuth page (with OAuth enabled).
 
 == Changelog ==
 
