@@ -101,7 +101,7 @@ This section describes how to install the plugin and get it working.
 
 Of course: we have created a video that demonstrates how it works:
 
-[youtube http://youtu.be/Mt7I72UzoSY]
+https://www.youtube.com/watch?v=Mt7I72UzoSY&rel=0
 
 = Who is this plugin for? =
 
