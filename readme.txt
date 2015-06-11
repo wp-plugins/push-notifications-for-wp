@@ -1,6 +1,6 @@
 === Plugin Name ===
 Contributors: delitestudio
-Tags: amazon, android, apple, Fire OS, google, ios, ipad, iphone, ipod touch, kindle, mobile, newsletter, notifications, post types, push
+Tags: push notifications, push notification, push, notifications, notification, mobile push, wordpress push, mobile notifications, mobile app, wordpress app, wordpress android app, wordpress ios app, ios app, ipad app, iphone app
 Requires at least: 3.5
 Tested up to: 4.2.2
 Stable tag: 1.0
