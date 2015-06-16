@@ -19,6 +19,8 @@ Push Notifications for WordPress (Lite) allows you to focus on building beautifu
 
 > Push Notifications for WordPress (Lite) is our basic solution for small personal blogs. We also offer a full-featured plugin, [Push Notifications for WordPress](http://www.delitestudio.com/wordpress/push-notifications-for-wordpress/), designed for all the other websites. If you’re not sure which plugin is right for you, compare the features [here](http://www.delitestudio.com/wordpress/push-notifications-for-wordpress/what-are-the-differences-between-push-notifications-for-wordpress-and-push-notifications-for-posts/).
 
+https://www.youtube.com/watch?v=Mt7I72UzoSY&rel=0
+
 = Key Features =
 
 Push Notifications for WordPress (Lite) natively supports:
@@ -209,10 +211,11 @@ Let us know, we will do everything to help you. [Contact us →](http://www.deli
 
 1. The settings page.
 2. An example of push notification received on an iOS device.
-3. The Push Notifications widget on Add New Post page.
-4. The Tokens page.
-5. The OAuth page (with OAuth disabled).
-6. The OAuth page (with OAuth enabled).
+3. An example of push notification received on an Android device.
+4. The Push Notifications widget on Add New Post page.
+5. The Tokens page.
+6. The OAuth page (with OAuth disabled).
+7. The OAuth page (with OAuth enabled).
 
 == Changelog ==
 
