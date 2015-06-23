@@ -219,6 +219,10 @@ Let us know, we will do everything to help you. [Contact us →](http://www.deli
 
 == Changelog ==
 
+= 1.1 =
+* Option to support Apache Cordova with PushPlugin.
+* Upgraded graph library.
+
 = 1.0 =
 * First public release.
 

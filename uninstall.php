@@ -62,6 +62,7 @@ function pnfw_delete_plugin() {
  delete_option('pnfw_enabled_post_types');
  delete_option('pnfw_enabled_object_taxonomies');
  delete_option('pnfw_use_wpautop');
+ delete_option('pnfw_add_message_field_in_payload');
  delete_option('pnfw_uninstall_data');
 
  flush_rewrite_rules();

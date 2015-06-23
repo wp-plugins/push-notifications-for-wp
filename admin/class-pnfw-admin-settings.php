@@ -102,6 +102,9 @@ class PNFW_Admin_Settings {
    $pnfw_use_wpautop = (bool)pnfw_get_post('pnfw_use_wpautop');
    update_option('pnfw_use_wpautop', $pnfw_use_wpautop);
 
+   $pnfw_add_message_field_in_payload = (bool)pnfw_get_post('pnfw_add_message_field_in_payload');
+   update_option('pnfw_add_message_field_in_payload', $pnfw_add_message_field_in_payload);
+
    $pnfw_uninstall_data = pnfw_get_post('pnfw_uninstall_data');
    update_option('pnfw_uninstall_data', $pnfw_uninstall_data);
   }
@@ -126,7 +129,7 @@ class PNFW_Admin_Settings {
   $enabled_object_taxonomies = get_option('pnfw_enabled_object_taxonomies', array());
 
   $pnfw_use_wpautop = (bool)get_option('pnfw_use_wpautop');
-
+  $pnfw_add_message_field_in_payload = (bool)get_option('pnfw_add_message_field_in_payload');
   $pnfw_uninstall_data = get_option('pnfw_uninstall_data');
 
   if ($pnfw_enable_push_notifications && $pnfw_ios_push_notifications) {
@@ -488,6 +491,13 @@ class PNFW_Admin_Settings {
          <input type="checkbox" name="pnfw_use_wpautop" id="pnfw_use_wpautop" <?php checked((bool)$pnfw_use_wpautop) ?> />
          <label for="pnfw_use_wpautop"><?php _e('Enable wpautop filter to convert double line-breaks in the content into HTML paragraphs', 'pnfw'); ?></label>
         </p>
+
+        <p>
+         <input type="checkbox" name="pnfw_add_message_field_in_payload" id="pnfw_add_message_field_in_payload" <?php checked((bool)$pnfw_add_message_field_in_payload) ?> />
+         <label for="pnfw_add_message_field_in_payload"><?php _e('In the Android notification payload add the <code>message</code> field', 'pnfw'); ?></label>
+        </p>
+
+        <br/><span class="description"><?php _e('Check this box if you are using Apache Cordova with PushPlugin.', 'pnfw'); ?></span>
 
         <p>
          <input type="checkbox" name="pnfw_uninstall_data" id="pnfw_uninstall_data" <?php checked((bool)$pnfw_uninstall_data) ?> />

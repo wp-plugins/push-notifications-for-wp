@@ -31,10 +31,28 @@ class PNFW_Notifications_Android extends PNFW_Notifications {
    return 0;
   }
 
-  $payloadData = array_merge(array('title' => $title), $user_info);
+  $pnfw_add_message_field_in_payload = (bool)get_option('pnfw_add_message_field_in_payload');
+
+  if ($pnfw_add_message_field_in_payload) {
+   if (is_multisite()) {
+    global $blog_id;
+
+    $current_blog_details = get_blog_details(array('blog_id' => $blog_id));
+
+    $blog_title = $current_blog_details->blogname;
+   }
+   else {
+    $blog_title = get_bloginfo('name');
+   }
+
+   $payload_data = array_merge(array('title' => $blog_title, 'message' => $title), $user_info);
+  }
+  else {
+   $payload_data = array_merge(array('title' => $title), $user_info);
+  }
 
   $sender = new PHP_GCM\Sender($api_key);
-  $message = new PHP_GCM\Message('push', $payloadData);
+  $message = new PHP_GCM\Message('push', $payload_data);
 
   $max_bulk_size = 999;
   $chunks = array_chunk($tokens, $max_bulk_size);
