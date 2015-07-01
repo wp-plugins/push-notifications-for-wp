@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Delite Studio Push Notifications 1.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/output\n"
-"POT-Creation-Date: 2015-06-23 12:28:33+00:00\n"
-"PO-Revision-Date: 2015-06-23 14:34+0100\n"
+"POT-Creation-Date: 2015-06-30 16:35:43+00:00\n"
+"PO-Revision-Date: 2015-06-30 18:37+0100\n"
 "Last-Translator: Delite Studio S.r.l. <support@delitestudio.com>\n"
 "Language-Team: Delite Studio S.r.l.\n"
 "Language: it_IT\n"
@@ -15,74 +15,78 @@ msgstr ""
 "X-Generator: Poedit 1.7.3\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: admin/class-pnfw-admin-debug.php:12 admin/class-pnfw-admin-subscribers.php:18
+#: admin/class-pnfw-admin-debug.php:12 admin/class-pnfw-admin-subscribers.php:20
 #: admin/class-pnfw-admin-tokens.php:27 admin/class-pnfw-admin-tokens.php:61
 msgid "Are you sure you want to do this?"
 msgstr "Sei sicuro di volerlo fare?"
 
-#: admin/class-pnfw-admin-debug.php:26 admin/class-pnfw-admin.php:70
-#: admin/class-pnfw-admin.php:71
+#: admin/class-pnfw-admin-debug.php:26 admin/class-pnfw-admin.php:73
+#: admin/class-pnfw-admin.php:74
 msgid "Debug"
 msgstr "Debug"
 
-#: admin/class-pnfw-admin-debug.php:28
+#: admin/class-pnfw-admin-debug.php:27 admin/class-pnfw-admin-subscribers.php:12
+msgid "Export CSV"
+msgstr "Esporta CSV"
+
+#: admin/class-pnfw-admin-debug.php:30
 msgid "Feedback Provider"
 msgstr "Feedback Provider"
 
-#: admin/class-pnfw-admin-debug.php:30
+#: admin/class-pnfw-admin-debug.php:32
 msgid "Feedback Provider is"
 msgstr "Il Feedback Provider è"
 
-#: admin/class-pnfw-admin-debug.php:34
+#: admin/class-pnfw-admin-debug.php:36
 msgid "active"
 msgstr "attivo"
 
-#: admin/class-pnfw-admin-debug.php:34
+#: admin/class-pnfw-admin-debug.php:36
 msgid "disabled"
 msgstr "disattivo"
 
-#: admin/class-pnfw-admin-debug.php:38
+#: admin/class-pnfw-admin-debug.php:40
 msgid "(next scheduled event: %s)"
 msgstr "(prossima esecuzione: %s)"
 
-#: admin/class-pnfw-admin-debug.php:41
+#: admin/class-pnfw-admin-debug.php:43
 msgid "Checks"
 msgstr "Check"
 
-#: admin/class-pnfw-admin-debug.php:43
+#: admin/class-pnfw-admin-debug.php:45
 msgid "is"
 msgstr "è"
 
-#: admin/class-pnfw-admin-debug.php:46
+#: admin/class-pnfw-admin-debug.php:48
 msgid "true (BAD! please fix)"
 msgstr "true (MALE! da correggere)"
 
-#: admin/class-pnfw-admin-debug.php:46
+#: admin/class-pnfw-admin-debug.php:48
 msgid "false (GOOD!)"
 msgstr "false (BENE!)"
 
-#: admin/class-pnfw-admin-debug.php:49
+#: admin/class-pnfw-admin-debug.php:51
 msgid "function is"
 msgstr "funzione è"
 
-#: admin/class-pnfw-admin-debug.php:52
+#: admin/class-pnfw-admin-debug.php:54
 msgid "enabled (GOOD!)"
 msgstr "abilitata (BENE!)"
 
-#: admin/class-pnfw-admin-debug.php:52
+#: admin/class-pnfw-admin-debug.php:54
 msgid "disabled (BAD! please fix)"
 msgstr "disabilitato (MALE! da correggere)"
 
-#: admin/class-pnfw-admin-debug.php:55
+#: admin/class-pnfw-admin-debug.php:57
 msgid "Logs"
 msgstr "Log"
 
-#: admin/class-pnfw-admin-debug.php:84
+#: admin/class-pnfw-admin-debug.php:86
 msgid "Empty Log"
 msgstr "Svuota log"
 
-#: admin/class-pnfw-admin-oauth.php:29 admin/class-pnfw-admin.php:46
-#: admin/class-pnfw-admin.php:47
+#: admin/class-pnfw-admin-oauth.php:29 admin/class-pnfw-admin.php:49
+#: admin/class-pnfw-admin.php:50
 msgid "OAuth"
 msgstr "OAuth"
 
@@ -121,8 +125,8 @@ msgstr ""
 "IMPORTANTE: dopo aver revocato le API Key i client che ne facevano uso non saranno più in grado "
 "di collegarsi."
 
-#: admin/class-pnfw-admin-settings.php:46 admin/class-pnfw-admin.php:36
-#: admin/class-pnfw-admin.php:37 push-notifications-for-wordpress.php:383
+#: admin/class-pnfw-admin-settings.php:46 admin/class-pnfw-admin.php:39
+#: admin/class-pnfw-admin.php:40 push-notifications-for-wordpress.php:383
 #: push-notifications-for-posts.php:287 push-notifications-for-wordpress-lite.php:289
 msgid "Settings"
 msgstr "Impostazioni"
@@ -338,78 +342,85 @@ msgid "Users who read the notifications"
 msgstr "Utenti che hanno letto le notifiche"
 
 #: admin/class-pnfw-admin-stats.php:28
+msgid "Subscribers per day"
+msgstr "Sottoscrittori per giorno"
+
+#: admin/class-pnfw-admin-stats.php:32
 msgid "Subscribers per category"
 msgstr "Utenti sottoscrittori per categoria"
 
-#: admin/class-pnfw-admin-stats.php:32 admin/class-pnfw-admin-subscribers.php:62
+#: admin/class-pnfw-admin-stats.php:36 admin/class-pnfw-admin-subscribers.php:64
+#: admin/class-pnfw-admin.php:366 admin/class-pnfw-admin.php:229
 msgid "Devices"
 msgstr "Dispositivi"
 
-#: admin/class-pnfw-admin-stats.php:51
+#: admin/class-pnfw-admin-stats.php:55
 msgid "App subscribers"
 msgstr "Sottoscrittori app"
 
-#: admin/class-pnfw-admin-stats.php:58
+#: admin/class-pnfw-admin-stats.php:62
 msgid "Registered app subscribers"
 msgstr "Sottoscrittori app registrati"
 
-#: admin/class-pnfw-admin-stats.php:62
+#: admin/class-pnfw-admin-stats.php:66
 msgid "Anonymous app subscribers"
 msgstr "Sottoscrittori app anonimi"
 
-#: admin/class-pnfw-admin-subscribers.php:11 admin/class-pnfw-admin.php:54
-#: admin/class-pnfw-admin.php:55
+#: admin/class-pnfw-admin-subscribers.php:11 admin/class-pnfw-admin.php:57
+#: admin/class-pnfw-admin.php:58
 msgid "App Subscribers"
 msgstr "Sottoscrittori app"
 
-#: admin/class-pnfw-admin-subscribers.php:31
+#: admin/class-pnfw-admin-subscribers.php:33
 msgid "Completely deleted the user %s."
 msgstr "Eliminato completamente l'utente %s"
 
-#: admin/class-pnfw-admin-subscribers.php:36
+#: admin/class-pnfw-admin-subscribers.php:38
 msgid "Disassociated the user %s from blog %s"
 msgstr "Disassociato l'utente %s dal blog %s"
 
-#: admin/class-pnfw-admin-subscribers.php:43
+#: admin/class-pnfw-admin-subscribers.php:45
 msgid "User deleted"
 msgstr "Utente eliminato"
 
-#: admin/class-pnfw-admin-subscribers.php:59
+#: admin/class-pnfw-admin-subscribers.php:61 admin/class-pnfw-admin.php:363
+#: admin/class-pnfw-admin.php:226
 msgid "Username"
 msgstr "Nome utente"
 
-#: admin/class-pnfw-admin-subscribers.php:60
+#: admin/class-pnfw-admin-subscribers.php:62
 msgid "E-mail"
 msgstr "E-mail"
 
-#: admin/class-pnfw-admin-subscribers.php:61 push-notifications-for-wordpress.php:226
+#: admin/class-pnfw-admin-subscribers.php:63 admin/class-pnfw-admin.php:365
+#: push-notifications-for-wordpress.php:226 admin/class-pnfw-admin.php:228
 #: push-notifications-for-posts.php:214 push-notifications-for-wordpress-lite.php:216
 msgid "Categories"
 msgstr "Categorie"
 
-#: admin/class-pnfw-admin-subscribers.php:63
+#: admin/class-pnfw-admin-subscribers.php:65
 msgid "Excluded Categories"
 msgstr "Categorie escluse"
 
-#: admin/class-pnfw-admin-subscribers.php:179 admin/class-pnfw-admin-tokens.php:206
-#: admin/class-pnfw-admin-subscribers.php:169
+#: admin/class-pnfw-admin-subscribers.php:180 admin/class-pnfw-admin-tokens.php:206
+#: admin/class-pnfw-admin-subscribers.php:170
 msgid "Delete"
 msgstr "Elimina"
 
-#: admin/class-pnfw-admin-subscribers.php:186 admin/class-pnfw-admin-subscribers.php:176
+#: admin/class-pnfw-admin-subscribers.php:187 admin/class-pnfw-admin-subscribers.php:177
 msgid "No app subscribers were found."
 msgstr "Nessun utente sottoscrittore app trovato."
 
-#: admin/class-pnfw-admin-tokens.php:20 admin/class-pnfw-admin.php:62
-#: admin/class-pnfw-admin.php:63
+#: admin/class-pnfw-admin-tokens.php:20 admin/class-pnfw-admin.php:65
+#: admin/class-pnfw-admin.php:66
 msgid "Tokens"
 msgstr "Token"
 
 #: admin/class-pnfw-admin-tokens.php:42 includes/api/class-pnfw-api-register.php:212
 #: includes/api/class-pnfw-api-unregister.php:24
-#: includes/notifications/class-pnfw-notifications.php:138
+#: includes/notifications/class-pnfw-notifications.php:170
 #: includes/api/class-pnfw-api-register.php:143
-#: includes/notifications/class-pnfw-notifications.php:130
+#: includes/notifications/class-pnfw-notifications.php:162
 msgid "Automatically deleted the anonymous user %s since left without tokens."
 msgstr "Eliminato in automatico l'utente anonimo %s dato che non ha più token associati."
 
@@ -481,21 +492,37 @@ msgstr "Invia notifica di test"
 msgid "No tokens were found."
 msgstr "Nessun token trovato."
 
-#: admin/class-pnfw-admin.php:23 admin/class-pnfw-admin.php:24
+#: admin/class-pnfw-admin.php:26 admin/class-pnfw-admin.php:27
 #: push-notifications-for-wordpress.php:410 push-notifications-for-posts.php:314
 #: push-notifications-for-wordpress-lite.php:316
 msgid "Push Notifications"
 msgstr "Notifiche push"
 
-#: admin/class-pnfw-admin.php:165 push-notifications-for-wordpress.php:434
-#: admin/class-pnfw-admin.php:157 push-notifications-for-posts.php:338
+#: admin/class-pnfw-admin.php:170 push-notifications-for-wordpress.php:434
+#: admin/class-pnfw-admin.php:160 push-notifications-for-posts.php:338
 #: push-notifications-for-wordpress-lite.php:340
 msgid "Send and make visible only to"
 msgstr "Invia e rendi visibile solo a"
 
-#: admin/class-pnfw-admin.php:166 admin/class-pnfw-admin.php:158
+#: admin/class-pnfw-admin.php:171 admin/class-pnfw-admin.php:161
 msgid "Make visible only to"
 msgstr "Rendi visibile solo a"
+
+#: admin/class-pnfw-admin.php:364 admin/class-pnfw-admin.php:227
+msgid "Email"
+msgstr "Email"
+
+#: admin/class-pnfw-admin.php:407 admin/class-pnfw-admin.php:270
+msgid "Timestamp"
+msgstr "Timestamp"
+
+#: admin/class-pnfw-admin.php:408 admin/class-pnfw-admin.php:271
+msgid "Type"
+msgstr "Tipo"
+
+#: admin/class-pnfw-admin.php:409 admin/class-pnfw-admin.php:272
+msgid "Text"
+msgstr "Testo"
 
 #: includes/api/class-pnfw-api-activate.php:11 includes/api/class-pnfw-api-activate.php:21
 #: includes/api/class-pnfw-api-activate.php:27
@@ -522,7 +549,7 @@ msgstr "Successo"
 msgid "Mandatory parameter %s missing"
 msgstr "Parametro obbligatorio %s mancante"
 
-#: includes/api/class-pnfw-api-categories.php:56 includes/api/class-pnfw-api.php:14
+#: includes/api/class-pnfw-api-categories.php:61 includes/api/class-pnfw-api.php:14
 #: includes/api/class-pnfw-api.php:63
 msgid "Invalid HTTP method"
 msgstr "Metodo HTTP non valido"
@@ -552,8 +579,8 @@ msgid "prevToken not found"
 msgstr "prevToken non trovato"
 
 #: includes/api/class-pnfw-api-register.php:48
-#: includes/notifications/class-pnfw-notifications.php:111
-#: includes/notifications/class-pnfw-notifications.php:103
+#: includes/notifications/class-pnfw-notifications.php:143
+#: includes/notifications/class-pnfw-notifications.php:135
 msgid "Attempted an update of a token equal to a token already present"
 msgstr "Tentato l'aggiornamento di un token uguale ad un token già presente"
 
@@ -680,13 +707,13 @@ msgstr "ADM Client ID non impostata correttamente."
 msgid "ADM Client Secret is not correctly set."
 msgstr "ADM Client Secret non impostato correttamente."
 
-#: includes/notifications/class-pnfw-notifications.php:118
-#: includes/notifications/class-pnfw-notifications.php:110
+#: includes/notifications/class-pnfw-notifications.php:150
+#: includes/notifications/class-pnfw-notifications.php:142
 msgid "Updated %s token from %s to %s."
 msgstr "Aggiornato token %s da %s a %s."
 
-#: includes/notifications/class-pnfw-notifications.php:127
-#: includes/notifications/class-pnfw-notifications.php:119
+#: includes/notifications/class-pnfw-notifications.php:159
+#: includes/notifications/class-pnfw-notifications.php:151
 msgid "Removed invalid %s token: %s."
 msgstr "Rimosso token %s invalido: %s."
 
@@ -860,6 +887,16 @@ msgstr "Aggiorna subito a Push Notifications for WordPress"
 #: admin/class-pnfw-admin-stats.php:27
 msgid "Do you want to see more stats?"
 msgstr "Vuoi vedere altre statistiche?"
+
+#: includes/notifications/class-pnfw-notifications.php:81
+msgid ""
+"This plugin allows you to send push notifications to up to %d tokens per platform. To send more "
+"notifications, please upgrade to <a href=\"http://www.delitestudio.com/wordpress/push-"
+"notifications-for-wordpress/\">Push Notifications for Wordpress</a>."
+msgstr ""
+"Questo plugin ti permette di inviare notifiche push ad un massimo di %d token per piattaforma. "
+"Per inviare più notifiche puoi fare l'upgrade a <a href=\"http://www.delitestudio.com/wordpress/"
+"push-notifications-for-wordpress/\">Push Notifications for Wordpress</a>."
 
 #: push-notifications-for-posts.php:16
 msgid ""
