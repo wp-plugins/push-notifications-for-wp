@@ -1,5 +1,7 @@
 <?php
 
+
+
 if (!defined('ABSPATH')) {
  exit; // Exit if accessed directly
 }
@@ -35,26 +37,56 @@ class PNFW_Notifications {
  }
 
  public function send_post_to_user_categories($post) {
+
+
+
+
   $user_cat = get_post_meta($post->ID, 'pnfw_user_cat', true);
   $category_id = pnfw_get_normalized_term_id((int)$this->get_category_id($post));
   $lang = pnfw_get_post_lang($post->ID);
-  $tokens = $this->get_tokens($category_id, $lang);
 
-  if (empty($user_cat)) {
-   // Send tokens to all categories (no filter)
-   return $this->raw_send($tokens, $post->post_title, $post->ID);
-  }
-  else {
-   // Send tokens only to selected category
-   $out_tokens = array();
-   foreach ($tokens as $token) {
-    $user_id = $this->get_user_id($token);
-    if ($this->user_should_be_notified($user_id, $user_cat)) {
-     $out_tokens[] = $token;
-    }
+  $total = 0;
+  $page = 0;
+
+
+
+
+   $tokens = $this->get_tokens($category_id, $lang, $page);
+
+   if (empty($user_cat)) {
+    // Send tokens to all categories (no filter)
+    $total += $this->raw_send($tokens, $post->post_title, $post->ID);
    }
-   return $this->raw_send($out_tokens, $post->post_title, $post->ID);
-  }
+   else {
+    // Send tokens only to selected category
+    $out_tokens = array();
+    foreach ($tokens as $token) {
+     $user_id = $this->get_user_id($token);
+     if ($this->user_should_be_notified($user_id, $user_cat)) {
+
+
+
+
+
+       $out_tokens[] = $token;
+
+
+
+     }
+    }
+    $total += $this->raw_send($out_tokens, $post->post_title, $post->ID);
+   }
+
+   if (count($tokens) >= 1000) {
+    pnfw_log(PNFW_SYSTEM_LOG, sprintf(__('This plugin allows you to send push notifications to up to %d tokens per platform. To send more notifications, please upgrade to <a href="http://www.delitestudio.com/wordpress/push-notifications-for-wordpress/">Push Notifications for Wordpress</a>.', 'pnfw'), 1000));
+   }
+
+
+
+
+
+
+  return $total;
  }
  private function user_should_be_notified($user_id, $post_user_category) {
   if (empty($post_user_category)) {
@@ -157,9 +189,15 @@ class PNFW_Notifications {
   return $raw_posts;
  }
 
- private function get_forged_query($raw_sql, $args, $lang) {
+ private function get_forged_query($raw_sql, $args, $limit, $offset, $lang) {
   if (is_null($lang)) {
-   return $this->wpdb->prepare($raw_sql, $args);
+   $values = array_merge($args, array($limit, $offset));
+
+   return $this->wpdb->prepare(
+    $raw_sql .
+    " LIMIT %d
+    OFFSET %d",
+    $values);
   }
   else {
    $langs = array($lang);
@@ -175,18 +213,29 @@ class PNFW_Notifications {
     $langs = array_merge($unsupported_langs, $langs, array(''));
    }
    $in = join(',', array_fill(0, count($langs), '%s'));
-   $values = array_merge($args, $langs);
-   return $this->wpdb->prepare($raw_sql." AND lang IN ($in)", $values);
+   $values = array_merge($args, $langs, array($limit, $offset));
+
+   return $this->wpdb->prepare(
+    $raw_sql." AND lang IN ($in) 
+    LIMIT %d
+    OFFSET %d",
+    $values);
   }
  }
 
- protected function get_tokens($category_id, $lang) {
+ protected function get_tokens($category_id, $lang, $page) {
+
+
+
+  $PAGE_LENGTH = 1000;
+
+
   if (is_null($category_id)) {
    $sql = $this->get_forged_query(
     "SELECT token
     FROM {$this->push_tokens}
     WHERE os = %s AND active = %d AND token NOT LIKE 'tokenless_%%'",
-    array($this->os, true), $lang
+    array($this->os, true), $PAGE_LENGTH, ($page * $PAGE_LENGTH), $lang
    );
   }
   else {
@@ -194,7 +243,7 @@ class PNFW_Notifications {
     "SELECT token
     FROM {$this->push_tokens}
     WHERE os = %s AND active = %d AND token NOT LIKE 'tokenless_%%' AND (user_id NOT IN (SELECT user_id FROM {$this->push_excluded_categories} WHERE category_id = %d))",
-    array($this->os, true, $category_id), $lang
+    array($this->os, true, $category_id), $PAGE_LENGTH, ($page * $PAGE_LENGTH), $lang
    );
   }
 

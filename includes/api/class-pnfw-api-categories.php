@@ -18,6 +18,9 @@ class PNFW_API_Categories extends PNFW_API_Registered {
    case 'GET': {
     $object_taxonomies = get_option('pnfw_enabled_object_taxonomies', array());
     $raw_terms = get_terms($object_taxonomies, array('hide_empty' => 0));
+
+
+
     $categories = array();
 
     foreach ($raw_terms as $raw_term) {
@@ -33,6 +36,8 @@ class PNFW_API_Categories extends PNFW_API_Registered {
       $category['description'] = $description;
 
      $category['exclude'] = $this->isCategoryExcluded(pnfw_get_normalized_term_id((int)$raw_term->term_id));
+
+
 
      $categories[] = $category;
     }
