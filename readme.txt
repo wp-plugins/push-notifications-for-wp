@@ -3,7 +3,7 @@ Contributors: delitestudio
 Tags: push notifications, push notification, push, notifications, notification, mobile push, wordpress push, mobile notifications, mobile app, wordpress app, wordpress android app, wordpress ios app, ios app, ipad app, iphone app
 Requires at least: 3.5
 Tested up to: 4.2.2
-Stable tag: 1.1
+Stable tag: 1.1.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -17,7 +17,9 @@ Alert your visitors when new content is published, converting them to regular an
 
 Push Notifications for WordPress (Lite) allows you to focus on building beautiful and unique apps, without developing your own server-side back-end. Content for the apps is collected automatically from your WordPress site, so no extra work is needed to maintain them.
 
-> Push Notifications for WordPress (Lite) is our basic solution for small personal blogs. We also offer a full-featured plugin, [Push Notifications for WordPress](http://www.delitestudio.com/wordpress/push-notifications-for-wordpress/), designed for all the other websites. If you’re not sure which plugin is right for you, compare the features [here](http://www.delitestudio.com/wordpress/push-notifications-for-wordpress/what-are-the-differences-between-push-notifications-for-wordpress-and-push-notifications-for-posts/).
+With Push Notifications for WordPress (Lite) you can send, for each post, a maximum of 1,000 notifications per platform (e.g. 1,000 for iOS, + 1,000 for Android, + 1,000 for Fire OS).
+
+> Push Notifications for WordPress (Lite) is our basic solution for small personal blogs. We also offer a full-featured plugin with a reduced memory footprint and unlimited notifications, [Push Notifications for WordPress](http://www.delitestudio.com/wordpress/push-notifications-for-wordpress/), designed for all the other websites. If you’re not sure which plugin is right for you, compare the features [here](http://www.delitestudio.com/wordpress/push-notifications-for-wordpress/what-are-the-differences-between-push-notifications-for-wordpress-and-push-notifications-for-posts/).
 
 https://www.youtube.com/watch?v=Mt7I72UzoSY&rel=0
 
@@ -39,9 +41,11 @@ Push Notifications for WordPress (Lite) natively supports:
 
 **Optional support for OAuth.** Any request sent to the API that are not properly signed will be denied.
 
+**Android and iOS libraries.** Save hours of work by using our libraries in your Android and iOS apps.
+
 **Localization ready.** Thanks to the presence of the POT (Portable Object Template) file, it’s really easy for you to provide your own translation files, with English and Italian translation out of the box.
 
-**Android and iOS libraries.** Save hours of work by using our libraries in your Android and iOS apps.
+> WPML is supported only by the premium [Push Notifications for WordPress](http://www.delitestudio.com/wordpress/push-notifications-for-wordpress/).
 
 = Additional Information =
 
@@ -98,6 +102,10 @@ This section describes how to install the plugin and get it working.
 3. Configure the plugin by going to the Push Notifications menu that appears in your admin menu
 
 == Frequently Asked Questions ==
+
+= How is this plugin different from other push notifications plugins? =
+
+Other plugins use third-party server's that send notifications for a fee. This plugin has a built in hub, allowing WordPress to send out the push notifications directly. For free.
 
 = Can I see Push Notifications for WordPress (Lite) in action? =
 
@@ -218,6 +226,9 @@ Let us know, we will do everything to help you. [Contact us →](http://www.deli
 7. The OAuth page (with OAuth enabled).
 
 == Changelog ==
+
+= 1.1.1 =
+* Minor bug fixes.
 
 = 1.1 =
 * Option to support Apache Cordova with PushPlugin.

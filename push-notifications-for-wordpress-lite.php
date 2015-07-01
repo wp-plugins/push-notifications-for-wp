@@ -3,7 +3,7 @@
 Plugin Name: Push Notifications for WordPress (Lite)
 Plugin URI: http://delitestudio.com/wordpress/push-notifications-for-wordpress/
 Description: Send push notifications to iOS, Android, and Fire OS devices when you publish a new post.
-Version: 1.1
+Version: 1.1.1
 Author: Delite Studio S.r.l.
 Author URI: http://www.delitestudio.com/
 */
