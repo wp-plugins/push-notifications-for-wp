@@ -30,7 +30,7 @@ class PNFW_API_Posts extends PNFW_API_Registered {
 
    $post_date = new DateTime($this->post->post_date);
 
-   $content = (bool)get_option('pnfw_use_wpautop') ? wpautop($this->post->post_content) : $this->post->post_content;
+   $content = (bool)get_option('pnfw_use_wpautop') ? wpautop(do_shortcode($this->post->post_content)) : do_shortcode($this->post->post_content);
 
    $response = array(
     'id' => $this->post->ID,
