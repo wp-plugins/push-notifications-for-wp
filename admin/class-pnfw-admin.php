@@ -11,6 +11,9 @@ final class PNFW_Admin {
     add_action('admin_menu', array($this, 'menus'));
 
     add_action('admin_enqueue_scripts', array($this, 'load_admin_meta_box_script'));
+
+  add_action('admin_init', array($this, 'export_subscribers'));
+  add_action('admin_init', array($this, 'export_logs'));
  }
 
  function menus() {
@@ -200,5 +203,101 @@ final class PNFW_Admin {
   );
 
   return $res;
+ }
+ public function export_subscribers() {
+  global $wpdb;
+
+  if (empty($_GET['pnfw_download_subscribers'])) {
+   return;
+  }
+
+  $args = array(
+   'role' => PNFW_Push_Notifications_for_WordPress_Lite::USER_ROLE,
+   'fields' => 'all_with_meta',
+   'order' => 'desc',
+   'orderby' => 'id'
+  );
+
+  $user_query = new WP_User_Query($args);
+
+  $items = $user_query->get_results();
+
+  $row = array();
+  $row[] = __('Username', 'pnfw');
+  $row[] = __('Email', 'pnfw');
+  $row[] = __('Categories', 'pnfw');
+  $row[] = __('Devices', 'pnfw');
+
+  $rows = array();
+  $rows[] = '"' . implode('","', $row) . '"';
+
+  if (!empty($items)) {
+   foreach ($items as $item) {
+    $row = array();
+
+    $row[] = $item->display_name;
+    $row[] = $item->user_email;
+
+    $user_groups = wp_get_object_terms($item->ID, 'user_cat', array('fields' => 'names'));
+
+    $row[] = implode(', ', $user_groups);
+
+    $push_tokens = $wpdb->get_blog_prefix() . 'push_tokens';
+    $token_count = $wpdb->get_var($wpdb->prepare("SELECT COUNT(*) FROM $push_tokens WHERE user_id=%s", $item->ID));
+
+    $row[] = $token_count;
+
+    $rows[] = '"' . implode('","', $row) . '"';
+   }
+  }
+
+  $this->generate_csv($rows, 'subscribers_log.csv');
+
+  exit;
+ }
+
+ public function export_logs() {
+  global $wpdb;
+
+  if (empty($_GET['pnfw_download_logs'])) {
+   return;
+  }
+
+  $push_logs = $wpdb->get_blog_prefix() . 'push_logs';
+  $items = $wpdb->get_results("SELECT * FROM $push_logs ORDER BY id DESC;");
+
+  $row = array();
+  $row[] = __('Timestamp', 'pnfw');
+  $row[] = __('Type', 'pnfw');
+  $row[] = __('Text', 'pnfw');
+
+  $rows = array();
+  $rows[] = '"' . implode('","', $row) . '"';
+
+  if (!empty($items)) {
+   foreach ($items as $item) {
+    $row = array();
+
+    $row[] = $item->timestamp;
+    $row[] = $item->type;
+    $row[] = $item->text;
+
+    $rows[] = '"' . implode('","', $row) . '"';
+   }
+  }
+
+  $this->generate_csv($rows, 'debug_log.csv');
+
+  exit;
+ }
+
+ private function generate_csv($rows, $filename) {
+  header('Content-type: text/csv');
+  header('Content-Disposition: attachment; filename=' . $filename);
+  header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+
+  $log = implode("\n", $rows);
+  header('Content-Length: ' . strlen($log));
+  echo $log;
  }
 }

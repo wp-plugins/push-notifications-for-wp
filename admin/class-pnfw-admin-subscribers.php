@@ -8,10 +8,12 @@ class PNFW_Admin_Subscribers {
  public static function output() { ?>
   <div class="wrap">
    <div id="icon-options-general" class="icon32"></div>
-   <h2><?php _e('App Subscribers', 'pnfw'); ?></h2>
+   <h2><?php _e('App Subscribers', 'pnfw'); ?>
+    <a href="<?php echo add_query_arg('pnfw_download_subscribers', 'true', admin_url('admin.php?page=pnfw-app-subscribers-identifier')); ?>" class="add-new-h2"><?php _e('Export CSV', 'pnfw'); ?></a>
+   </h2>
 
    <?php
-   $appSubscribers = new App_Subscribers_Table();
+   $app_subscribers = new App_Subscribers_Table();
 
    if (isset($_REQUEST['action']) && 'delete' === $_REQUEST['action']) {
     if (!isset($_REQUEST['_wpnonce']) || !wp_verify_nonce($_REQUEST['_wpnonce'], 'delete' . $_REQUEST['id'])) {
@@ -43,8 +45,8 @@ class PNFW_Admin_Subscribers {
           <div class="updated below-h2" id="message"><p><?php _e('User deleted', 'pnfw'); ?></p></div>
          <?php }
 
-   $appSubscribers->prepare_items();
-   $appSubscribers->display(); ?>
+   $app_subscribers->prepare_items();
+   $app_subscribers->display(); ?>
   </div>
  <?php }
 }
@@ -99,7 +101,6 @@ class App_Subscribers_Table extends WP_List_Table {
 			$args['order'] = $_REQUEST['order'];*/
 
   $user_query = new WP_User_Query($args);
-
 
   $this->items = $user_query->get_results();
 

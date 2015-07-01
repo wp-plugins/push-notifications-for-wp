@@ -23,7 +23,9 @@ class PNFW_Admin_Debug {
 
   <div class="wrap">
    <div id="icon-options-general" class="icon32"></div>
-   <h2><?php _e('Debug', 'pnfw'); ?></h2>
+   <h2><?php _e('Debug', 'pnfw'); ?>
+    <a href="<?php echo add_query_arg('pnfw_download_logs', 'true', admin_url('admin.php?page=pnfw-debug-identifier')); ?>" class="add-new-h2"><?php _e('Export CSV', 'pnfw'); ?></a>
+   </h2>
 
    <h3><?php _e('Feedback Provider', 'pnfw'); ?></h2>
 
