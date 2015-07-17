@@ -41,7 +41,9 @@ Push Notifications for WordPress (Lite) natively supports:
 
 **Optional support for OAuth.** Any request sent to the API that are not properly signed will be denied.
 
-**Android and iOS libraries.** Save hours of work by using our libraries in your Android and iOS apps.
+**Android and iOS libraries.** Save hours of work by using our [Android](http://www.delitestudio.com/wordpress/push-notifications-for-wordpress/push-notifications-library-for-android/) and [iOS](http://www.delitestudio.com/wordpress/push-notifications-for-wordpress/push-notifications-library-for-ios/) libraries in your apps.
+
+**Works with native apps, Cordova, Ionic, PhoneGap, and more frameworks.** Build beautiful and interactive mobile apps using your preferred technology.
 
 **Localization ready.** Thanks to the presence of the POT (Portable Object Template) file, it’s really easy for you to provide your own translation files, with English and Italian translation out of the box.
 
@@ -65,11 +67,11 @@ This plugin is primarily intended for mobile developers who do not want to devel
 
 = Can You Build The Apps For Me? =
 
-Yes. We’re a team of mobile developers. We created a [pre-packaged Android app](http://www.delitestudio.com/product/android-app-for-wordpress/), and we put our expertise to work on custom projects for companies that need great apps. Interested? [Contact us](http://www.delitestudio.com/contact/).
+Yes. We’re a team of mobile developers. We created native [Android](http://www.delitestudio.com/wordpress/push-notifications-for-wordpress/push-notifications-library-for-android/) and [iOS](http://www.delitestudio.com/wordpress/push-notifications-for-wordpress/push-notifications-library-for-ios/) libraries, a [pre-packaged Android app](http://www.delitestudio.com/product/android-app-for-wordpress/), and we put our expertise to work on custom projects for companies that need great apps. Interested? [Contact us](http://www.delitestudio.com/contact/).
 
 = Getting Started =
 
-1. Build your iOS, Android, and/or Fire OS apps. Being a mobile developer, you should know how to do that (or use our [pre-packaged Android app](http://www.delitestudio.com/product/android-app-for-wordpress/), or [request a quote from our team](http://www.delitestudio.com/contact/)).
+1. Build your iOS, Android, and/or Fire OS apps. Being a mobile developer, you should know how to do that (or use our [Android](http://www.delitestudio.com/wordpress/push-notifications-for-wordpress/push-notifications-library-for-android/) and [iOS](http://www.delitestudio.com/wordpress/push-notifications-for-wordpress/push-notifications-library-for-ios/) libraries, our [pre-packaged Android app](http://www.delitestudio.com/product/android-app-for-wordpress/), or [request a quote from our team](http://www.delitestudio.com/contact/)).
 2. Install this plugin on your WordPress site.
 3. Change the WordPress permalink structure (Settings → Permalinks) from "default" to one of the so-called "pretty" permalinks.
 4. Enable push notifications on the plugin's settings page (providing required certificates and keys).
