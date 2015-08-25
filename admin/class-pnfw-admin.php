@@ -12,8 +12,43 @@ final class PNFW_Admin {
 
     add_action('admin_enqueue_scripts', array($this, 'load_admin_meta_box_script'));
 
+  add_action('admin_head', array($this, 'admin_header'));
+
   add_action('admin_init', array($this, 'export_subscribers'));
   add_action('admin_init', array($this, 'export_logs'));
+ }
+
+ function admin_header() {
+  echo '<style type="text/css">';
+
+  // App Subscribers page
+  echo '.wp-list-table .column-username { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }';
+  echo '.wp-list-table .column-email { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }';
+  echo '.wp-list-table .column-user_categories { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }';
+  echo '.wp-list-table .column-devices { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }';
+  echo '.wp-list-table .column-excluded_categories { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }';
+
+  // Tokens page
+  echo '.wp-list-table .column-id { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }';
+  echo '.wp-list-table .column-token  { max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }';
+  echo '.wp-list-table .column-user_id { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }';
+  echo '.wp-list-table .column-timestamp { overflow: hidden; text-overflow: ellipsis; }';
+  echo '.wp-list-table .column-os { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }';
+  echo '.wp-list-table .column-lang { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }';
+  echo '.wp-list-table .column-status { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }';
+
+  // Debug page
+  echo '.wp-list-table .column-type { width: 9%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }';
+  echo '.wp-list-table .column-timestamp { width: 16%; overflow: hidden; text-overflow: ellipsis; }';
+  echo '.wp-list-table .column-text { overflow: hidden; text-overflow: ellipsis; }';
+
+  echo '.log-type-' . PNFW_SYSTEM_LOG . ' { width: 20px; height: 20px; border-radius: 50%; background-color: #cccccc; }';
+  echo '.log-type-' . PNFW_IOS_LOG . ' { width: 20px; height: 20px; border-radius: 50%; background-color: #3980d5; }';
+  echo '.log-type-' . PNFW_ANDROID_LOG . ' { width: 20px; height: 20px; border-radius: 50%; background-color: #99cc00; }';
+  echo '.log-type-' . PNFW_KINDLE_LOG . ' { width: 20px; height: 20px; border-radius: 50%; background-color: #fd9924; }';
+  echo '.log-type-' . PNFW_FEEDBACK_PROVIDER_LOG . ' { width: 20px; height: 20px; border-radius: 50%; background-color: #3980d5; }';
+  echo '.log-type-' . PNFW_ALERT_LOG . ' { width: 20px; height: 20px; border-radius: 50%; background-color: #f27d7d; }';
+  echo '</style>';
  }
 
  function menus() {
@@ -34,6 +69,10 @@ final class PNFW_Admin {
   // Use the hook suffix to compose the hook and register an action executed when plugin's options page is loaded
   add_action('load-' . $page_hook_suffix , array($this, 'chart_add_scripts'));
 
+
+
+
+
   $page_hook_suffix = add_submenu_page(
    $menu_slug,
    __('Settings', 'pnfw'),
@@ -44,7 +83,11 @@ final class PNFW_Admin {
 
   add_action('admin_print_scripts-' . $page_hook_suffix, array($this, 'plugin_admin_scripts'));
 
-  add_submenu_page(
+
+
+
+
+  $page_hook_suffix = add_submenu_page(
    $menu_slug,
    __('OAuth', 'pnfw'),
    __('OAuth', 'pnfw'),
@@ -52,7 +95,11 @@ final class PNFW_Admin {
    'pnfw-oauth-identifier',
    array($this, 'oauth_page'));
 
-  add_submenu_page(
+
+
+
+
+  $page_hook_suffix = add_submenu_page(
    $menu_slug,
    __('App Subscribers', 'pnfw'),
    __('App Subscribers', 'pnfw'),
@@ -60,7 +107,11 @@ final class PNFW_Admin {
    'pnfw-app-subscribers-identifier',
    array($this, 'app_subscribers_page'));
 
-  add_submenu_page(
+
+
+
+
+  $page_hook_suffix = add_submenu_page(
    $menu_slug,
    __('Tokens', 'pnfw'),
    __('Tokens', 'pnfw'),
@@ -68,13 +119,20 @@ final class PNFW_Admin {
    'pnfw-tokens-identifier',
    array($this, 'tokens_page'));
 
-  add_submenu_page(
+
+
+
+
+  $page_hook_suffix = add_submenu_page(
    $menu_slug,
    __('Debug', 'pnfw'),
    __('Debug', 'pnfw'),
    $admin_capability,
    'pnfw-debug-identifier',
    array($this, 'debug_page'));
+
+
+
 
  }
 
@@ -130,12 +188,8 @@ final class PNFW_Admin {
    '1.0',
    true
   );
-
      wp_enqueue_script('adminCharts');
-
-  wp_localize_script('adminCharts', 'data_overview', $this->data_for_overview_graph());
  }
-
  function plugin_admin_scripts() {
   wp_enqueue_media();
   wp_enqueue_script('script', plugin_dir_url(__FILE__) . '../assets/js/script.js', array('jquery'));
@@ -222,6 +276,8 @@ final class PNFW_Admin {
 
   $items = $user_query->get_results();
 
+  $separator = apply_filters('pnfw_csv_separator', ',');
+
   $row = array();
   $row[] = __('Username', 'pnfw');
   $row[] = __('Email', 'pnfw');
@@ -229,7 +285,7 @@ final class PNFW_Admin {
   $row[] = __('Devices', 'pnfw');
 
   $rows = array();
-  $rows[] = '"' . implode('","', $row) . '"';
+  $rows[] = '"' . implode('"' . $separator . '"', $row) . '"';
 
   if (!empty($items)) {
    foreach ($items as $item) {
@@ -247,7 +303,7 @@ final class PNFW_Admin {
 
     $row[] = $token_count;
 
-    $rows[] = '"' . implode('","', $row) . '"';
+    $rows[] = '"' . implode('"' . $separator . '"', $row) . '"';
    }
   }
 
@@ -266,13 +322,15 @@ final class PNFW_Admin {
   $push_logs = $wpdb->get_blog_prefix() . 'push_logs';
   $items = $wpdb->get_results("SELECT * FROM $push_logs ORDER BY id DESC;");
 
+  $separator = apply_filters('pnfw_csv_separator', ',');
+
   $row = array();
   $row[] = __('Timestamp', 'pnfw');
   $row[] = __('Type', 'pnfw');
   $row[] = __('Text', 'pnfw');
 
   $rows = array();
-  $rows[] = '"' . implode('","', $row) . '"';
+  $rows[] = '"' . implode('"' . $separator . '"', $row) . '"';
 
   if (!empty($items)) {
    foreach ($items as $item) {
@@ -282,7 +340,7 @@ final class PNFW_Admin {
     $row[] = $item->type;
     $row[] = $item->text;
 
-    $rows[] = '"' . implode('","', $row) . '"';
+    $rows[] = '"' . implode('"' . $separator . '"', $row) . '"';
    }
   }
 
@@ -292,6 +350,11 @@ final class PNFW_Admin {
  }
 
  private function generate_csv($rows, $filename) {
+  $blog_title = strtolower(get_bloginfo('name'));
+  $blog_title = str_replace(' ', '_', $blog_title);
+
+  $filename = $blog_title . '_' . $filename;
+
   header('Content-type: text/csv');
   header('Content-Disposition: attachment; filename=' . $filename);
   header('Cache-Control: must-revalidate, post-check=0, pre-check=0');

@@ -20,7 +20,7 @@ class PNFW_API_Posts extends PNFW_API_Registered {
   if (isset($this->post_id)) {
    $this->post = get_post($this->post_id);
 
-   if ($this->post == null) {
+   if ($this->post == null || $this->post->post_status != 'publish') {
     $this->json_error('404', __('Post not found.', 'pnfw'));
    }
 
@@ -104,11 +104,6 @@ class PNFW_API_Posts extends PNFW_API_Registered {
    ));
   }
   exit;
- }
-
- private function get_last_modification_timestamp() {
-  //return (int)get_option('pnfw_last_save_timestamp', time());
-  return time(); // FIXME
  }
 
  private function get_categories($post = null) {

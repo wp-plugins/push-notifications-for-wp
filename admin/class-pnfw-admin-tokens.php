@@ -6,29 +6,17 @@ if (!defined('ABSPATH')) {
 
 class PNFW_Admin_Tokens {
  public static function output() { ?>
-  <style type="text/css">
-   td.token.column-token {
-       max-width: 200px;
-       overflow: hidden;
-       text-overflow: ellipsis;
-       white-space: nowrap;
-   }
-  </style>
-
   <div class="wrap">
    <div id="icon-options-general" class="icon32"></div>
    <h2><?php _e('Tokens', 'pnfw'); ?></h2>
 
    <?php
-   $tokesTable = new Tokens_Table();
-
    if (isset($_REQUEST['action']) && 'delete' === $_REQUEST['action']) {
     if (!isset($_REQUEST['_wpnonce']) || !wp_verify_nonce($_REQUEST['_wpnonce'], 'delete' . $_REQUEST['id'])) {
      _e('Are you sure you want to do this?', 'pnfw');
      die;
     }
 
-    // FIXME non si potrà chiamare direttamente il metodo delete_token() di class-pnfw-notifications.php?
     global $wpdb;
     $table_name = $wpdb->get_blog_prefix() . 'push_tokens';
 
@@ -36,10 +24,12 @@ class PNFW_Admin_Tokens {
 
     $wpdb->delete($table_name, array('id' => $_REQUEST['id']));
 
+    pnfw_log(PNFW_ALERT_LOG, sprintf(__("Removed from the Tokens page the token with ID %s.", 'pnfw'), $_REQUEST['id']));
+
     $user = new WP_User($user_id);
 
     if (in_array(PNFW_Push_Notifications_for_WordPress_Lite::USER_ROLE, $user->roles) && empty($user->user_email)) {
-     pnfw_log(PNFW_SYSTEM_LOG, sprintf(__("Automatically deleted the anonymous user %s since left without tokens.", 'pnfw'), $user->user_login));
+     pnfw_log(PNFW_SYSTEM_LOG, sprintf(__("Automatically deleted the anonymous user %s (%s) since left without tokens.", 'pnfw'), $user->user_login, $user_id));
 
      if (is_multisite()) {
       require_once(ABSPATH . 'wp-admin/includes/ms.php');
@@ -106,6 +96,7 @@ class PNFW_Admin_Tokens {
     }
    }
 
+   $tokesTable = new Tokens_Table();
    $tokesTable->prepare_items();
    $tokesTable->display(); ?>
   </div>
@@ -117,9 +108,16 @@ if (!class_exists( 'WP_List_Table')) {
 }
 
 class Tokens_Table extends WP_List_Table {
+ public function __construct() {
+  parent::__construct([
+   'singular' => __('Token', 'pnfw'),
+   'plural' => __('Tokens', 'pnfw'),
+   'ajax' => false
+  ]);
+ }
+
  function get_columns() {
    $columns = array(
-    'id' => __('Id', 'pnfw'),
     'token' => __('Token', 'pnfw'),
     'user_id' => __('User', 'pnfw'),
     'timestamp' => __('Registration timestamp', 'pnfw'),
@@ -161,7 +159,6 @@ class Tokens_Table extends WP_List_Table {
 
  function column_default($item, $column_name) {
   switch ($column_name) {
-   case 'id':
    case 'token':
    case 'timestamp':
    case 'os':
@@ -190,7 +187,6 @@ class Tokens_Table extends WP_List_Table {
 
  public function get_sortable_columns() {
   $sortable_columns = array(
-   'id' => array('id', false),
    'token' => array('token', false),
    'user_id' => array('user_id', false),
    'timestamp' => array('timestamp', false),

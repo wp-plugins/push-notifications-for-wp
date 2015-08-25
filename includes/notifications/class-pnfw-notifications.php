@@ -54,6 +54,10 @@ class PNFW_Notifications {
    $tokens = $this->get_tokens($category_id, $lang, $page);
 
    if (empty($user_cat)) {
+
+
+
+
     // Send tokens to all categories (no filter)
     $total += $this->raw_send($tokens, $post->post_title, $post->ID);
    }
@@ -78,7 +82,7 @@ class PNFW_Notifications {
    }
 
    if (count($tokens) >= 1000) {
-    pnfw_log(PNFW_SYSTEM_LOG, sprintf(__('This plugin allows you to send push notifications to up to %d tokens per platform. To send more notifications, please upgrade to <a href="http://www.delitestudio.com/wordpress/push-notifications-for-wordpress/">Push Notifications for Wordpress</a>.', 'pnfw'), 1000));
+    pnfw_log($this->type, sprintf(__('This plugin allows you to send push notifications to up to %d tokens per platform. To send more notifications, please upgrade to <a href="http://www.delitestudio.com/wordpress/push-notifications-for-wordpress/">Push Notifications for Wordpress</a>.', 'pnfw'), 1000));
    }
 
 
@@ -132,7 +136,7 @@ class PNFW_Notifications {
 
   if ($count != 0) {
    // This situation can happen on an Android device, for example when you uninstall the app and then reinstall it. In that case, Google GCM assigns to the device two different tokens, one before the uninstall and one after the reinstall. But when we send the notification to the old token ($prevToken), Google GCM informs us that it does no longer exists and gives us its new token ($token). Since the new token is already present in our db we have to delete the old one.
-   pnfw_log(PNFW_SYSTEM_LOG, __('Attempted an update of a token equal to a token already present', 'pnfw'));
+   pnfw_log($this->type, sprintf(__('Attempted an update of an %s token equal to a token already present: %s.', 'pnfw'), $this->os, $token));
 
    $this->delete_token($prevToken);
 
@@ -159,7 +163,7 @@ class PNFW_Notifications {
   $user = new WP_User($user_id);
 
   if (in_array(PNFW_Push_Notifications_for_WordPress_Lite::USER_ROLE, $user->roles) && empty($user->user_email)) {
-   pnfw_log(PNFW_SYSTEM_LOG, sprintf(__("Automatically deleted the anonymous user %s since left without tokens.", 'pnfw'), $user->user_login));
+   pnfw_log($this->type, sprintf(__("Automatically deleted the anonymous user %s (%s) since left without tokens.", 'pnfw'), $user->user_login, $user_id));
 
    require_once(ABSPATH . 'wp-admin/includes/user.php');
 

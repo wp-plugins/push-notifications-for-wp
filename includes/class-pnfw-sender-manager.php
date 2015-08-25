@@ -33,7 +33,7 @@ class PNFW_Sender_Manager {
 
   // Only do this when a post transitions to being published
   // Enforce that notifications will be triggered only by posts
-  if ('publish' == $new_status && 'publish' != $old_status) {
+  if ('publish' == $new_status && 'publish' != $old_status && 'trash' != $old_status) {
    $title = $post->post_title;
 
    wp_schedule_single_event(time(), 'pnfw_new_event', array($post));
@@ -50,6 +50,11 @@ class PNFW_Sender_Manager {
 
    return;
   }
+
+
+
+
+
 
   if (get_option("pnfw_ios_push_notifications")) {
    require_once dirname(__FILE__ ) . '/notifications/class-pnfw-post-notifications-ios.php';

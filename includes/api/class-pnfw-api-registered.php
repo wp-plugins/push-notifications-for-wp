@@ -39,5 +39,4 @@ class PNFW_API_Registered extends PNFW_API {
    )
   );
  }
-
 }

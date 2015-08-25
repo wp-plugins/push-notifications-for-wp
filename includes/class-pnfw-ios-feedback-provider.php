@@ -102,9 +102,27 @@ class PNFW_iOS_Feedback_Provider {
   $push_tokens = $wpdb->get_blog_prefix() . 'push_tokens';
 
   foreach ($devices as &$device) {
-   pnfw_log(PNFW_FEEDBACK_PROVIDER_LOG, sprintf(__("The Feedback Provider removed iOS token: %s.", 'pnfw'), $device['deviceToken']));
+   $user_id = $wpdb->get_var($wpdb->prepare("SELECT user_id FROM $push_tokens WHERE os = 'iOS' AND token = %s", $device['deviceToken']));
 
    $wpdb->delete($push_tokens, array('token' => $device['deviceToken'], 'os' => 'iOS'));
+
+   pnfw_log(PNFW_FEEDBACK_PROVIDER_LOG, sprintf(__("The Feedback Provider removed iOS token of user %s: %s.", 'pnfw'), $user_id, $device['deviceToken']));
+
+   $user = new WP_User($user_id);
+
+   if (in_array(PNFW_Push_Notifications_for_WordPress_Lite::USER_ROLE, $user->roles) && empty($user->user_email)) {
+    pnfw_log(PNFW_SYSTEM_LOG, sprintf(__("Automatically deleted the anonymous user %s (%s) since left without tokens.", 'pnfw'), $user->user_login, $user_id));
+
+    if (is_multisite()) {
+     require_once(ABSPATH . 'wp-admin/includes/ms.php');
+     if (is_user_member_of_blog($user_id)) {
+      wpmu_delete_user($user_id);
+     }
+    }
+    else {
+     wp_delete_user($user_id);
+    }
+   }
   }
   unset($device);
  }

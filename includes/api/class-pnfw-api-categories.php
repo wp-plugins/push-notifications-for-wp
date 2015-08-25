@@ -17,7 +17,7 @@ class PNFW_API_Categories extends PNFW_API_Registered {
   switch($this->get_method()) {
    case 'GET': {
     $object_taxonomies = get_option('pnfw_enabled_object_taxonomies', array());
-    $raw_terms = get_terms($object_taxonomies, array('hide_empty' => 0));
+    $raw_terms = get_terms($object_taxonomies, array('hide_empty' => false));
 
 
 
@@ -61,11 +61,6 @@ class PNFW_API_Categories extends PNFW_API_Registered {
     $this->json_error('401', __('Invalid HTTP method', 'pnfw'));
   }
   exit;
- }
-
- private function get_last_modification_timestamp() {
-  //return (int)get_option('pnfw_last_save_timestamp', time());
-  return time(); // FIXME
  }
 
  private function isCategoryExcluded($category_id = null) {

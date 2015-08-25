@@ -3,7 +3,7 @@
 Plugin Name: Push Notifications for WordPress (Lite)
 Plugin URI: http://delitestudio.com/wordpress/push-notifications-for-wordpress/
 Description: Send push notifications to iOS, Android, and Fire OS devices when you publish a new post.
-Version: 1.1.1
+Version: 1.2
 Author: Delite Studio S.r.l.
 Author URI: http://www.delitestudio.com/
 */
@@ -262,7 +262,7 @@ final class PNFW_Push_Notifications_for_WordPress_Lite {
     require_once(dirname(__FILE__) . '/includes/api/class-pnfw-api-unregister.php');
     $unregister = new PNFW_API_Unregister();
     break;
-   case 'events':
+   case 'events': // FIXME: deprecated, will be removed soon
     require_once(dirname(__FILE__) . '/includes/api/class-pnfw-api-events.php');
     $events = new PNFW_API_Events();
     break;
@@ -270,6 +270,12 @@ final class PNFW_Push_Notifications_for_WordPress_Lite {
     require_once(dirname(__FILE__) . '/includes/api/class-pnfw-api-categories.php');
     $categories = new PNFW_API_Categories();
     break;
+
+
+
+
+
+
    case 'activate':
     require_once(dirname(__FILE__) . '/includes/api/class-pnfw-api-activate.php');
     $activate = new PNFW_API_Activate();
@@ -557,7 +563,6 @@ final class PNFW_Push_Notifications_for_WordPress_Lite {
    }
   }
  }
-
  private function rename_option($old_option, $new_option) {
   $old_value = get_option($old_option);
   if ($old_value === false)
@@ -582,6 +587,7 @@ if (!function_exists('pnfw_log')) {
  define("PNFW_ANDROID_LOG", 2);
  define("PNFW_KINDLE_LOG", 3);
  define("PNFW_FEEDBACK_PROVIDER_LOG", 4);
+ define("PNFW_ALERT_LOG", 5);
 
  function pnfw_log($type, $text) {
   global $wpdb;

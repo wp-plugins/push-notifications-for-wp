@@ -170,6 +170,8 @@ class PNFW_API {
    'detail' => $detail
   );
 
+  pnfw_log(PNFW_ALERT_LOG, sprintf(__('%s API Error (%s) from IP address %s: %s, %s.', 'pnfw'), self::get_request_uri(), $error, self::get_remote_addr(), $reason, $detail));
+
   echo json_encode($response);
   exit;
  }
@@ -224,4 +226,32 @@ class PNFW_API {
   return empty($res);
  }
 
+ protected static function get_remote_addr() {
+        $res = '';
+
+        if (isset($_SERVER['REMOTE_ADDR'])) {
+            $res = $_SERVER['REMOTE_ADDR'];
+        }
+
+        if ($res == '::1') {
+            $res = '127.0.0.1';
+        }
+
+        return $res;
+    }
+
+    protected static function get_request_uri() {
+        $res = '';
+
+        if (isset($_SERVER['REQUEST_URI'])) {
+            $res = $_SERVER['REQUEST_URI'];
+        }
+
+        return $res;
+    }
+
+    protected function get_last_modification_timestamp() {
+  //return (int)get_option('pnfw_last_save_timestamp', time());
+  return time(); // FIXME
+ }
 }

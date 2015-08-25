@@ -4,6 +4,9 @@ require_once dirname(__FILE__ ) . '/class-pnfw-api.php';
 
 class PNFW_API_Register extends PNFW_API {
  protected $email;
+
+
+
  protected $activation_code;
 
  public function __construct() {
@@ -13,10 +16,12 @@ class PNFW_API_Register extends PNFW_API {
   $prevToken = $this->opt_parameter('prevToken');
   $this->email = $this->opt_parameter('email');
 
+
+
+
   if (isset($this->email) && !filter_var($this->email, FILTER_VALIDATE_EMAIL)) {
    $this->json_error('500', __('Invalid email address', 'pnfw'));
   }
-
   $this->activation_code = $this->get_activation_code();
 
   global $wpdb;
@@ -45,7 +50,7 @@ class PNFW_API_Register extends PNFW_API {
    $count = $wpdb->get_var($wpdb->prepare("SELECT COUNT(*) FROM $push_tokens WHERE token = %s AND os = %s", $this->token, $this->os));
 
    if ($count != 0) {
-    pnfw_log(PNFW_SYSTEM_LOG, __('Attempted an update of a token equal to a token already present', 'pnfw'));
+    pnfw_log(PNFW_SYSTEM_LOG, sprintf(__('Attempted an update of an %s token equal to a token already present: %s.', 'pnfw'), $this->os, $this->token));
 
     // Delete destination token to allow overwrite
     $wpdb->delete($push_tokens, $where);
@@ -57,7 +62,7 @@ class PNFW_API_Register extends PNFW_API {
   else {
    $user_id = username_exists($this->email);
    // If the user does not exist it is created, otherwise the role app_subscriber is added
-   if (is_null($user_id)) {
+   if (empty($user_id) || is_null($user_id)) {
     $user_id = $this->create_user($this->email);
    }
    else {
@@ -100,6 +105,12 @@ class PNFW_API_Register extends PNFW_API {
      $this->new_device_email($user_id, $activation_link);
     }
    }
+
+
+
+
+
+
   }
 
   exit;
@@ -117,8 +128,12 @@ class PNFW_API_Register extends PNFW_API {
   $old_user_id = $wpdb->get_var($wpdb->prepare("SELECT user_id FROM $push_tokens WHERE token=%s AND os=%s", $this->token, $this->os));
 
   if ($old_user_id == $user_id) {
+   $wpdb->query("UNLOCK TABLES;");
+
    return false; // reassign the tokens to the same user
   }
+
+  pnfw_log(PNFW_SYSTEM_LOG, sprintf(__("Reassign %s token %s from user %s to user %s.", 'pnfw'), $this->os, $this->token, $old_user_id, $user_id));
 
   $wpdb->update(
    $push_tokens,
@@ -137,10 +152,14 @@ class PNFW_API_Register extends PNFW_API {
   if ($this->user_without_tokens($old_user_id)) {
    $wpdb->query("UNLOCK TABLES;");
 
+   $old_user_categories = wp_get_object_terms($old_user_id, 'user_cat', array('fields' => 'ids'));
+
+   $this->set_categories($user_id, $old_user_categories);
+
    $old_user = new WP_User($old_user_id);
 
    if (in_array(PNFW_Push_Notifications_for_WordPress_Lite::USER_ROLE, $old_user->roles) && empty($old_user->user_email)) {
-    pnfw_log(PNFW_SYSTEM_LOG, sprintf(__("Automatically deleted the anonymous user %s since left without tokens.", 'pnfw'), $old_user->user_login));
+    pnfw_log(PNFW_SYSTEM_LOG, sprintf(__("Automatically deleted the anonymous user %s (%s) since left without tokens.", 'pnfw'), $old_user->user_login, $old_user_id));
 
     require_once(ABSPATH . 'wp-admin/includes/user.php');
 
@@ -157,6 +176,9 @@ class PNFW_API_Register extends PNFW_API {
   }
   else {
    $wpdb->query("UNLOCK TABLES;");
+
+   $old_user_categories = wp_get_object_terms($old_user_id, 'user_cat', array('fields' => 'ids'));
+   $this->set_categories($user_id, $old_user_categories);
   }
 
   return true;
@@ -230,5 +252,20 @@ class PNFW_API_Register extends PNFW_API {
   $message .= $activation_link;
 
   wp_mail($user->user_email, sprintf(__('Welcome to %s', 'pnfw'), $blogname), $message);
+ }
+
+ private function set_categories($user_id, $category_ids) {
+  global $sitepress;
+
+  if (isset($sitepress)) { // Removes a WPML warning
+   remove_action('deleted_term_relationships', array($sitepress, 'deleted_term_relationships'));
+  }
+
+  wp_set_object_terms($user_id, $category_ids, 'user_cat', false);
+  clean_object_term_cache($user_id, 'user_cat');
+
+  if (isset($sitepress)) {
+   add_action('deleted_term_relationships', array($sitepress, 'deleted_term_relationships'), 10, 2);
+  }
  }
 }

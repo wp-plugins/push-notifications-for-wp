@@ -6,6 +6,6 @@ if (!defined('ABSPATH')) {
 
 class PNFW_ApnsPHP_Logger implements ApnsPHP_Log_Interface {
  public function log($sMessage) {
-  pnfw_log(PNFW_SYSTEM_LOG, $sMessage);
+  pnfw_log(PNFW_IOS_LOG, $sMessage);
  }
 }

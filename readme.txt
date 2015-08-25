@@ -2,7 +2,7 @@
 Contributors: delitestudio
 Tags: push notifications, push notification, push, notifications, notification, mobile push, wordpress push, mobile notifications, mobile app, wordpress app, wordpress android app, wordpress ios app, ios app, ipad app, iphone app
 Requires at least: 3.5
-Tested up to: 4.2.2
+Tested up to: 4.3
 Stable tag: 1.1.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -126,7 +126,7 @@ Push Notifications for WordPress (Lite) requires:
 * WordPress 3.5 or later with "pretty" permalinks.
 * PHP 5.3 or later.
 * Inbound and outbound TCP packets over ports 2195 and 2196 (for iOS notifications).
-* PHP's cURL support (for Kindle notifications).
+* PHP's cURL support (for Android and Kindle notifications).
 
 = You are selling a plugin called Push Notifications for WordPress. What’s the difference? =
 
@@ -228,6 +228,11 @@ Let us know, we will do everything to help you. [Contact us →](http://www.deli
 7. The OAuth page (with OAuth enabled).
 
 == Changelog ==
+
+= 1.2 =
+* Full support for WordPress 4.3.
+* New logs, also for APIs, more frequent and detailed.
+* Minor bug fixes.
 
 = 1.1.1 =
 * Minor bug fixes.

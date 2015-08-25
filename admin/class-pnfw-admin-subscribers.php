@@ -13,13 +13,13 @@ class PNFW_Admin_Subscribers {
    </h2>
 
    <?php
-   $app_subscribers = new App_Subscribers_Table();
-
    if (isset($_REQUEST['action']) && 'delete' === $_REQUEST['action']) {
     if (!isset($_REQUEST['_wpnonce']) || !wp_verify_nonce($_REQUEST['_wpnonce'], 'delete' . $_REQUEST['id'])) {
      _e('Are you sure you want to do this?', 'pnfw');
      die;
     }
+
+    pnfw_log(PNFW_ALERT_LOG, sprintf(__("Removed from the App Subscribers page the user with ID %s.", 'pnfw'), $_REQUEST['id']));
 
     if (is_multisite()) {
      $blog_id = get_current_blog_id();
@@ -43,10 +43,18 @@ class PNFW_Admin_Subscribers {
     }?>
 
           <div class="updated below-h2" id="message"><p><?php _e('User deleted', 'pnfw'); ?></p></div>
-         <?php }
+         <?php } ?>
 
+
+
+
+
+   <?php $app_subscribers = new App_Subscribers_Table();
    $app_subscribers->prepare_items();
    $app_subscribers->display(); ?>
+
+
+
   </div>
  <?php }
 }
@@ -56,8 +64,19 @@ if (!class_exists( 'WP_List_Table')) {
 }
 
 class App_Subscribers_Table extends WP_List_Table {
+ public function __construct() {
+  parent::__construct([
+   'singular' => __('App Subscriber', 'pnfw'),
+   'plural' => __('App Subscribers', 'pnfw'),
+   'ajax' => false
+  ]);
+ }
+
  function get_columns() {
   $columns = array(
+
+
+
    'username' => __('Username', 'pnfw'),
    'email' => __('E-mail', 'pnfw'),
    'user_categories' => __('Categories', 'pnfw'),
@@ -74,6 +93,10 @@ class App_Subscribers_Table extends WP_List_Table {
 
   $this->_column_headers = array($columns, $hidden, $sortable);
 
+
+
+
+
   $per_page = 40;
 
   $paged = $this->get_pagenum();
@@ -85,20 +108,10 @@ class App_Subscribers_Table extends WP_List_Table {
    'number' => $per_page,
    'offset' => ($paged - 1) * $per_page,
    'role' => PNFW_Push_Notifications_for_WordPress_Lite::USER_ROLE,
-   //'search' => $usersearch,
    'fields' => 'all_with_meta',
    'order' => $order,
    'orderby' => $orderby
   );
-
-  /*if ('' !== $args['search'])
-			$args['search'] = '*' . $args['search'] . '*';
-
-		if (isset( $_REQUEST['orderby']))
-			$args['orderby'] = $_REQUEST['orderby'];
-
-		if (isset( $_REQUEST['order']))
-			$args['order'] = $_REQUEST['order'];*/
 
   $user_query = new WP_User_Query($args);
 
@@ -115,8 +128,10 @@ class App_Subscribers_Table extends WP_List_Table {
   switch ($column_name) {
    case 'username':
     return $item->display_name;
+
    case 'email':
     return $item->user_email;
+
    case 'user_categories':
     $user_groups = wp_get_object_terms($item->ID, 'user_cat', array('fields' => 'names'));
 
@@ -128,6 +143,7 @@ class App_Subscribers_Table extends WP_List_Table {
     $token_count = $wpdb->get_var($wpdb->prepare("SELECT COUNT(*) FROM $push_tokens WHERE user_id=%s", $item->ID));
 
     return $token_count;
+
    case 'excluded_categories':
     $object_taxonomies = get_option('pnfw_enabled_object_taxonomies', array());
 
@@ -135,7 +151,7 @@ class App_Subscribers_Table extends WP_List_Table {
      return '';
        }
 
-    $terms = get_terms($object_taxonomies, array('hide_empty' => 0));
+    $terms = get_terms($object_taxonomies, array('hide_empty' => false));
     $excluded_categories = array();
 
     foreach ($terms as $term) {
@@ -147,6 +163,7 @@ class App_Subscribers_Table extends WP_List_Table {
     }
 
     return implode(", ", $excluded_categories);
+
    default: // custom parameters
 
 
@@ -155,11 +172,10 @@ class App_Subscribers_Table extends WP_List_Table {
 
   }
  }
-
  public function get_sortable_columns() {
   $sortable_columns = array(
-   'username' => 'login',
-   'email' => 'email',
+   'username' => array('login', false),
+   'email' => array('email', false),
   );
 
   return $sortable_columns;
@@ -172,7 +188,6 @@ class App_Subscribers_Table extends WP_List_Table {
 
   return sprintf('%1$s %2$s', $item->display_name, $this->row_actions($actions));
  }
-
  public function no_items() {
   _e('No app subscribers were found.', 'pnfw');
  }

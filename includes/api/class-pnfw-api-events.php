@@ -1,4 +1,4 @@
-<?php
+<?php // FIXME deprecated, will be removed soon
 
 require_once dirname(__FILE__ ) . '/class-pnfw-api-registered.php';
 
@@ -102,11 +102,6 @@ class PNFW_API_Events extends PNFW_API_Registered {
    ));
   }
   exit;
- }
-
- private function get_last_modification_timestamp() {
-  //return (int)get_option('pnfw_last_save_timestamp', time());
-  return time(); // FIXME
  }
 
  private function get_images() {

@@ -27,7 +27,7 @@ class PNFW_Notifications_Android extends PNFW_Notifications {
 
   $api_key = get_option("pnfw_google_api_key");
   if (empty($api_key)) {
-   pnfw_log(PNFW_SYSTEM_LOG, __("Google API Key is not correctly set.", 'pnfw'));
+   pnfw_log(PNFW_ANDROID_LOG, __("Google API Key is not correctly set.", 'pnfw'));
    return 0;
   }
 
@@ -89,11 +89,11 @@ class PNFW_Notifications_Android extends PNFW_Notifications {
     $sent += $multicastResult->getSuccess();
    }
    catch (\InvalidArgumentException $e) {
-    pnfw_log(PNFW_SYSTEM_LOG, strip_tags($e->getMessage()));
+    pnfw_log(PNFW_ANDROID_LOG, sprintf(__('Invalid argument (%s): %s', 'pnfw'), (string)$e->getCode(), strip_tags($e->getMessage())));
    } catch (PHP_GCM\InvalidRequestException $e) {
-    pnfw_log(PNFW_SYSTEM_LOG, strip_tags($e->getMessage()));
+    pnfw_log(PNFW_ANDROID_LOG, sprintf(__('Invalid request (%s): %s', 'pnfw'), (string)$e->getCode(), strip_tags($e->getMessage())));
    } catch (\Exception $e) {
-    pnfw_log(PNFW_SYSTEM_LOG, strip_tags($e->getMessage()));
+    pnfw_log(PNFW_ANDROID_LOG, sprintf(__('Could not send message (%s): %s', 'pnfw'), (string)$e->getCode(), strip_tags($e->getMessage())));
    }
   }
 

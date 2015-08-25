@@ -43,17 +43,17 @@ class PNFW_Notifications_iOS extends PNFW_Notifications {
   }
 
   if (empty($certificate)) {
-   pnfw_log(PNFW_SYSTEM_LOG, __("iOS SSL certificate is not correctly set.", 'pnfw'));
+   pnfw_log(PNFW_IOS_LOG, __("iOS SSL certificate is not correctly set.", 'pnfw'));
       return 0;
   }
 
   if (empty($passphrase)) {
-   pnfw_log(PNFW_SYSTEM_LOG, __("iOS SSL certificate password is not correctly set.", 'pnfw'));
+   pnfw_log(PNFW_IOS_LOG, __("iOS SSL certificate password is not correctly set.", 'pnfw'));
       return 0;
   }
 
   if (!file_exists($certificate)) {
-   pnfw_log(PNFW_SYSTEM_LOG, __("iOS SSL Certificate does not exists.", 'pnfw'));
+   pnfw_log(PNFW_IOS_LOG, __("iOS SSL Certificate does not exists.", 'pnfw'));
    return 0;
   }
 

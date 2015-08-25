@@ -21,7 +21,7 @@ class PNFW_API_Unregister extends PNFW_API_Registered {
   $user = new WP_User($user_id);
 
   if (in_array(PNFW_Push_Notifications_for_WordPress_Lite::USER_ROLE, $user->roles) && empty($user->user_email)) {
-   pnfw_log(PNFW_SYSTEM_LOG, sprintf(__("Automatically deleted the anonymous user %s since left without tokens.", 'pnfw'), $user->user_login));
+   pnfw_log(PNFW_SYSTEM_LOG, sprintf(__("Automatically deleted the anonymous user %s (%s) since left without tokens.", 'pnfw'), $user->user_login, $user_id));
    require_once(ABSPATH . 'wp-admin/includes/user.php');
 
    if (is_multisite()) {
