@@ -3,7 +3,7 @@ Contributors: delitestudio
 Tags: push notifications, push notification, push, notifications, notification, mobile push, wordpress push, mobile notifications, mobile app, wordpress app, wordpress android app, wordpress ios app, ios app, ipad app, iphone app
 Requires at least: 3.5
 Tested up to: 4.3.1
-Stable tag: 1.2
+Stable tag: 1.3
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
