@@ -65,11 +65,11 @@ if (!class_exists( 'WP_List_Table')) {
 
 class App_Subscribers_Table extends WP_List_Table {
  public function __construct() {
-  parent::__construct([
+  parent::__construct(array(
    'singular' => __('App Subscriber', 'pnfw'),
    'plural' => __('App Subscribers', 'pnfw'),
    'ajax' => false
-  ]);
+  ));
  }
 
  function get_columns() {
