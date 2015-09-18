@@ -1,8 +1,8 @@
 <?php
 
-require_once dirname(__FILE__ ) . '/class-pnfw-api-registered.php';
+require_once dirname(__FILE__ ) . '/class-pnfw-api-activated.php';
 
-class PNFW_API_Posts extends PNFW_API_Registered {
+class PNFW_API_Posts extends PNFW_API_Activated {
 
  private $post_id;
  private $post;
@@ -11,9 +11,9 @@ class PNFW_API_Posts extends PNFW_API_Registered {
   parent::__construct(site_url('pnfw/posts/'), 'GET');
 
   // Optional
-  $this->post_id = $this->opt_parameter('id');
+  $this->post_id = $this->opt_parameter('id', FILTER_SANITIZE_NUMBER_INT);
 
-  $timestamp = $this->opt_parameter('timestamp');
+  $timestamp = $this->opt_parameter('timestamp', FILTER_SANITIZE_NUMBER_INT);
   if ($timestamp == $this->get_last_modification_timestamp())
    $this->header_error('304');
 
