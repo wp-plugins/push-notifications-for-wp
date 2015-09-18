@@ -34,8 +34,6 @@ class PNFW_Sender_Manager {
   // Only do this when a post transitions to being published
   // Enforce that notifications will be triggered only by posts
   if ('publish' == $new_status && 'publish' != $old_status && 'trash' != $old_status) {
-   $title = $post->post_title;
-
    wp_schedule_single_event(time(), 'pnfw_new_event', array($post));
   }
  }
@@ -57,21 +55,21 @@ class PNFW_Sender_Manager {
 
 
   if (get_option("pnfw_ios_push_notifications")) {
-   require_once dirname(__FILE__ ) . '/notifications/class-pnfw-post-notifications-ios.php';
+   require_once dirname(__FILE__) . '/notifications/class-pnfw-post-notifications-ios.php';
 
    $sender = new PNFW_Post_Notifications_iOS();
    $sender->send_post_to_user_categories($post);
   }
 
   if (get_option("pnfw_android_push_notifications")) {
-   require_once dirname(__FILE__ ) . '/notifications/class-pnfw-post-notifications-android.php';
+   require_once dirname(__FILE__) . '/notifications/class-pnfw-post-notifications-android.php';
 
    $sender = new PNFW_Post_Notifications_Android();
    $sender->send_post_to_user_categories($post);
   }
 
   if (get_option("pnfw_kindle_push_notifications")) {
-   require_once dirname(__FILE__ ) . '/notifications/class-pnfw-post-notifications-kindle.php';
+   require_once dirname(__FILE__) . '/notifications/class-pnfw-post-notifications-kindle.php';
 
    $sender = new PNFW_Post_Notifications_Kindle();
    $sender->send_post_to_user_categories($post);
