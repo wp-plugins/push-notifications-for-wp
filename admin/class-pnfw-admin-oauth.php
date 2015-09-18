@@ -28,42 +28,40 @@ class PNFW_Admin_OAuth {
    <div id="icon-options-general" class="icon32"></div>
    <h2><?php _e('OAuth', 'pnfw'); ?></h2>
 
-   <div id="poststuff" class="metabox-holder has-right-sidebar">
-    <div class="has-sidebar sm-padded">
-     <div class="has-sidebar sm-padded">
-      <div id="post-body-content" class="has-sidebar-content">
-       <div class="meta-box-sortabless">
-        <form action="" method="post">
-         <div class="postbox">
-          <h3 class="hndle">
-           <span><?php _e('API Keys', 'pnfw'); ?></span>
-          </h3>
+   <div id="poststuff" class="metabox-holder">
+    <div class="sm-padded">
+     <div id="post-body-content">
+      <div class="meta-box-sortabless">
+       <form action="" method="post">
+        <div class="postbox">
+         <h3 class="hndle">
+          <span><?php _e('API Keys', 'pnfw'); ?></span>
+         </h3>
 
-          <div class="inside">
-           <?php if (empty($pnfw_api_consumer_key)) : ?>
-           <div id="message" class="error"><p><?php _e('OAuth is disabled. Anyone can connect to the APIs without authorization. For better security we recommend to enable OAuth (requires changes to client).', 'pnfw'); ?></p></div>
-            <input name="pnfw_generate_api_key" type="hidden" id="pnfw_generate_api_key" value="0" />
-            <p class="submit">
-             <input name="issubmitted" type="hidden" value="yes" />
-             <input class="button button-primary" type="submit" name="pnfw_save_settings_button" value="<?php _e('Enable OAuth & Generate API Keys', 'pnfw'); ?>" />
-            </p>
-           <?php else : ?>
-            <strong><?php _e('Consumer Key:', 'pnfw'); ?>&nbsp;</strong><code id="pnfw_api_consumer_key"><?php echo $pnfw_api_consumer_key ?></code><br/>
-            <strong><?php _e('Consumer Secret:', 'pnfw'); ?>&nbsp;</strong><code id="pnfw_api_consumer_secret"><?php echo $pnfw_api_consumer_secret; ?></code><br/>
+         <div class="inside">
+          <?php if (empty($pnfw_api_consumer_key)) : ?>
+          <div id="message" class="error"><p><?php _e('OAuth is disabled. Anyone can connect to the APIs without authorization. For better security we recommend to enable OAuth (requires changes to client).', 'pnfw'); ?></p></div>
+           <input name="pnfw_generate_api_key" type="hidden" id="pnfw_generate_api_key" value="0" />
+           <p class="submit">
+            <input name="issubmitted" type="hidden" value="yes" />
+            <input class="button button-primary" type="submit" name="pnfw_save_settings_button" value="<?php _e('Enable OAuth & Generate API Keys', 'pnfw'); ?>" />
+           </p>
+          <?php else : ?>
+           <strong><?php _e('Consumer Key:', 'pnfw'); ?>&nbsp;</strong><code id="pnfw_api_consumer_key"><?php echo $pnfw_api_consumer_key ?></code><br/>
+           <strong><?php _e('Consumer Secret:', 'pnfw'); ?>&nbsp;</strong><code id="pnfw_api_consumer_secret"><?php echo $pnfw_api_consumer_secret; ?></code><br/>
 
-            <input name="pnfw_revoke_api_key" type="hidden" id="pnfw_revoke_api_key" value="0" />
+           <input name="pnfw_revoke_api_key" type="hidden" id="pnfw_revoke_api_key" value="0" />
 
-            <p class="submit">
-             <input name="issubmitted" type="hidden" value="yes" />
-             <input class="button button-secondary" type="submit" name="pnfw_save_settings_button" value="<?php _e('Disable OAuth & Revoke Keys', 'pnfw'); ?>" />
-            </p>
+           <p class="submit">
+            <input name="issubmitted" type="hidden" value="yes" />
+            <input class="button button-secondary" type="submit" name="pnfw_save_settings_button" value="<?php _e('Disable OAuth & Revoke Keys', 'pnfw'); ?>" />
+           </p>
 
-            <span><?php _e('IMPORTANT: After revoking the API Keys clients who used them will no longer be able to connect.', 'pnfw'); ?></span>
-           <?php endif; ?>
-          </div> <!-- inside -->
-         </div> <!-- postbox -->
-        </form>
-       </div>
+           <span><?php _e('IMPORTANT: After revoking the API Keys clients who used them will no longer be able to connect.', 'pnfw'); ?></span>
+          <?php endif; ?>
+         </div> <!-- inside -->
+        </div> <!-- postbox -->
+       </form>
       </div>
      </div>
     </div>
