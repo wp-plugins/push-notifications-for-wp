@@ -343,7 +343,7 @@ class PNFW_Admin_Settings {
         <span><?php _e('URL Scheme', 'pnfw'); ?></span>
        </h3>
        <div class="inside">
-        <input name="pnfw_url_scheme" id="pnfw_url_scheme" type="text" style="" value="<?php echo $pnfw_url_scheme; ?>" class="" placeholder="my-app-scheme://">
+        <input name="pnfw_url_scheme" id="pnfw_url_scheme" type="text" style="" value="<?php echo $pnfw_url_scheme; ?>" class="textfield" placeholder="my-app-scheme://">
 
         <br/><span class="description"><?php _e('When a user registers on this site, he will receive a confirmation email with a verification link. If you have filled in the URL Scheme, after a successful verification from a mobile device the user will be redirected to the URL indicated.', 'pnfw'); ?></span>
 
@@ -436,7 +436,7 @@ class PNFW_Admin_Settings {
          </tr>
         </table>
 
-        <p><a href="http://developer.android.com/google/gcm/gs.html" target="_blank"><?php _e('Obtaining the Google API Key', 'pnfw'); ?></a></p>
+        <p><a href="https://developers.google.com/mobile/add" target="_blank"><?php _e('Obtaining the Google API Key', 'pnfw'); ?></a></p>
         <p class="submit">
          <input name="issubmitted" type="hidden" value="yes" />
          <input class="button button-primary" type="submit" name="pnfw_save_settings_button" value="<?php _e('Save settings', 'pnfw'); ?>" />
