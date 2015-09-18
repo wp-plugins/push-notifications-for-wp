@@ -12,16 +12,11 @@ class PNFW_API_Register extends PNFW_API {
  public function __construct() {
   parent::__construct(site_url('pnfw/register/'), 'POST');
 
+  add_filter('wp_mail_from_name', array($this, 'from_name'));
+
   // Optional
-  $prevToken = $this->opt_parameter('prevToken');
-  $this->email = $this->opt_parameter('email');
-
-
-
-
-  if (isset($this->email) && !filter_var($this->email, FILTER_VALIDATE_EMAIL)) {
-   $this->json_error('500', __('Invalid email address', 'pnfw'));
-  }
+  $prevToken = $this->opt_parameter('prevToken', FILTER_SANITIZE_STRING);
+  $this->email = $this->opt_parameter('email', FILTER_VALIDATE_EMAIL);
   $this->activation_code = $this->get_activation_code();
 
   global $wpdb;
@@ -114,6 +109,12 @@ class PNFW_API_Register extends PNFW_API {
   }
 
   exit;
+ }
+
+ public function from_name() {
+  $blogname = wp_specialchars_decode(get_option('blogname'), ENT_QUOTES);
+
+  return $blogname;
  }
  private function get_activation_code() {
   if (empty($this->email))
