@@ -3,7 +3,7 @@
 Plugin Name: Push Notifications for WordPress (Lite)
 Plugin URI: http://delitestudio.com/wordpress/push-notifications-for-wordpress/
 Description: Send push notifications to iOS, Android, and Fire OS devices when you publish a new post.
-Version: 1.2
+Version: 1.3
 Author: Delite Studio S.r.l.
 Author URI: http://www.delitestudio.com/
 */
@@ -22,9 +22,30 @@ if (class_exists('PNFW_Push_Notifications_for_Posts') || class_exists('PNFW_Push
 }
 
 
+if (!function_exists('pnfw_log')) {
+ define("PNFW_SYSTEM_LOG", 0);
+ define("PNFW_IOS_LOG", 1);
+ define("PNFW_ANDROID_LOG", 2);
+ define("PNFW_KINDLE_LOG", 3);
+ define("PNFW_FEEDBACK_PROVIDER_LOG", 4);
+ define("PNFW_ALERT_LOG", 5);
+
+ function pnfw_log($type, $text) {
+  global $wpdb;
+
+  $table_name = $wpdb->get_blog_prefix() . 'push_logs';
+
+  $data = array('type' => $type, 'text' => $text, 'timestamp' => current_time('mysql'));
+  $wpdb->insert($table_name, $data, array('%d', '%s', '%s'));
+ }
+}
+
 require_once dirname(__FILE__) . '/admin/class-pnfw-admin.php';
 require_once dirname(__FILE__) . '/includes/class-pnfw-sender-manager.php';
 require_once dirname(__FILE__) . '/includes/class-pnfw-ios-feedback-provider.php';
+
+
+
 
 $push_notifications_for_wordpress = new PNFW_Push_Notifications_for_WordPress_Lite();
 
@@ -37,7 +58,6 @@ final class PNFW_Push_Notifications_for_WordPress_Lite {
  public function __construct() {
   register_activation_hook(__FILE__, array($this, 'activate'));
   register_deactivation_hook(__FILE__, array($this, 'deactivate'));
-
   add_filter('query_vars', array($this, 'manage_routes_query_vars'));
   add_action('init', array($this, 'plugin_init'));
   add_action('admin_init', array($this, 'admin_init'));
@@ -54,10 +74,6 @@ final class PNFW_Push_Notifications_for_WordPress_Lite {
   add_action('delete_user', array($this, 'delete_user'));
   add_action('deleted_user', array($this, 'user_deleted'));
   add_action('delete_post', array($this, 'post_delete'));
-  //add_filter('pre_set_site_transient_update_plugins', array(&$this, 'display_transient_update_plugins'));
-
-
-
  }
 
  /**
@@ -262,10 +278,6 @@ final class PNFW_Push_Notifications_for_WordPress_Lite {
     require_once(dirname(__FILE__) . '/includes/api/class-pnfw-api-unregister.php');
     $unregister = new PNFW_API_Unregister();
     break;
-   case 'events': // FIXME: deprecated, will be removed soon
-    require_once(dirname(__FILE__) . '/includes/api/class-pnfw-api-events.php');
-    $events = new PNFW_API_Events();
-    break;
    case 'categories':
     require_once(dirname(__FILE__) . '/includes/api/class-pnfw-api-categories.php');
     $categories = new PNFW_API_Categories();
@@ -303,7 +315,7 @@ final class PNFW_Push_Notifications_for_WordPress_Lite {
 	  * checks during media uploads
 	  */
  function allow_pem($mimes) {
-     $mimes['pem'] = 'application/x-pem-file';
+  $mimes['pem'] = 'application/x-pem-file';
   return $mimes;
  }
 
@@ -313,18 +325,18 @@ final class PNFW_Push_Notifications_for_WordPress_Lite {
  function adding_meta_box($post_type, $post) {
   $enabled_post_types = get_option('pnfw_enabled_post_types', array());
 
-     if (empty($enabled_post_types) || !in_array($post_type, $enabled_post_types)) {
-      return false;
-     }
+  if (empty($enabled_post_types) || !in_array($post_type, $enabled_post_types)) {
+   return false;
+  }
 
-     add_meta_box(
-         'pnfw-meta-box',
-         __('Push Notifications', 'pnfw'),
-         array($this, 'render_meta_box'),
-         $post_type,
-         'side',
-         'high'
-     );
+  add_meta_box(
+   'pnfw-meta-box',
+   __('Push Notifications', 'pnfw'),
+   array($this, 'render_meta_box'),
+   $post_type,
+   'side',
+   'high'
+  );
  }
 
  /**
@@ -333,7 +345,7 @@ final class PNFW_Push_Notifications_for_WordPress_Lite {
  function render_meta_box($post) {
   wp_nonce_field('pnfw_meta_box', 'pnfw_meta_box_nonce');
 
-     $value = get_post_meta($post->ID, 'pnfw_do_not_send_push_notifications_for_this_post', true);
+  $value = get_post_meta($post->ID, 'pnfw_do_not_send_push_notifications_for_this_post', true);
 
   ?>
   <label><input type="checkbox"<?php echo (!empty($value) ? ' checked="checked"' : null) ?> value="1" name="pnfw_do_not_send_push_notifications_for_this_post" id="pnfw-do-not-send-push-notifications-for-this-post" /> <?php echo sprintf(__('Do not send for this %s', 'pnfw'), strtolower(get_post_type_object($post->post_type)->labels->singular_name)); ?></label>
@@ -576,28 +588,18 @@ final class PNFW_Push_Notifications_for_WordPress_Lite {
   return username_exists($tmp_user_login) ? $this->create_unique_user_login() : $tmp_user_login;
  }
  function opt_parameter($parameter) {
-  $parameters = strtoupper($_SERVER['REQUEST_METHOD']) == 'POST' ? $_POST : $_GET;
-  return isset($parameters[$parameter]) ? $parameters[$parameter] : NULL;
+  $pars = strtoupper($_SERVER['REQUEST_METHOD']) == 'POST' ? $_POST : $_GET;
+
+  if (!array_key_exists($parameter, $pars))
+   return NULL;
+
+  $res = filter_var($pars[$parameter], FILTER_SANITIZE_STRING);
+
+  return $res ? $res : NULL;
  }
 }
 
-if (!function_exists('pnfw_log')) {
- define("PNFW_SYSTEM_LOG", 0);
- define("PNFW_IOS_LOG", 1);
- define("PNFW_ANDROID_LOG", 2);
- define("PNFW_KINDLE_LOG", 3);
- define("PNFW_FEEDBACK_PROVIDER_LOG", 4);
- define("PNFW_ALERT_LOG", 5);
 
- function pnfw_log($type, $text) {
-  global $wpdb;
-
-  $table_name = $wpdb->get_blog_prefix() . 'push_logs';
-
-  $data = array('type' => $type, 'text' => $text, 'timestamp' => current_time('mysql'));
-  $wpdb->insert($table_name, $data, array('%d', '%s', '%s'));
- }
-}
 
 if (!function_exists('pnfw_get_post')) {
  function pnfw_get_post($key, $default = false) {
@@ -646,24 +648,24 @@ if (!function_exists('pnfw_suppress_filters')) {
 }
 if (!function_exists('pnfw_is_exclusive_user_member_of_blog')) {
  function pnfw_is_exclusive_user_member_of_blog($user_id = 0, $blog_id = 0) {
-     $user_id = (int)$user_id;
-     $blog_id = (int)$blog_id;
+  $user_id = (int)$user_id;
+  $blog_id = (int)$blog_id;
 
-        if (empty($user_id))
-            $user_id = get_current_user_id();
+  if (empty($user_id))
+   $user_id = get_current_user_id();
 
-        if (empty($blog_id))
-            $blog_id = get_current_blog_id();
+  if (empty($blog_id))
+   $blog_id = get_current_blog_id();
 
-        $blogs = get_blogs_of_user($user_id);
+  $blogs = get_blogs_of_user($user_id);
 
-        return array_key_exists($blog_id, $blogs) && count($blogs) == 1;
+  return array_key_exists($blog_id, $blogs) && count($blogs) == 1;
  }
 }
 
 if (!function_exists('pnfw_starts_with')) {
  function pnfw_starts_with($haystack, $needle) {
-     $length = strlen($needle);
+  $length = strlen($needle);
   return (substr($haystack, 0, $length) === $needle);
  }
 }
