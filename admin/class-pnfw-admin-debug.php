@@ -96,11 +96,11 @@ class PNFW_Admin_Debug {
 
 class PNfW_Logs_Table extends WP_List_Table {
  public function __construct() {
-  parent::__construct([
+  parent::__construct(array(
    'singular' => __('Log', 'pnfw'),
    'plural' => __('Logs', 'pnfw'),
    'ajax' => false
-  ]);
+  ));
  }
 
  function get_columns() {
