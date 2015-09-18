@@ -10,7 +10,7 @@ class PNFW_API_Activate {
   if (!is_null($http_method) && strtoupper($http_method) !== $this->get_method())
    $this->html_response(__('We were not able to activate your account. Please contact support.', 'pnfw'), $error = true);
 
-  $activation_code = sanitize_text_field($this->get_parameter('activation_code'));
+  $activation_code = $this->get_parameter('activation_code');
 
   global $wpdb;
   $table_name = $wpdb->get_blog_prefix() . 'push_tokens';
@@ -43,7 +43,7 @@ class PNFW_API_Activate {
 
   $message = sprintf(__('New confirmed app subscriber on your site %s: %s', 'pnfw'), $blogname, $user->user_email) . "\r\n\r\n";
 
-  @wp_mail(get_option('admin_email'), sprintf(__('[%s] New Confirmed App Subscriber', 'pnfw'), $blogname), $message);
+  wp_mail(get_option('admin_email'), sprintf(__('[%s] New Confirmed App Subscriber', 'pnfw'), $blogname), $message);
  }
 
  private function html_response($message, $error = false) {
@@ -102,10 +102,18 @@ class PNFW_API_Activate {
   return strtoupper($_SERVER['REQUEST_METHOD']) == 'POST' ? $_POST : $_GET;
  }
 
- // Get mandatory parameter from get or post
- private function get_parameter($parameter) {
+ // Get mandatory parameter from get or post	
+ function get_parameter($parameter) {
   $pars = $this->get_parameters();
 
-  return array_key_exists($parameter, $pars) ? $pars[$parameter] : $this->html_response(sprintf(__('Mandatory parameter %s missing', 'pnfw'), $parameter), $error = true);
+  if (!array_key_exists($parameter, $pars))
+   $this->html_response(__('We were not able to activate your account. Please contact support.', 'pnfw'), $error = true);
+
+  $res = filter_var($pars[$parameter], FILTER_SANITIZE_STRING);
+
+  if (!$res)
+   $this->html_response(__('We were not able to activate your account. Please contact support.', 'pnfw'), $error = true);
+
+  return $res;
  }
 }
