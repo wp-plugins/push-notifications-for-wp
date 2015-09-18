@@ -54,12 +54,9 @@ class PNFW_Notifications {
    $tokens = $this->get_tokens($category_id, $lang, $page);
 
    if (empty($user_cat)) {
-
-
-
-
     // Send tokens to all categories (no filter)
     $total += $this->raw_send($tokens, $post->post_title, $post->ID);
+
    }
    else {
     // Send tokens only to selected category
