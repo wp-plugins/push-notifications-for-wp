@@ -10,7 +10,7 @@ class PNFW_API_Categories extends PNFW_API_Registered {
   parent::__construct(site_url('pnfw/categories/'));
 
   // Optional
-  $timestamp = $this->opt_parameter('timestamp');
+  $timestamp = $this->opt_parameter('timestamp', FILTER_SANITIZE_NUMBER_INT);
   if ($timestamp == $this->get_last_modification_timestamp())
    $this->header_error('304');
 
@@ -51,8 +51,9 @@ class PNFW_API_Categories extends PNFW_API_Registered {
     break;
    }
    case 'POST': {
-    $this->category_id = pnfw_get_normalized_term_id((int)$this->get_parameter('id'));
-    $excluded = filter_var($this->get_parameter('exclude'), FILTER_VALIDATE_BOOLEAN);
+    $this->category_id = pnfw_get_normalized_term_id((int)$this->get_parameter('id', FILTER_SANITIZE_NUMBER_INT));
+
+    $excluded = $this->get_parameter('exclude', FILTER_VALIDATE_BOOLEAN);
 
     $this->setCategoryExcluded($excluded);
     break;
