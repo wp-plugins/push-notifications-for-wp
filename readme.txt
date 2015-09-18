@@ -2,7 +2,7 @@
 Contributors: delitestudio
 Tags: push notifications, push notification, push, notifications, notification, mobile push, wordpress push, mobile notifications, mobile app, wordpress app, wordpress android app, wordpress ios app, ios app, ipad app, iphone app
 Requires at least: 3.5
-Tested up to: 4.3
+Tested up to: 4.3.1
 Stable tag: 1.2
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -229,6 +229,12 @@ Let us know, we will do everything to help you. [Contact us →](http://www.deli
 
 == Changelog ==
 
+= 1.3 =
+* Changed the sender's name in the activation emails.
+* Full parameters validation.
+* Older PHP version fix.
+* Minor bug fixes.
+
 = 1.2 =
 * Full support for WordPress 4.3.
 * New logs, also for APIs, more frequent and detailed.
@@ -258,6 +264,6 @@ To begin using this plugin, you first need an app that uses one of the supported
 
 To send push notifications to iOS devices, you need the Apple Push Notification service SSL certificate in the .PEM format. For more information, see [Provisioning and Development](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ProvisioningDevelopment.html#//apple_ref/doc/uid/TP40008194-CH104-SW1) in the Apple Local and Push Notification Programming Guide.
 
-To send push notifications to Android devices, you need to obtain the Google API Key. For more information, see [GCM Architectural Overview](http://developer.android.com/google/gcm/gcm.html).
+To send push notifications to Android devices, you need to obtain the Google API Key. For more information, see [GCM Architectural Overview](https://developers.google.com/mobile/add).
 
 To send push notifications to Fire OS devices, you need to obtain the Client ID and Client Secret. For more information, see [Obtaining ADM Credentials](http://developer.amazon.com/sdk/adm/credentials.html).
