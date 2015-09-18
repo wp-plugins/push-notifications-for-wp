@@ -19,15 +19,21 @@ class PNFW_API {
    $this->check_oauth_signature();
 
   // Check mandatory os parameter
-  $this->os = $this->get_parameter('os');
+  $this->os = $this->get_parameter('os', FILTER_SANITIZE_STRING);
   if (!in_array($this->os, array('iOS', 'Android', 'Fire OS')))
    $this->json_error('500', __('os parameter invalid', 'pnfw'));
 
   // Check mandatory token parameter
-  $this->token = $this->get_parameter('token');
+  $this->token = $this->get_parameter('token', FILTER_SANITIZE_STRING);
 
   // Set optional lang parameter
-  $this->lang = $this->opt_parameter('lang');
+  $this->lang = $this->opt_parameter('lang', FILTER_SANITIZE_STRING);
+  if (isset($this->lang)) {
+   $this->lang = substr($this->lang, 0, 2); // FIXME deprecated, will be removed soon
+
+   if (strlen($this->lang) != 2)
+    $this->json_error('500', __('lang parameter invalid', 'pnfw'));
+  }
  }
 
  // Get parameters from get or post
@@ -36,17 +42,42 @@ class PNFW_API {
  }
 
  // Get mandatory parameter from get or post
- function get_parameter($parameter) {
+ function get_parameter($parameter, $filter) {
   $pars = $this->get_parameters();
 
-  return array_key_exists($parameter, $pars) ? $pars[$parameter] : $this->json_error('500', sprintf(__('Mandatory parameter %s missing', 'pnfw'), $parameter));
+  if (!array_key_exists($parameter, $pars))
+   $this->json_error('500', sprintf(__('Mandatory parameter %s missing', 'pnfw'), $parameter));
+
+  return $this->filter($parameter, $pars[$parameter], $filter);
  }
 
  // Get optional parameter from get or post
- function opt_parameter($parameter) {
+ function opt_parameter($parameter, $filter) {
   $pars = $this->get_parameters();
 
-  return array_key_exists($parameter, $pars) ? $pars[$parameter] : NULL;
+  if (!array_key_exists($parameter, $pars))
+   return NULL;
+
+  return $this->filter($parameter, $pars[$parameter], $filter);
+ }
+
+ private function filter($parameter, $value, $filter) {
+  if ($filter != FILTER_VALIDATE_BOOLEAN) {
+   $res = filter_var($value, $filter);
+
+   if (!$res)
+    $this->json_error('500', sprintf(__('Invalid %s', 'pnfw'), $parameter));
+
+   return $res;
+  }
+  else {
+   $res = filter_var($value, $filter, FILTER_NULL_ON_FAILURE);
+
+   if (is_null($res))
+    $this->json_error('500', sprintf(__('Invalid %s', 'pnfw'), $parameter));
+
+   return $res;
+  }
  }
 
  function get_method() {
@@ -227,28 +258,28 @@ class PNFW_API {
  }
 
  protected static function get_remote_addr() {
-        $res = '';
+  $res = '';
 
-        if (isset($_SERVER['REMOTE_ADDR'])) {
-            $res = $_SERVER['REMOTE_ADDR'];
-        }
+  if (isset($_SERVER['REMOTE_ADDR'])) {
+   $res = $_SERVER['REMOTE_ADDR'];
+  }
 
-        if ($res == '::1') {
-            $res = '127.0.0.1';
-        }
+  if ($res == '::1') {
+   $res = '127.0.0.1';
+  }
 
-        return $res;
-    }
+  return $res;
+ }
 
     protected static function get_request_uri() {
-        $res = '';
+  $res = '';
 
-        if (isset($_SERVER['REQUEST_URI'])) {
-            $res = $_SERVER['REQUEST_URI'];
-        }
+  if (isset($_SERVER['REQUEST_URI'])) {
+   $res = $_SERVER['REQUEST_URI'];
+  }
 
-        return $res;
-    }
+  return $res;
+ }
 
     protected function get_last_modification_timestamp() {
   //return (int)get_option('pnfw_last_save_timestamp', time());
