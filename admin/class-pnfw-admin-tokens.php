@@ -109,11 +109,11 @@ if (!class_exists( 'WP_List_Table')) {
 
 class Tokens_Table extends WP_List_Table {
  public function __construct() {
-  parent::__construct([
+  parent::__construct(array(
    'singular' => __('Token', 'pnfw'),
    'plural' => __('Tokens', 'pnfw'),
    'ajax' => false
-  ]);
+  ));
  }
 
  function get_columns() {
