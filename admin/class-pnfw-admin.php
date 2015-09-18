@@ -21,6 +21,9 @@ final class PNFW_Admin {
  function admin_header() {
   echo '<style type="text/css">';
 
+  // Common
+  echo '.textfield { width: 100%; }';
+
   // App Subscribers page
   echo '.wp-list-table .column-username { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }';
   echo '.wp-list-table .column-email { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }';
