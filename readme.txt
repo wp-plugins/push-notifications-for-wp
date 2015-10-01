@@ -105,6 +105,8 @@ This section describes how to install the plugin and get it working.
 
 == Frequently Asked Questions ==
 
+> Full FAQs on the [premium plugin's page](http://www.delitestudio.com/wordpress/push-notifications-for-wordpress/faqs/).
+
 = How is this plugin different from other push notifications plugins? =
 
 Other plugins use third-party server's that send notifications for a fee. This plugin has a built in hub, allowing WordPress to send out the push notifications directly. For free.
@@ -170,7 +172,7 @@ Two things in particular:
 
 = Does it work with WPML? =
 
-No, WPML is only supported by the premium version Push Notifications for Wordpress.
+No, WPML is only supported by the premium version [Push Notifications for WordPress](http://www.delitestudio.com/wordpress/push-notifications-for-wordpress/).
 
 = Why am I getting a Web page when connecting to the `http://yoursite/pnfw/register/`? =
 
