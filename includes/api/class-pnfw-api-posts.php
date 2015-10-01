@@ -8,102 +8,122 @@ class PNFW_API_Posts extends PNFW_API_Activated {
  private $post;
 
  public function __construct() {
-  parent::__construct(site_url('pnfw/posts/'), 'GET');
+  parent::__construct(site_url('pnfw/posts/'));
 
-  // Optional
-  $this->post_id = $this->opt_parameter('id', FILTER_SANITIZE_NUMBER_INT);
+  switch($this->get_method()) {
+   case 'GET': {
+    // Optional
+    $this->post_id = $this->opt_parameter('id', FILTER_SANITIZE_NUMBER_INT);
 
-  $timestamp = $this->opt_parameter('timestamp', FILTER_SANITIZE_NUMBER_INT);
-  if ($timestamp == $this->get_last_modification_timestamp())
-   $this->header_error('304');
+    $timestamp = $this->opt_parameter('timestamp', FILTER_SANITIZE_NUMBER_INT);
+    if ($timestamp == $this->get_last_modification_timestamp())
+     $this->header_error('304');
 
-  if (isset($this->post_id)) {
-   $this->post = get_post($this->post_id);
+    if (isset($this->post_id)) {
+     $this->check_current_post_id();
 
-   if ($this->post == null || $this->post->post_status != 'publish') {
-    $this->json_error('404', __('Post not found.', 'pnfw'));
-   }
+     $post_date = new DateTime($this->post->post_date);
 
-   if (!$this->current_user_can_view_post($this->post_id)) {
-    $this->json_error('401', __('You do not have permission to access this post.', 'pnfw'));
-   }
+     $content = (bool)get_option('pnfw_use_wpautop') ? wpautop(do_shortcode($this->post->post_content)) : do_shortcode($this->post->post_content);
 
-   $post_date = new DateTime($this->post->post_date);
-
-   $content = (bool)get_option('pnfw_use_wpautop') ? wpautop(do_shortcode($this->post->post_content)) : do_shortcode($this->post->post_content);
-
-   $response = array(
-    'id' => $this->post->ID,
-    'title' => $this->post->post_title,
-    'content' => $content,
-    'categories' => $this->get_categories(),
-    'date' => $post_date->getTimestamp(),
-    'author' => $this->get_author(),
-   );
-
-   // Optional fields
-   $image = $this->get_image();
-   if (!is_null($image))
-    $response['image'] = $image;
-
-   if (!$this->is_viewed())
-    $this->set_viewed();
-
-
-
-   header('Content-Type: application/json');
-
-   echo json_encode($response);
-  }
-  else {
-   $raw_posts = array();
-   if (get_option('pnfw_enabled_post_types')) {
-    $raw_posts = get_posts(
-     array(
-      'posts_per_page' => get_option('pnfw_posts_per_page'),
-      'post_type' => get_option('pnfw_enabled_post_types'),
-      'suppress_filters' => pnfw_suppress_filters()
-     )
-    );
-   }
-
-
-
-   $posts = array();
-
-   foreach ($raw_posts as $raw_post) {
-    if ($this->current_user_can_view_post($raw_post->ID)) {
-     $post_date = new DateTime($raw_post->post_date);
-
-     // Mandatory fields
-     $post = array(
-      'id' => $raw_post->ID,
-      'title' => $raw_post->post_title,
+     $response = array(
+      'id' => $this->post->ID,
+      'title' => $this->post->post_title,
+      'content' => $content,
+      'categories' => $this->get_categories(),
       'date' => $post_date->getTimestamp(),
+      'author' => $this->get_author(),
      );
 
      // Optional fields
-     $thumbnail = $this->get_thumbnail($raw_post->ID);
-     if (!is_null($thumbnail))
-      $post['thumbnail'] = $thumbnail;
+     $image = $this->get_image();
+     if (!is_null($image))
+      $response['image'] = $image;
 
-     if (!$this->is_read($raw_post->ID))
-      $post['read'] = false;
+     if (!$this->is_viewed())
+      $this->set_viewed();
 
 
 
-     $posts[] = $post;
+     header('Content-Type: application/json');
+
+     echo json_encode($response);
     }
+    else {
+     $raw_posts = array();
+     if (get_option('pnfw_enabled_post_types')) {
+      $raw_posts = get_posts(
+       array(
+        'posts_per_page' => get_option('pnfw_posts_per_page'),
+        'post_type' => get_option('pnfw_enabled_post_types'),
+        'suppress_filters' => pnfw_suppress_filters()
+       )
+      );
+     }
+
+
+
+     $posts = array();
+
+     foreach ($raw_posts as $raw_post) {
+      if ($this->current_user_can_view_post($raw_post->ID)) {
+       $post_date = new DateTime($raw_post->post_date);
+
+       // Mandatory fields
+       $post = array(
+        'id' => $raw_post->ID,
+        'title' => $raw_post->post_title,
+        'date' => $post_date->getTimestamp(),
+       );
+
+       // Optional fields
+       $thumbnail = $this->get_thumbnail($raw_post->ID);
+       if (!is_null($thumbnail))
+        $post['thumbnail'] = $thumbnail;
+
+       if (!$this->is_read($raw_post->ID))
+        $post['read'] = false;
+
+
+
+       $posts[] = $post;
+      }
+     }
+
+     header('Content-Type: application/json');
+
+     echo json_encode(array(
+      'posts' => $posts,
+      'timestamp' => $this->get_last_modification_timestamp()
+     ));
+    }
+    break;
    }
+   case 'POST': {
+    // Mandatory
+    $this->post_id = $this->get_parameter('id', FILTER_SANITIZE_NUMBER_INT);
+    $viewed = $this->get_parameter('viewed', FILTER_VALIDATE_BOOLEAN);
 
-   header('Content-Type: application/json');
-
-   echo json_encode(array(
-    'posts' => $posts,
-    'timestamp' => $this->get_last_modification_timestamp()
-   ));
+    $this->check_current_post_id();
+    $this->set_viewed($viewed);
+    break;
+   }
+   default:
+    $this->json_error('401', __('Invalid HTTP method', 'pnfw'));
   }
   exit;
+ }
+
+ private function check_current_post_id() {
+  $this->post = get_post($this->post_id);
+
+  if ($this->post == null || $this->post->post_status != 'publish') {
+   $this->json_error('404', __('Post not found.', 'pnfw'));
+  }
+
+  if (!$this->current_user_can_view_post($this->post_id)) {
+   $this->json_error('401', __('You do not have permission to access this post.', 'pnfw'));
+  }
  }
 
  private function get_categories($post = null) {
@@ -185,13 +205,16 @@ class PNFW_API_Posts extends PNFW_API_Activated {
   return (boolean)$wpdb->get_var($wpdb->prepare("SELECT COUNT(*) FROM $push_viewed WHERE post_id=%d AND user_id=%d", $post_id, $this->current_user_id()));
  }
 
- public function set_viewed($post_id = null) {
-  if (is_null($post_id))
-   $post_id = $this->post_id;
-
+ public function set_viewed($viewed = true) {
   global $wpdb;
   $push_viewed = $wpdb->get_blog_prefix() . 'push_viewed';
-  $wpdb->insert($push_viewed, array('post_id' => $post_id, 'user_id' => $this->current_user_id(), 'timestamp' => current_time('mysql')));
+
+  if ($viewed) {
+   $wpdb->insert($push_viewed, array('post_id' => $this->post_id, 'user_id' => $this->current_user_id(), 'timestamp' => current_time('mysql')));
+  }
+  else {
+   $wpdb->delete($push_viewed, array('post_id' => $this->post_id, 'user_id' => $this->current_user_id()));
+  }
  }
 
  public function is_read($post_id = null) {
