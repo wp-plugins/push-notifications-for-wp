@@ -57,6 +57,8 @@ class PNFW_Notifications_iOS extends PNFW_Notifications {
    return 0;
   }
 
+  $pnfw_ios_payload_sound = get_option('pnfw_ios_payload_sound', 'default');
+
   try {
    $push = new ApnsPHP_Push($environment, $certificate);
    $push->setLogger(new PNFW_ApnsPHP_Logger());
@@ -71,7 +73,7 @@ class PNFW_Notifications_iOS extends PNFW_Notifications {
       $message->setCustomProperty($key, strval($user_info[$key]));
      }
      $message->setText($title);
-     $message->setSound();
+     $message->setSound($pnfw_ios_payload_sound);
      $message->setBadge($this->get_badge_count($token));
      $push->add($message);
     }

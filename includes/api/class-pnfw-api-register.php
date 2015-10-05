@@ -55,7 +55,7 @@ class PNFW_API_Register extends PNFW_API {
    $wpdb->update($push_tokens, $data, $where);
   }
   else {
-   $user_id = username_exists($this->email);
+   $user_id = email_exists($this->email);
    // If the user does not exist it is created, otherwise the role app_subscriber is added
    if (empty($user_id) || is_null($user_id)) {
     $user_id = $this->create_user($this->email);
@@ -78,6 +78,12 @@ class PNFW_API_Register extends PNFW_API {
    $push_logs = $wpdb->get_blog_prefix().'push_logs';
    $wpdb->query("LOCK TABLES $push_tokens WRITE, $push_logs WRITE;");
 
+   $active = empty($this->email);
+
+   if (get_option('pnfw_disable_email_verification')) {
+    $active = true;
+   }
+
    // If the device does not exist it is created, otherwise the user_id is updated
    if ($this->is_token_missing()) {
     $data = array(
@@ -86,14 +92,16 @@ class PNFW_API_Register extends PNFW_API {
      'lang' => $this->lang,
      'timestamp' => current_time('mysql'),
      'user_id' => $user_id,
-     'active' => empty($this->email),
+     'active' => $active,
      'activation_code' => $this->activation_code
     );
     $wpdb->insert($push_tokens, $data);
 
     $wpdb->query("UNLOCK TABLES;");
 
-    $this->new_device_email($user_id, $activation_link);
+    if (!get_option('pnfw_disable_email_verification')) {
+     $this->new_device_email($user_id, $activation_link);
+    }
    }
    else {
     if ($this->reassign_token_to($user_id)) {
@@ -136,12 +144,18 @@ class PNFW_API_Register extends PNFW_API {
 
   pnfw_log(PNFW_SYSTEM_LOG, sprintf(__("Reassign %s token %s from user %s to user %s.", 'pnfw'), $this->os, $this->token, $old_user_id, $user_id));
 
+  $active = empty($this->email);
+
+  if (get_option('pnfw_disable_email_verification')) {
+   $active = true;
+  }
+
   $wpdb->update(
    $push_tokens,
    array(
     'lang' => $this->lang,
     "user_id" => $user_id,
-    'active' => empty($this->email),
+    'active' => $active,
     'activation_code' => $this->activation_code
    ),
    array(

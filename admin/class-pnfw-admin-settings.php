@@ -84,6 +84,15 @@ class PNFW_Admin_Settings {
    $pnfw_production_ssl_certificate_password = $_POST['pnfw_production_ssl_certificate_password'];
    update_option("pnfw_production_ssl_certificate_password", $pnfw_production_ssl_certificate_password);
 
+   $pnfw_ios_payload_sound = $_POST['pnfw_ios_payload_sound'];
+
+   if (!empty($pnfw_ios_payload_sound)) {
+    update_option('pnfw_ios_payload_sound', $pnfw_ios_payload_sound);
+   }
+   else {
+    update_option('pnfw_ios_payload_sound', 'default');
+   }
+
    $pnfw_google_api_key = $_POST['pnfw_google_api_key'];
    update_option("pnfw_google_api_key", $pnfw_google_api_key);
 
@@ -101,6 +110,9 @@ class PNFW_Admin_Settings {
 
    $pnfw_use_wpautop = (bool)pnfw_get_post('pnfw_use_wpautop');
    update_option('pnfw_use_wpautop', $pnfw_use_wpautop);
+
+   $pnfw_disable_email_verification = (bool)pnfw_get_post('pnfw_disable_email_verification');
+   update_option('pnfw_disable_email_verification', $pnfw_disable_email_verification);
 
    $pnfw_add_message_field_in_payload = (bool)pnfw_get_post('pnfw_add_message_field_in_payload');
    update_option('pnfw_add_message_field_in_payload', $pnfw_add_message_field_in_payload);
@@ -125,10 +137,13 @@ class PNFW_Admin_Settings {
   $pnfw_production_ssl_certificate_media_id = get_option("pnfw_production_ssl_certificate_media_id");
   $pnfw_production_ssl_certificate_password = get_option("pnfw_production_ssl_certificate_password");
 
+  $pnfw_ios_payload_sound = get_option('pnfw_ios_payload_sound', 'default');
+
   $enabled_post_types = get_option('pnfw_enabled_post_types', array());
   $enabled_object_taxonomies = get_option('pnfw_enabled_object_taxonomies', array());
 
   $pnfw_use_wpautop = (bool)get_option('pnfw_use_wpautop');
+  $pnfw_disable_email_verification = (bool)get_option('pnfw_disable_email_verification');
   $pnfw_add_message_field_in_payload = (bool)get_option('pnfw_add_message_field_in_payload');
   $pnfw_uninstall_data = get_option('pnfw_uninstall_data');
 
@@ -405,11 +420,21 @@ class PNFW_Admin_Settings {
           </th>
           <td>
            <input type="password" class="textfield" name="pnfw_production_ssl_certificate_password" id="pnfw_production_ssl_certificate_password" value="<?php echo $pnfw_production_ssl_certificate_password; ?>" maxlength="255" />
+
+           <p><a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ProvisioningDevelopment.html#//apple_ref/doc/uid/TP40008194-CH104-SW1" target="_blank"><?php _e('Obtaining the SSL Certificates', 'pnfw'); ?></a></p>
+          </td>
+         </tr>
+
+         <tr valign="top">
+          <th scope="row">
+           <label for="pnfw_ios_payload_sound"><?php _e('Notification sound file', 'pnfw'); ?></label>
+          </th>
+          <td>
+           <input type="text" class="textfield" name="pnfw_ios_payload_sound" id="pnfw_ios_payload_sound" value="<?php echo $pnfw_ios_payload_sound; ?>" maxlength="255" placeholder="bingbong.aiff" />
+           <br/><span class="description"><?php echo sprintf(__('The name of a sound file in the app bundle or in the <code>Library/Sounds</code> folder of the app’s data container. If the sound file doesn’t exist or <code>default</code> is specified as the value, the default alert sound is played. The audio must be in one of the audio data formats that are compatible with system sounds (<code>aiff</code>, <code>wav</code>, or <code>caf</code>). See <a href="%s">Preparing Custom Alert Sounds</a> for details.', 'pnfw'), 'https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/IPhoneOSClientImp.html#//apple_ref/doc/uid/TP40008194-CH103-SW6'); ?></span>
           </td>
          </tr>
         </table>
-
-        <p><a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ProvisioningDevelopment.html#//apple_ref/doc/uid/TP40008194-CH104-SW1" target="_blank"><?php _e('Obtaining the SSL Certificates', 'pnfw'); ?></a></p>
 
         <p class="submit">
          <input name="issubmitted" type="hidden" value="yes" />
@@ -491,6 +516,13 @@ class PNFW_Admin_Settings {
          <input type="checkbox" name="pnfw_use_wpautop" id="pnfw_use_wpautop" <?php checked((bool)$pnfw_use_wpautop) ?> />
          <label for="pnfw_use_wpautop"><?php _e('Enable wpautop filter to convert double line-breaks in the content into HTML paragraphs', 'pnfw'); ?></label>
         </p>
+
+        <p>
+         <input type="checkbox" name="pnfw_disable_email_verification" id="pnfw_disable_email_verification" <?php checked((bool)$pnfw_disable_email_verification) ?> />
+         <label for="pnfw_disable_email_verification"><?php _e('Don\'t require email verification', 'pnfw'); ?></label>
+        </p>
+
+        <br/><span class="description"><?php _e('Check this box if you do not require devices to be activated only after confirmation of the email address (use with caution).', 'pnfw'); ?></span>
 
         <p>
          <input type="checkbox" name="pnfw_add_message_field_in_payload" id="pnfw_add_message_field_in_payload" <?php checked((bool)$pnfw_add_message_field_in_payload) ?> />

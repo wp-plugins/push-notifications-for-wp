@@ -54,6 +54,7 @@ function pnfw_delete_plugin() {
  delete_option('pnfw_sandbox_ssl_certificate_password');
  delete_option('pnfw_production_ssl_certificate_media_id');
  delete_option('pnfw_production_ssl_certificate_password');
+ delete_option('pnfw_ios_payload_sound');
  delete_option('pnfw_google_api_key');
  delete_option('pnfw_adm_client_id');
  delete_option('pnfw_adm_client_secret');
@@ -62,6 +63,7 @@ function pnfw_delete_plugin() {
  delete_option('pnfw_enabled_post_types');
  delete_option('pnfw_enabled_object_taxonomies');
  delete_option('pnfw_use_wpautop');
+ delete_option('pnfw_disable_email_verification');
  delete_option('pnfw_add_message_field_in_payload');
  delete_option('pnfw_uninstall_data');
 
