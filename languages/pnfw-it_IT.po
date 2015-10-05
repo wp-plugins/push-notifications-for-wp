@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Delite Studio Push Notifications 1.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/output\n"
-"POT-Creation-Date: 2015-09-04 17:13+0200\n"
-"PO-Revision-Date: 2015-09-04 17:14+0200\n"
+"POT-Creation-Date: 2015-10-02 15:26+0200\n"
+"PO-Revision-Date: 2015-10-02 15:28+0200\n"
 "Last-Translator: Delite Studio S.r.l. <support@delitestudio.com>\n"
 "Language-Team: Delite Studio S.r.l.\n"
 "Language: it_IT\n"
@@ -170,98 +170,98 @@ msgstr ""
 msgid "Settings"
 msgstr "Impostazioni"
 
-#: admin/class-pnfw-admin-settings.php:138
+#: admin/class-pnfw-admin-settings.php:153
 msgid "Missing sandbox SSL certificate"
 msgstr "Certificato SSL per la sandbox mancante"
 
-#: admin/class-pnfw-admin-settings.php:141
+#: admin/class-pnfw-admin-settings.php:156
 msgid "Missing sandbox certificate password"
 msgstr "Password del certificato SSL per la sandbox non impostata"
 
-#: admin/class-pnfw-admin-settings.php:146
+#: admin/class-pnfw-admin-settings.php:161
 msgid "Missing production SSL certificate"
 msgstr "Certificato SSL di produzione mancante"
 
-#: admin/class-pnfw-admin-settings.php:149
+#: admin/class-pnfw-admin-settings.php:164
 msgid "Missing production certificate password"
 msgstr "Password del certificato SSL di produzione non impostata"
 
-#: admin/class-pnfw-admin-settings.php:158
+#: admin/class-pnfw-admin-settings.php:173
 msgid "Missing Google API Key"
 msgstr "Google API Key non impostata"
 
-#: admin/class-pnfw-admin-settings.php:167
+#: admin/class-pnfw-admin-settings.php:182
 msgid "Missing ADM Client ID"
 msgstr "ADM Client ID non impostato"
 
-#: admin/class-pnfw-admin-settings.php:170
+#: admin/class-pnfw-admin-settings.php:185
 msgid "Missing ADM Client Secret"
 msgstr "ADM Client Secret non impostato"
 
-#: admin/class-pnfw-admin-settings.php:179
+#: admin/class-pnfw-admin-settings.php:194
 msgid "About this Plugin"
 msgstr "A proposito di questo plugin"
 
-#: admin/class-pnfw-admin-settings.php:182
+#: admin/class-pnfw-admin-settings.php:197
 msgid "Developed by"
 msgstr "Sviluppato da"
 
-#: admin/class-pnfw-admin-settings.php:188 admin/class-pnfw-admin-settings.php:205
+#: admin/class-pnfw-admin-settings.php:203 admin/class-pnfw-admin-settings.php:220
 msgid "Resources"
 msgstr "Risorse"
 
-#: admin/class-pnfw-admin-settings.php:191 admin/class-pnfw-admin-settings.php:208
+#: admin/class-pnfw-admin-settings.php:206 admin/class-pnfw-admin-settings.php:223
 msgid "See the online documentation"
 msgstr "Vedi la documentazione online"
 
-#: admin/class-pnfw-admin-settings.php:210 admin/class-pnfw-admin-settings.php:227
+#: admin/class-pnfw-admin-settings.php:225 admin/class-pnfw-admin-settings.php:242
 msgid "Basic Options"
 msgstr "Configurazioni di base"
 
-#: admin/class-pnfw-admin-settings.php:215 admin/class-pnfw-admin-settings.php:232
+#: admin/class-pnfw-admin-settings.php:230 admin/class-pnfw-admin-settings.php:247
 msgid "Send push notifications when a new post is published"
 msgstr "Invia le notifiche push quando viene pubblicato un post"
 
-#: admin/class-pnfw-admin-settings.php:218 admin/class-pnfw-admin-settings.php:235
+#: admin/class-pnfw-admin-settings.php:233 admin/class-pnfw-admin-settings.php:250
 msgid "Send push notifications to:"
 msgstr "Invia notifiche push a:"
 
-#: admin/class-pnfw-admin-settings.php:223 admin/class-pnfw-admin-settings.php:240
+#: admin/class-pnfw-admin-settings.php:238 admin/class-pnfw-admin-settings.php:255
 msgid "iOS devices"
 msgstr "Dispositivi iOS"
 
-#: admin/class-pnfw-admin-settings.php:224 admin/class-pnfw-admin-settings.php:241
+#: admin/class-pnfw-admin-settings.php:239 admin/class-pnfw-admin-settings.php:256
 msgid "Android devices"
 msgstr "Dispositivi Android"
 
-#: admin/class-pnfw-admin-settings.php:225 admin/class-pnfw-admin-settings.php:242
+#: admin/class-pnfw-admin-settings.php:240 admin/class-pnfw-admin-settings.php:257
 msgid "Kindle Fire devices"
 msgstr "Dispositivi Kindle Fire"
 
-#: admin/class-pnfw-admin-settings.php:231 admin/class-pnfw-admin-settings.php:269
-#: admin/class-pnfw-admin-settings.php:304 admin/class-pnfw-admin-settings.php:325
-#: admin/class-pnfw-admin-settings.php:389 admin/class-pnfw-admin-settings.php:415
-#: admin/class-pnfw-admin-settings.php:451 admin/class-pnfw-admin-settings.php:484
-#: admin/class-pnfw-admin-settings.php:248 admin/class-pnfw-admin-settings.php:296
-#: admin/class-pnfw-admin-settings.php:331 admin/class-pnfw-admin-settings.php:352
-#: admin/class-pnfw-admin-settings.php:416 admin/class-pnfw-admin-settings.php:442
-#: admin/class-pnfw-admin-settings.php:478 admin/class-pnfw-admin-settings.php:511
+#: admin/class-pnfw-admin-settings.php:246 admin/class-pnfw-admin-settings.php:284
+#: admin/class-pnfw-admin-settings.php:319 admin/class-pnfw-admin-settings.php:340
+#: admin/class-pnfw-admin-settings.php:414 admin/class-pnfw-admin-settings.php:440
+#: admin/class-pnfw-admin-settings.php:476 admin/class-pnfw-admin-settings.php:516
+#: admin/class-pnfw-admin-settings.php:263 admin/class-pnfw-admin-settings.php:311
+#: admin/class-pnfw-admin-settings.php:346 admin/class-pnfw-admin-settings.php:367
+#: admin/class-pnfw-admin-settings.php:441 admin/class-pnfw-admin-settings.php:467
+#: admin/class-pnfw-admin-settings.php:503 admin/class-pnfw-admin-settings.php:543
 msgid "Save settings"
 msgstr "Salva impostazioni"
 
-#: admin/class-pnfw-admin-settings.php:250 admin/class-pnfw-admin-settings.php:267
+#: admin/class-pnfw-admin-settings.php:265 admin/class-pnfw-admin-settings.php:282
 msgid "Send Push Notifications for"
 msgstr "Invia notifiche push per"
 
-#: admin/class-pnfw-admin-settings.php:285 admin/class-pnfw-admin-settings.php:312
+#: admin/class-pnfw-admin-settings.php:300 admin/class-pnfw-admin-settings.php:327
 msgid "Categories Filterable by App Subscribers"
 msgstr "Categorie filtrabili dagli utenti sottoscrittori"
 
-#: admin/class-pnfw-admin-settings.php:316 admin/class-pnfw-admin-settings.php:343
+#: admin/class-pnfw-admin-settings.php:331 admin/class-pnfw-admin-settings.php:358
 msgid "URL Scheme"
 msgstr "Schema URL"
 
-#: admin/class-pnfw-admin-settings.php:321 admin/class-pnfw-admin-settings.php:348
+#: admin/class-pnfw-admin-settings.php:336 admin/class-pnfw-admin-settings.php:363
 msgid ""
 "When a user registers on this site, he will receive a confirmation email with a verification "
 "link. If you have filled in the URL Scheme, after a successful verification from a mobile "
@@ -271,92 +271,122 @@ msgstr ""
 "verifica. Se hai compilato questo campo, dopo una verifica andata a buon fine su un dispositivo "
 "mobile l'utente sarà rediretto all'URL indicato."
 
-#: admin/class-pnfw-admin-settings.php:334 admin/class-pnfw-admin-settings.php:361
+#: admin/class-pnfw-admin-settings.php:349 admin/class-pnfw-admin-settings.php:376
 msgid "iOS Push Notifications (via Apple Push Notification Service, APNs)"
 msgstr "Notifiche push iOS (attraverso l'Apple Push Notification Service, APNs)"
 
-#: admin/class-pnfw-admin-settings.php:338 admin/class-pnfw-admin-settings.php:365
+#: admin/class-pnfw-admin-settings.php:353 admin/class-pnfw-admin-settings.php:380
 msgid "Use sandbox environment"
 msgstr "Usa sandbox"
 
-#: admin/class-pnfw-admin-settings.php:344 admin/class-pnfw-admin-settings.php:371
+#: admin/class-pnfw-admin-settings.php:359 admin/class-pnfw-admin-settings.php:386
 msgid "Sandbox SSL certificate (.pem)"
 msgstr "Certificato SSL per la sandbox (.pem)"
 
-#: admin/class-pnfw-admin-settings.php:349 admin/class-pnfw-admin-settings.php:370
-#: admin/class-pnfw-admin-settings.php:376 admin/class-pnfw-admin-settings.php:397
+#: admin/class-pnfw-admin-settings.php:364 admin/class-pnfw-admin-settings.php:385
+#: admin/class-pnfw-admin-settings.php:391 admin/class-pnfw-admin-settings.php:412
 msgid "Upload"
 msgstr "Carica"
 
-#: admin/class-pnfw-admin-settings.php:349 admin/class-pnfw-admin-settings.php:370
-#: admin/class-pnfw-admin-settings.php:376 admin/class-pnfw-admin-settings.php:397
+#: admin/class-pnfw-admin-settings.php:364 admin/class-pnfw-admin-settings.php:385
+#: admin/class-pnfw-admin-settings.php:391 admin/class-pnfw-admin-settings.php:412
 msgid "Change"
 msgstr "Cambia"
 
-#: admin/class-pnfw-admin-settings.php:356 admin/class-pnfw-admin-settings.php:377
-#: admin/class-pnfw-admin-settings.php:383 admin/class-pnfw-admin-settings.php:404
+#: admin/class-pnfw-admin-settings.php:371 admin/class-pnfw-admin-settings.php:392
+#: admin/class-pnfw-admin-settings.php:398 admin/class-pnfw-admin-settings.php:419
 msgid "Certificate Password"
 msgstr "Password certificato"
 
-#: admin/class-pnfw-admin-settings.php:365 admin/class-pnfw-admin-settings.php:392
+#: admin/class-pnfw-admin-settings.php:380 admin/class-pnfw-admin-settings.php:407
 msgid "Production SSL certificate (.pem)"
 msgstr "Certificato SSL di produzione (.pem)"
 
-#: admin/class-pnfw-admin-settings.php:385 admin/class-pnfw-admin-settings.php:412
+#: admin/class-pnfw-admin-settings.php:397 admin/class-pnfw-admin-settings.php:424
 msgid "Obtaining the SSL Certificates"
 msgstr "Ottenere i certificati SSL"
 
-#: admin/class-pnfw-admin-settings.php:398 admin/class-pnfw-admin-settings.php:425
+#: admin/class-pnfw-admin-settings.php:403 admin/class-pnfw-admin-settings.php:430
+msgid "Notification sound file"
+msgstr "File audio notifica"
+
+#: admin/class-pnfw-admin-settings.php:407 admin/class-pnfw-admin-settings.php:434
+msgid ""
+"The name of a sound file in the app bundle or in the <code>Library/Sounds</code> folder of the "
+"app’s data container. If the sound file doesn’t exist or <code>default</code> is specified as "
+"the value, the default alert sound is played. The audio must be in one of the audio data "
+"formats that are compatible with system sounds (<code>aiff</code>, <code>wav</code>, or "
+"<code>caf</code>). See <a href=\"%s\">Preparing Custom Alert Sounds</a> for details."
+msgstr ""
+"Il file deve trovarsi nel bundle dell’app o nella cartella <code>Library/Sounds</code> del data "
+"container dell’app. Se il file audio non esiste, oppure se è specificato il valore "
+"<code>default</code>, viene riprodotto il suono predefinito di sistema. Il file audio deve "
+"essere in un formato compatibile (<code>aiff</code>, <code>wav</code> o <code>caf</code>). Vedi "
+"il documento <a href=\"%s\">Preparing Custom Alert Sounds</a> per i dettagli."
+
+#: admin/class-pnfw-admin-settings.php:423 admin/class-pnfw-admin-settings.php:450
 msgid "Android Push Notifications (via Google Cloud Messaging, GCM)"
 msgstr "Notifiche push Android (attraverso il Google Cloud Messaging, GCM)"
 
-#: admin/class-pnfw-admin-settings.php:404 admin/class-pnfw-admin-settings.php:431
+#: admin/class-pnfw-admin-settings.php:429 admin/class-pnfw-admin-settings.php:456
 msgid "Google API Key"
 msgstr "Google API Key"
 
-#: admin/class-pnfw-admin-settings.php:412 admin/class-pnfw-admin-settings.php:439
+#: admin/class-pnfw-admin-settings.php:437 admin/class-pnfw-admin-settings.php:464
 msgid "Obtaining the Google API Key"
 msgstr "Ottenere la Google API Key"
 
-#: admin/class-pnfw-admin-settings.php:424 admin/class-pnfw-admin-settings.php:451
+#: admin/class-pnfw-admin-settings.php:449 admin/class-pnfw-admin-settings.php:476
 msgid "Kindle Fire Push Notifications (via Amazon Device Messaging, ADM)"
 msgstr "Notifiche push per Kindle Fire (attraverso l'Amazon Device Messaging, ADM)"
 
-#: admin/class-pnfw-admin-settings.php:430 admin/class-pnfw-admin-settings.php:457
+#: admin/class-pnfw-admin-settings.php:455 admin/class-pnfw-admin-settings.php:482
 msgid "ADM Client ID"
 msgstr "ADM Client ID"
 
-#: admin/class-pnfw-admin-settings.php:439 admin/class-pnfw-admin-settings.php:466
+#: admin/class-pnfw-admin-settings.php:464 admin/class-pnfw-admin-settings.php:491
 msgid "ADM Client Secret"
 msgstr "ADM Client Secret"
 
-#: admin/class-pnfw-admin-settings.php:447 admin/class-pnfw-admin-settings.php:474
+#: admin/class-pnfw-admin-settings.php:472 admin/class-pnfw-admin-settings.php:499
 msgid "Obtaining the Amazon Device Messaging credentials"
 msgstr "Ottenere le credenziali per l'Amazon Device Messaging"
 
-#: admin/class-pnfw-admin-settings.php:460 admin/class-pnfw-admin-settings.php:487
+#: admin/class-pnfw-admin-settings.php:485 admin/class-pnfw-admin-settings.php:512
 msgid "Misc"
 msgstr "Miscellanea"
 
-#: admin/class-pnfw-admin-settings.php:465 admin/class-pnfw-admin-settings.php:492
+#: admin/class-pnfw-admin-settings.php:490 admin/class-pnfw-admin-settings.php:517
 msgid "Enable wpautop filter to convert double line-breaks in the content into HTML paragraphs"
 msgstr ""
 "Abilita il filtro wpautop per convertire le doppie interruzioni di riga nel contenuto in "
 "paragrafi HTML"
 
-#: admin/class-pnfw-admin-settings.php:470 admin/class-pnfw-admin-settings.php:497
+#: admin/class-pnfw-admin-settings.php:495 admin/class-pnfw-admin-settings.php:522
+msgid "Don't require email verification"
+msgstr "Non richiedere verifica dell’indirizzo email"
+
+#: admin/class-pnfw-admin-settings.php:498 admin/class-pnfw-admin-settings.php:525
+msgid ""
+"Check this box if you do not require devices to be activated only after confirmation of the "
+"email address (use with caution)."
+msgstr ""
+"Seleziona questa casella se non è necessario che i dispositivi vengano attivati solo dopo "
+"conferma dell’indirizzo email (da usare con cautela)."
+
+#: admin/class-pnfw-admin-settings.php:502 admin/class-pnfw-admin-settings.php:529
 msgid "In the Android notification payload add the <code>message</code> field"
 msgstr "Nel payload delle notifiche Android aggiungi il campo <code>message</code>"
 
-#: admin/class-pnfw-admin-settings.php:473 admin/class-pnfw-admin-settings.php:500
+#: admin/class-pnfw-admin-settings.php:505 admin/class-pnfw-admin-settings.php:532
 msgid "Check this box if you are using Apache Cordova with PushPlugin."
 msgstr "Seleziona questa casella se utilizzi Apache Cordova con PushPlugin."
 
-#: admin/class-pnfw-admin-settings.php:477 admin/class-pnfw-admin-settings.php:504
+#: admin/class-pnfw-admin-settings.php:509 admin/class-pnfw-admin-settings.php:536
 msgid "Remove data on uninstall"
 msgstr "Rimuovi tutto durante la disinstallazione"
 
-#: admin/class-pnfw-admin-settings.php:480 admin/class-pnfw-admin-settings.php:507
+#: admin/class-pnfw-admin-settings.php:512 admin/class-pnfw-admin-settings.php:539
 msgid ""
 "Check this box if you would like to completely remove all of its data when the plugin is "
 "deleted."
@@ -488,10 +518,10 @@ msgstr "Nessun utente sottoscrittore app trovato."
 msgid "Removed from the Tokens page the token with ID %s."
 msgstr "Rimosso dalla pagina dei Token il token con ID %s."
 
-#: admin/class-pnfw-admin-tokens.php:32 includes/api/class-pnfw-api-register.php:237
+#: admin/class-pnfw-admin-tokens.php:32 includes/api/class-pnfw-api-register.php:259
 #: includes/api/class-pnfw-api-unregister.php:24 includes/class-pnfw-ios-feedback-provider.php:114
 #: includes/notifications/class-pnfw-notifications.php:183
-#: includes/api/class-pnfw-api-register.php:155
+#: includes/api/class-pnfw-api-register.php:177
 #: includes/notifications/class-pnfw-notifications.php:163
 msgid "Automatically deleted the anonymous user %s (%s) since left without tokens."
 msgstr "Eliminato in automatico l'utente anonimo %s (%s) dato che non ha più token associati."
@@ -776,57 +806,57 @@ msgstr ""
 "parte nostra che ti chiede di confermare il tuo indirizzo. Se non la trovi assicurati di aver "
 "inserito l'indirizzo corretto."
 
-#: includes/api/class-pnfw-api-categories.php:62
+#: includes/api/class-pnfw-api-categories.php:62 includes/api/class-pnfw-api-posts.php:112
 #: includes/api/class-pnfw-api-user-categories.php:63 includes/api/class-pnfw-api.php:14
-#: includes/api/class-pnfw-api.php:85
+#: includes/api/class-pnfw-api.php:94
 msgid "Invalid HTTP method"
 msgstr "Metodo HTTP non valido"
 
-#: includes/api/class-pnfw-api-posts.php:24
+#: includes/api/class-pnfw-api-posts.php:121
 msgid "Post not found."
 msgstr "Post non trovato"
 
-#: includes/api/class-pnfw-api-posts.php:28
+#: includes/api/class-pnfw-api-posts.php:125
 msgid "You do not have permission to access this post."
 msgstr "Non hai i permessi di visualizzare questo articolo."
 
-#: includes/api/class-pnfw-api-posts.php:140
+#: includes/api/class-pnfw-api-posts.php:160
 msgid "Anonymous"
 msgstr "Anomimo"
 
-#: includes/api/class-pnfw-api-register.php:26 includes/api/class-pnfw-api-user-categories.php:56
+#: includes/api/class-pnfw-api-register.php:28 includes/api/class-pnfw-api-user-categories.php:56
 msgid "User category not found"
 msgstr "Categoria utente non trovata"
 
-#: includes/api/class-pnfw-api-register.php:39 includes/api/class-pnfw-api-register.php:26
+#: includes/api/class-pnfw-api-register.php:41 includes/api/class-pnfw-api-register.php:28
 msgid "prevToken not found"
 msgstr "prevToken non trovato"
 
-#: includes/api/class-pnfw-api-register.php:59
+#: includes/api/class-pnfw-api-register.php:61
 #: includes/notifications/class-pnfw-notifications.php:156
-#: includes/api/class-pnfw-api-register.php:46
+#: includes/api/class-pnfw-api-register.php:48
 #: includes/notifications/class-pnfw-notifications.php:136
 msgid "Attempted an update of an %s token equal to a token already present: %s."
 msgstr "Tentato l'aggiornamento di un token %s uguale ad un token già presente: %s."
 
-#: includes/api/class-pnfw-api-register.php:154 includes/api/class-pnfw-api.php:54
-#: includes/api/class-pnfw-api.php:69
+#: includes/api/class-pnfw-api-register.php:170 includes/api/class-pnfw-api.php:69
+#: includes/api/class-pnfw-api.php:77
 msgid "Invalid %s"
 msgstr "%s invalido"
 
-#: includes/api/class-pnfw-api-register.php:211 includes/api/class-pnfw-api-register.php:129
+#: includes/api/class-pnfw-api-register.php:227 includes/api/class-pnfw-api-register.php:145
 msgid "Reassign %s token %s from user %s to user %s."
 msgstr "Riassegnato token %s %s dall'utente %s all'utente %s."
 
-#: includes/api/class-pnfw-api-register.php:324 includes/api/class-pnfw-api-register.php:242
+#: includes/api/class-pnfw-api-register.php:346 includes/api/class-pnfw-api-register.php:264
 msgid "Thank you for joining %s!"
 msgstr "Grazie per esserti iscritto a %s!"
 
-#: includes/api/class-pnfw-api-register.php:326 includes/api/class-pnfw-api-register.php:244
+#: includes/api/class-pnfw-api-register.php:348 includes/api/class-pnfw-api-register.php:266
 msgid "To confirm your registration, please click on the following link:"
 msgstr "Per confermare la registrazione clicca su questo link:"
 
-#: includes/api/class-pnfw-api-register.php:329 includes/api/class-pnfw-api-register.php:247
+#: includes/api/class-pnfw-api-register.php:351 includes/api/class-pnfw-api-register.php:269
 msgid "Welcome to %s"
 msgstr "Benvenuto su %s"
 
@@ -854,47 +884,47 @@ msgstr "Parametro lang non valido"
 msgid "Mandatory parameter %s missing"
 msgstr "Parametro obbligatorio %s mancante"
 
-#: includes/api/class-pnfw-api.php:93
+#: includes/api/class-pnfw-api.php:102
 msgid "Parameter %s is missing"
 msgstr "Parametro %s mancante"
 
-#: includes/api/class-pnfw-api.php:108
+#: includes/api/class-pnfw-api.php:117
 msgid "Failed to sort parameters"
 msgstr "Impossibile ordinare i parametri"
 
-#: includes/api/class-pnfw-api.php:122
+#: includes/api/class-pnfw-api.php:131
 msgid "Signature method is invalid"
 msgstr "Il signature method specificato non è valido"
 
-#: includes/api/class-pnfw-api.php:135
+#: includes/api/class-pnfw-api.php:144
 msgid "Provided signature does not match"
 msgstr "La signature non coincide con quella attesa"
 
-#: includes/api/class-pnfw-api.php:176
+#: includes/api/class-pnfw-api.php:185
 msgid "Unauthorized"
 msgstr "Accesso non autorizzato"
 
-#: includes/api/class-pnfw-api.php:181
+#: includes/api/class-pnfw-api.php:190
 msgid "Not Found"
 msgstr "Non trovato"
 
-#: includes/api/class-pnfw-api.php:186
+#: includes/api/class-pnfw-api.php:195
 msgid "Internal Server Error"
 msgstr "Errore interno del server"
 
-#: includes/api/class-pnfw-api.php:195
+#: includes/api/class-pnfw-api.php:204
 msgid "%s API Error (%s) from IP address %s: %s, %s."
 msgstr "%s Errore API (%s) dall'indirizzo IP %s: %s, %s."
 
-#: includes/class-pnfw-api-manager.php:151
+#: includes/class-pnfw-api-manager.php:149
 msgid "License Activation"
 msgstr "Attivazione licenza"
 
-#: includes/class-pnfw-api-manager.php:152
+#: includes/class-pnfw-api-manager.php:150
 msgid "License Deactivation"
 msgstr "Disattivazione licenza"
 
-#: includes/class-pnfw-api-manager.php:357
+#: includes/class-pnfw-api-manager.php:355
 msgid ""
 "The Push Notifications for WordPress API License Key has not been activated, so the plugin is "
 "inactive! %sClick here%s to activate the license key and the plugin."
@@ -902,7 +932,7 @@ msgstr ""
 "La licenza di Push Notifications for WordPress non è ancora stata inserita! %sClicca qui%s per "
 "inserire la licenza e attivare il plugin."
 
-#: includes/class-pnfw-api-manager.php:376
+#: includes/class-pnfw-api-manager.php:374
 msgid ""
 "<b>Warning!</b> You're blocking external requests which means you won't be able to get %s "
 "updates. Please add %s to %s."
@@ -941,8 +971,8 @@ msgstr "Il certificato SSL per iOS non esiste."
 msgid "The Feedback Provider removed iOS token of user %s: %s."
 msgstr "Il Feedback Provider ha rimosso un token iOS dell'utente %s: %s."
 
-#: includes/class-pnfw-sender-manager.php:41 includes/class-pnfw-sender-manager.php:59
-#: includes/class-pnfw-sender-manager.php:49
+#: includes/class-pnfw-sender-manager.php:41 includes/class-pnfw-sender-manager.php:57
+#: includes/class-pnfw-sender-manager.php:47
 msgid "Notifications for the %s %s deliberately not sent"
 msgstr "Notifiche per il %s %s non inviate volontariamente"
 
@@ -1121,11 +1151,11 @@ msgstr "Versione database %d aggiornata."
 msgid "Sending notifications..."
 msgstr "Invio notifiche in corso..."
 
-#: admin/class-pnfw-admin-settings.php:190
+#: admin/class-pnfw-admin-settings.php:205
 msgid "Push Notifications for WordPress"
 msgstr "Push Notifications for WordPress"
 
-#: admin/class-pnfw-admin-settings.php:193
+#: admin/class-pnfw-admin-settings.php:208
 msgid ""
 "This is our basic solution for small personal blogs. We also offer a full-featured plugin, Push "
 "Notifications for WordPress, designed for all the other websites."
@@ -1133,19 +1163,19 @@ msgstr ""
 "È la nostra soluzione di base per piccoli blog personali. Offriamo anche un plugin avanzato, "
 "Push Notifications for WordPress, pensato per tutti gli altri siti più evoluti."
 
-#: admin/class-pnfw-admin-settings.php:195
+#: admin/class-pnfw-admin-settings.php:210
 msgid "More info"
 msgstr "Maggiori informazioni"
 
-#: admin/class-pnfw-admin-settings.php:196
+#: admin/class-pnfw-admin-settings.php:211
 msgid "Differences"
 msgstr "Differenze"
 
-#: admin/class-pnfw-admin-settings.php:287
+#: admin/class-pnfw-admin-settings.php:302
 msgid "Do you want to support custom post types?"
 msgstr "Vuoi supportare anche custom post type?"
 
-#: admin/class-pnfw-admin-settings.php:289 admin/class-pnfw-admin-stats.php:29
+#: admin/class-pnfw-admin-settings.php:304 admin/class-pnfw-admin-stats.php:29
 #: push-notifications-for-posts.php:379 admin/class-pnfw-admin-stats.php:17
 #: push-notifications-for-wordpress-lite.php:381
 msgid "Upgrade now to Push Notifications for WordPress"
@@ -1204,6 +1234,9 @@ msgstr "Push Notifications for WordPress (Lite) necessita di PHP %s o successivo
 #: push-notifications-for-wordpress-lite.php:100
 msgid "Push Notifications for WordPress (Lite) is incompatible with WordPress Multisite."
 msgstr "Push Notifications for Posts (Lite) non è compatibile con i multisiti WordPress"
+
+#~ msgid "Sound file"
+#~ msgstr "File audio notifica"
 
 #~ msgid "Activate"
 #~ msgstr "Attiva"
@@ -1279,9 +1312,6 @@ msgstr "Push Notifications for Posts (Lite) non è compatibile con i multisiti W
 
 #~ msgid "Error: can't find a post to send"
 #~ msgstr "Errore: impossibile trovare un post da inviare"
-
-#~ msgid "Notifications sent per day"
-#~ msgstr "Notifiche inviate al giorno"
 
 #~ msgid "Missing mandatory parameter"
 #~ msgstr "Parametro obbligatorio mancante"
