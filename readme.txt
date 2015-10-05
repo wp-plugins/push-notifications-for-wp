@@ -231,6 +231,13 @@ Let us know, we will do everything to help you. [Contact us →](http://www.deli
 
 == Changelog ==
 
+= 1.4 =
+* New option to customise notification sound for iOS apps.
+* New API to set the flag read/unread of a post.
+* New option to disable email verification.
+* Now manages the users already registered with different roles without returning "Email already exists".
+* Updated internal libraries.
+
 = 1.3 =
 * Changed the sender's name in the activation emails.
 * Full parameters validation.
