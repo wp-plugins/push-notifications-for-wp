@@ -1,0 +1,1305 @@
+# Copyright (C) 2015 
+# This file is distributed under the same license as the  package.
+#, fuzzy
+msgid ""
+msgstr ""
+"#-#-#-#-#  pnfw.pot  #-#-#-#-#\n"
+"Project-Id-Version:  \n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/output\n"
+"POT-Creation-Date: 2015-10-02 13:25:57+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"#-#-#-#-#  pnfp.pot  #-#-#-#-#\n"
+"Project-Id-Version:  \n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/output\n"
+"POT-Creation-Date: 2015-10-02 13:26:05+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"#-#-#-#-#  pnfwl.pot  #-#-#-#-#\n"
+"Project-Id-Version:  \n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/output\n"
+"POT-Creation-Date: 2015-10-02 13:26:15+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: admin/class-pnfw-admin-debug.php:12
+#: admin/class-pnfw-admin-subscribers.php:18
+#: admin/class-pnfw-admin-subscribers.php:196
+#: admin/class-pnfw-admin-tokens.php:16 admin/class-pnfw-admin-tokens.php:51
+msgid "Are you sure you want to do this?"
+msgstr ""
+
+#: admin/class-pnfw-admin-debug.php:26 admin/class-pnfw-admin.php:131
+#: admin/class-pnfw-admin.php:132
+msgid "Debug"
+msgstr ""
+
+#: admin/class-pnfw-admin-debug.php:27
+#: admin/class-pnfw-admin-subscribers.php:12
+msgid "Export CSV"
+msgstr ""
+
+#: admin/class-pnfw-admin-debug.php:32
+msgid "Error: %s is true (please fix)."
+msgstr ""
+
+#: admin/class-pnfw-admin-debug.php:38 admin/class-pnfw-admin-debug.php:44
+msgid "Error: %s is disabled (please fix)."
+msgstr ""
+
+#: admin/class-pnfw-admin-debug.php:52
+msgid ""
+"Warning: WPML does not support users categories. Some spurious warnings may "
+"be generated. They can all be turned off disabling <code>WP_DEBUG</code> "
+"mode or disabling the option <em>Copy taxonomy to translations</em> in WPML "
+"&rarr; Translation options. However is <strong>not</strong> guaranteed to "
+"work."
+msgstr ""
+
+#: admin/class-pnfw-admin-debug.php:56 admin/class-pnfw-admin-debug.php:101
+msgid "Logs"
+msgstr ""
+
+#: admin/class-pnfw-admin-debug.php:70
+msgid "Empty Log"
+msgstr ""
+
+#: admin/class-pnfw-admin-debug.php:74
+msgid "Feedback Provider"
+msgstr ""
+
+#: admin/class-pnfw-admin-debug.php:76
+msgid "Feedback Provider is"
+msgstr ""
+
+#: admin/class-pnfw-admin-debug.php:80
+msgid "active"
+msgstr ""
+
+#: admin/class-pnfw-admin-debug.php:80
+msgid "disabled"
+msgstr ""
+
+#: admin/class-pnfw-admin-debug.php:84
+msgid "(next scheduled event: %s)"
+msgstr ""
+
+#: admin/class-pnfw-admin-debug.php:100
+msgid "Log"
+msgstr ""
+
+#: admin/class-pnfw-admin-debug.php:108 admin/class-pnfw-admin.php:514
+#: admin/class-pnfw-admin.php:336 admin/class-pnfw-admin.php:333
+msgid "Text"
+msgstr ""
+
+#: admin/class-pnfw-admin-debug.php:109 admin/class-pnfw-admin.php:513
+#: admin/class-pnfw-admin.php:335 admin/class-pnfw-admin.php:332
+msgid "Type"
+msgstr ""
+
+#: admin/class-pnfw-admin-debug.php:110 admin/class-pnfw-admin.php:512
+#: admin/class-pnfw-admin.php:334 admin/class-pnfw-admin.php:331
+msgid "Timestamp"
+msgstr ""
+
+#: admin/class-pnfw-admin-debug.php:150
+msgid "System"
+msgstr ""
+
+#: admin/class-pnfw-admin-debug.php:153
+msgid "iOS"
+msgstr ""
+
+#: admin/class-pnfw-admin-debug.php:156
+msgid "Android"
+msgstr ""
+
+#: admin/class-pnfw-admin-debug.php:159
+msgid "Fire OS"
+msgstr ""
+
+#: admin/class-pnfw-admin-debug.php:162
+msgid "iOS Feedback Provider"
+msgstr ""
+
+#: admin/class-pnfw-admin-debug.php:165
+msgid "Alert"
+msgstr ""
+
+#: admin/class-pnfw-admin-debug.php:196
+msgid "No logs were found."
+msgstr ""
+
+#: admin/class-pnfw-admin-oauth.php:29 admin/class-pnfw-admin.php:95
+#: admin/class-pnfw-admin.php:96
+msgid "OAuth"
+msgstr ""
+
+#: admin/class-pnfw-admin-oauth.php:38
+msgid "API Keys"
+msgstr ""
+
+#: admin/class-pnfw-admin-oauth.php:43
+msgid ""
+"OAuth is disabled. Anyone can connect to the APIs without authorization. For "
+"better security we recommend to enable OAuth (requires changes to client)."
+msgstr ""
+
+#: admin/class-pnfw-admin-oauth.php:47
+msgid "Enable OAuth & Generate API Keys"
+msgstr ""
+
+#: admin/class-pnfw-admin-oauth.php:50
+msgid "Consumer Key:"
+msgstr ""
+
+#: admin/class-pnfw-admin-oauth.php:51
+msgid "Consumer Secret:"
+msgstr ""
+
+#: admin/class-pnfw-admin-oauth.php:57
+msgid "Disable OAuth & Revoke Keys"
+msgstr ""
+
+#: admin/class-pnfw-admin-oauth.php:60
+msgid ""
+"IMPORTANT: After revoking the API Keys clients who used them will no longer "
+"be able to connect."
+msgstr ""
+
+#: admin/class-pnfw-admin-settings.php:46 admin/class-pnfw-admin.php:81
+#: admin/class-pnfw-admin.php:82 push-notifications-for-wordpress.php:416
+#: push-notifications-for-posts.php:305
+#: push-notifications-for-wordpress-lite.php:307
+msgid "Settings"
+msgstr ""
+
+#: admin/class-pnfw-admin-settings.php:153
+msgid "Missing sandbox SSL certificate"
+msgstr ""
+
+#: admin/class-pnfw-admin-settings.php:156
+msgid "Missing sandbox certificate password"
+msgstr ""
+
+#: admin/class-pnfw-admin-settings.php:161
+msgid "Missing production SSL certificate"
+msgstr ""
+
+#: admin/class-pnfw-admin-settings.php:164
+msgid "Missing production certificate password"
+msgstr ""
+
+#: admin/class-pnfw-admin-settings.php:173
+msgid "Missing Google API Key"
+msgstr ""
+
+#: admin/class-pnfw-admin-settings.php:182
+msgid "Missing ADM Client ID"
+msgstr ""
+
+#: admin/class-pnfw-admin-settings.php:185
+msgid "Missing ADM Client Secret"
+msgstr ""
+
+#: admin/class-pnfw-admin-settings.php:194
+msgid "About this Plugin"
+msgstr ""
+
+#: admin/class-pnfw-admin-settings.php:197
+msgid "Developed by"
+msgstr ""
+
+#: admin/class-pnfw-admin-settings.php:203
+#: admin/class-pnfw-admin-settings.php:220
+msgid "Resources"
+msgstr ""
+
+#: admin/class-pnfw-admin-settings.php:206
+#: admin/class-pnfw-admin-settings.php:223
+msgid "See the online documentation"
+msgstr ""
+
+#: admin/class-pnfw-admin-settings.php:225
+#: admin/class-pnfw-admin-settings.php:242
+msgid "Basic Options"
+msgstr ""
+
+#: admin/class-pnfw-admin-settings.php:230
+#: admin/class-pnfw-admin-settings.php:247
+msgid "Send push notifications when a new post is published"
+msgstr ""
+
+#: admin/class-pnfw-admin-settings.php:233
+#: admin/class-pnfw-admin-settings.php:250
+msgid "Send push notifications to:"
+msgstr ""
+
+#: admin/class-pnfw-admin-settings.php:238
+#: admin/class-pnfw-admin-settings.php:255
+msgid "iOS devices"
+msgstr ""
+
+#: admin/class-pnfw-admin-settings.php:239
+#: admin/class-pnfw-admin-settings.php:256
+msgid "Android devices"
+msgstr ""
+
+#: admin/class-pnfw-admin-settings.php:240
+#: admin/class-pnfw-admin-settings.php:257
+msgid "Kindle Fire devices"
+msgstr ""
+
+#: admin/class-pnfw-admin-settings.php:246
+#: admin/class-pnfw-admin-settings.php:284
+#: admin/class-pnfw-admin-settings.php:319
+#: admin/class-pnfw-admin-settings.php:340
+#: admin/class-pnfw-admin-settings.php:414
+#: admin/class-pnfw-admin-settings.php:440
+#: admin/class-pnfw-admin-settings.php:476
+#: admin/class-pnfw-admin-settings.php:516
+#: admin/class-pnfw-admin-settings.php:263
+#: admin/class-pnfw-admin-settings.php:311
+#: admin/class-pnfw-admin-settings.php:346
+#: admin/class-pnfw-admin-settings.php:367
+#: admin/class-pnfw-admin-settings.php:441
+#: admin/class-pnfw-admin-settings.php:467
+#: admin/class-pnfw-admin-settings.php:503
+#: admin/class-pnfw-admin-settings.php:543
+msgid "Save settings"
+msgstr ""
+
+#: admin/class-pnfw-admin-settings.php:265
+#: admin/class-pnfw-admin-settings.php:282
+msgid "Send Push Notifications for"
+msgstr ""
+
+#: admin/class-pnfw-admin-settings.php:300
+#: admin/class-pnfw-admin-settings.php:327
+msgid "Categories Filterable by App Subscribers"
+msgstr ""
+
+#: admin/class-pnfw-admin-settings.php:331
+#: admin/class-pnfw-admin-settings.php:358
+msgid "URL Scheme"
+msgstr ""
+
+#: admin/class-pnfw-admin-settings.php:336
+#: admin/class-pnfw-admin-settings.php:363
+msgid ""
+"When a user registers on this site, he will receive a confirmation email "
+"with a verification link. If you have filled in the URL Scheme, after a "
+"successful verification from a mobile device the user will be redirected to "
+"the URL indicated."
+msgstr ""
+
+#: admin/class-pnfw-admin-settings.php:349
+#: admin/class-pnfw-admin-settings.php:376
+msgid "iOS Push Notifications (via Apple Push Notification Service, APNs)"
+msgstr ""
+
+#: admin/class-pnfw-admin-settings.php:353
+#: admin/class-pnfw-admin-settings.php:380
+msgid "Use sandbox environment"
+msgstr ""
+
+#: admin/class-pnfw-admin-settings.php:359
+#: admin/class-pnfw-admin-settings.php:386
+msgid "Sandbox SSL certificate (.pem)"
+msgstr ""
+
+#: admin/class-pnfw-admin-settings.php:364
+#: admin/class-pnfw-admin-settings.php:385
+#: admin/class-pnfw-admin-settings.php:391
+#: admin/class-pnfw-admin-settings.php:412
+msgid "Upload"
+msgstr ""
+
+#: admin/class-pnfw-admin-settings.php:364
+#: admin/class-pnfw-admin-settings.php:385
+#: admin/class-pnfw-admin-settings.php:391
+#: admin/class-pnfw-admin-settings.php:412
+msgid "Change"
+msgstr ""
+
+#: admin/class-pnfw-admin-settings.php:371
+#: admin/class-pnfw-admin-settings.php:392
+#: admin/class-pnfw-admin-settings.php:398
+#: admin/class-pnfw-admin-settings.php:419
+msgid "Certificate Password"
+msgstr ""
+
+#: admin/class-pnfw-admin-settings.php:380
+#: admin/class-pnfw-admin-settings.php:407
+msgid "Production SSL certificate (.pem)"
+msgstr ""
+
+#: admin/class-pnfw-admin-settings.php:397
+#: admin/class-pnfw-admin-settings.php:424
+msgid "Obtaining the SSL Certificates"
+msgstr ""
+
+#: admin/class-pnfw-admin-settings.php:403
+#: admin/class-pnfw-admin-settings.php:430
+msgid "Notification sound file"
+msgstr ""
+
+#: admin/class-pnfw-admin-settings.php:407
+#: admin/class-pnfw-admin-settings.php:434
+msgid ""
+"The name of a sound file in the app bundle or in the <code>Library/Sounds</"
+"code> folder of the app’s data container. If the sound file doesn’t exist or "
+"<code>default</code> is specified as the value, the default alert sound is "
+"played. The audio must be in one of the audio data formats that are "
+"compatible with system sounds (<code>aiff</code>, <code>wav</code>, or "
+"<code>caf</code>). See <a href=\"%s\">Preparing Custom Alert Sounds</a> for "
+"details."
+msgstr ""
+
+#: admin/class-pnfw-admin-settings.php:423
+#: admin/class-pnfw-admin-settings.php:450
+msgid "Android Push Notifications (via Google Cloud Messaging, GCM)"
+msgstr ""
+
+#: admin/class-pnfw-admin-settings.php:429
+#: admin/class-pnfw-admin-settings.php:456
+msgid "Google API Key"
+msgstr ""
+
+#: admin/class-pnfw-admin-settings.php:437
+#: admin/class-pnfw-admin-settings.php:464
+msgid "Obtaining the Google API Key"
+msgstr ""
+
+#: admin/class-pnfw-admin-settings.php:449
+#: admin/class-pnfw-admin-settings.php:476
+msgid "Kindle Fire Push Notifications (via Amazon Device Messaging, ADM)"
+msgstr ""
+
+#: admin/class-pnfw-admin-settings.php:455
+#: admin/class-pnfw-admin-settings.php:482
+msgid "ADM Client ID"
+msgstr ""
+
+#: admin/class-pnfw-admin-settings.php:464
+#: admin/class-pnfw-admin-settings.php:491
+msgid "ADM Client Secret"
+msgstr ""
+
+#: admin/class-pnfw-admin-settings.php:472
+#: admin/class-pnfw-admin-settings.php:499
+msgid "Obtaining the Amazon Device Messaging credentials"
+msgstr ""
+
+#: admin/class-pnfw-admin-settings.php:485
+#: admin/class-pnfw-admin-settings.php:512
+msgid "Misc"
+msgstr ""
+
+#: admin/class-pnfw-admin-settings.php:490
+#: admin/class-pnfw-admin-settings.php:517
+msgid ""
+"Enable wpautop filter to convert double line-breaks in the content into HTML "
+"paragraphs"
+msgstr ""
+
+#: admin/class-pnfw-admin-settings.php:495
+#: admin/class-pnfw-admin-settings.php:522
+msgid "Don't require email verification"
+msgstr ""
+
+#: admin/class-pnfw-admin-settings.php:498
+#: admin/class-pnfw-admin-settings.php:525
+msgid ""
+"Check this box if you do not require devices to be activated only after "
+"confirmation of the email address (use with caution)."
+msgstr ""
+
+#: admin/class-pnfw-admin-settings.php:502
+#: admin/class-pnfw-admin-settings.php:529
+msgid "In the Android notification payload add the <code>message</code> field"
+msgstr ""
+
+#: admin/class-pnfw-admin-settings.php:505
+#: admin/class-pnfw-admin-settings.php:532
+msgid "Check this box if you are using Apache Cordova with PushPlugin."
+msgstr ""
+
+#: admin/class-pnfw-admin-settings.php:509
+#: admin/class-pnfw-admin-settings.php:536
+msgid "Remove data on uninstall"
+msgstr ""
+
+#: admin/class-pnfw-admin-settings.php:512
+#: admin/class-pnfw-admin-settings.php:539
+msgid ""
+"Check this box if you would like to completely remove all of its data when "
+"the plugin is deleted."
+msgstr ""
+
+#: admin/class-pnfw-admin-stats.php:11
+msgid "Stats"
+msgstr ""
+
+#: admin/class-pnfw-admin-stats.php:12
+msgid "Overview"
+msgstr ""
+
+#: admin/class-pnfw-admin-stats.php:19
+msgid "Users to which the notifications were sent"
+msgstr ""
+
+#: admin/class-pnfw-admin-stats.php:23
+msgid "Users who read the notifications"
+msgstr ""
+
+#: admin/class-pnfw-admin-stats.php:28
+msgid "Subscribers per day"
+msgstr ""
+
+#: admin/class-pnfw-admin-stats.php:32
+msgid "Subscribers per category"
+msgstr ""
+
+#: admin/class-pnfw-admin-stats.php:36
+#: admin/class-pnfw-admin-subscribers.php:83 admin/class-pnfw-admin.php:469
+#: admin/class-pnfw-admin.php:291 admin/class-pnfw-admin.php:288
+msgid "Devices"
+msgstr ""
+
+#: admin/class-pnfw-admin-stats.php:55
+msgid "App subscribers"
+msgstr ""
+
+#: admin/class-pnfw-admin-stats.php:62
+msgid "Registered app subscribers"
+msgstr ""
+
+#: admin/class-pnfw-admin-stats.php:66
+msgid "Anonymous app subscribers"
+msgstr ""
+
+#: admin/class-pnfw-admin-stats.php:70 admin/class-pnfw-admin-tokens.php:11
+#: admin/class-pnfw-admin-tokens.php:114 admin/class-pnfw-admin.php:119
+#: admin/class-pnfw-admin.php:120
+msgid "Tokens"
+msgstr ""
+
+#: admin/class-pnfw-admin-stats.php:77
+msgid "With active notifications"
+msgstr ""
+
+#: admin/class-pnfw-admin-stats.php:81
+msgid "With notifications disabled"
+msgstr ""
+
+#: admin/class-pnfw-admin-subscribers.php:11
+#: admin/class-pnfw-admin-subscribers.php:70 admin/class-pnfw-admin.php:107
+#: admin/class-pnfw-admin.php:108
+msgid "App Subscribers"
+msgstr ""
+
+#: admin/class-pnfw-admin-subscribers.php:22
+msgid "Removed from the App Subscribers page the user with ID %s."
+msgstr ""
+
+#: admin/class-pnfw-admin-subscribers.php:33
+msgid "Completely deleted the user %s."
+msgstr ""
+
+#: admin/class-pnfw-admin-subscribers.php:38
+msgid "Disassociated the user %s from blog %s"
+msgstr ""
+
+#: admin/class-pnfw-admin-subscribers.php:45
+msgid "User deleted"
+msgstr ""
+
+#: admin/class-pnfw-admin-subscribers.php:69
+#: push-notifications-for-wordpress.php:186
+#: push-notifications-for-wordpress.php:627
+#: push-notifications-for-posts.php:168 push-notifications-for-posts.php:507
+#: push-notifications-for-wordpress-lite.php:170
+#: push-notifications-for-wordpress-lite.php:509
+msgid "App Subscriber"
+msgstr ""
+
+#: admin/class-pnfw-admin-subscribers.php:80 admin/class-pnfw-admin.php:466
+#: admin/class-pnfw-admin.php:288 admin/class-pnfw-admin.php:285
+msgid "Username"
+msgstr ""
+
+#: admin/class-pnfw-admin-subscribers.php:81
+msgid "E-mail"
+msgstr ""
+
+#: admin/class-pnfw-admin-subscribers.php:82 admin/class-pnfw-admin.php:468
+#: push-notifications-for-wordpress.php:257 admin/class-pnfw-admin.php:290
+#: push-notifications-for-posts.php:230 admin/class-pnfw-admin.php:287
+#: push-notifications-for-wordpress-lite.php:232
+msgid "Categories"
+msgstr ""
+
+#: admin/class-pnfw-admin-subscribers.php:84
+msgid "Excluded Categories"
+msgstr ""
+
+#: admin/class-pnfw-admin-subscribers.php:235
+#: admin/class-pnfw-admin-tokens.php:202
+#: admin/class-pnfw-admin-subscribers.php:186
+msgid "Delete"
+msgstr ""
+
+#: admin/class-pnfw-admin-subscribers.php:247
+msgid "Remove categories"
+msgstr ""
+
+#: admin/class-pnfw-admin-subscribers.php:250
+msgid "Assign to %s"
+msgstr ""
+
+#: admin/class-pnfw-admin-subscribers.php:258
+#: admin/class-pnfw-admin-subscribers.php:192
+msgid "No app subscribers were found."
+msgstr ""
+
+#: admin/class-pnfw-admin-tokens.php:27
+msgid "Removed from the Tokens page the token with ID %s."
+msgstr ""
+
+#: admin/class-pnfw-admin-tokens.php:32
+#: includes/api/class-pnfw-api-register.php:259
+#: includes/api/class-pnfw-api-unregister.php:24
+#: includes/class-pnfw-ios-feedback-provider.php:114
+#: includes/notifications/class-pnfw-notifications.php:183
+#: includes/api/class-pnfw-api-register.php:177
+#: includes/notifications/class-pnfw-notifications.php:163
+msgid ""
+"Automatically deleted the anonymous user %s (%s) since left without tokens."
+msgstr ""
+
+#: admin/class-pnfw-admin-tokens.php:47
+msgid "Item deleted"
+msgstr ""
+
+#: admin/class-pnfw-admin-tokens.php:64
+msgid "This is a test notification"
+msgstr ""
+
+#: admin/class-pnfw-admin-tokens.php:86
+msgid "Notification sent to %s device"
+msgstr ""
+
+#: admin/class-pnfw-admin-tokens.php:91
+msgid ""
+"There was an error sending the notification. For more information, see the "
+"<a href='%s'>Debug</a> page"
+msgstr ""
+
+#: admin/class-pnfw-admin-tokens.php:95
+#: includes/api/class-pnfw-api-activate.php:80
+msgid "Error"
+msgstr ""
+
+#: admin/class-pnfw-admin-tokens.php:113 admin/class-pnfw-admin-tokens.php:121
+msgid "Token"
+msgstr ""
+
+#: admin/class-pnfw-admin-tokens.php:122
+msgid "User"
+msgstr ""
+
+#: admin/class-pnfw-admin-tokens.php:123
+msgid "Registration timestamp"
+msgstr ""
+
+#: admin/class-pnfw-admin-tokens.php:124
+msgid "Operating System"
+msgstr ""
+
+#: admin/class-pnfw-admin-tokens.php:125
+msgid "Language"
+msgstr ""
+
+#: admin/class-pnfw-admin-tokens.php:126
+msgid "Status"
+msgstr ""
+
+#: admin/class-pnfw-admin-tokens.php:169
+msgid "Active"
+msgstr ""
+
+#: admin/class-pnfw-admin-tokens.php:172
+msgid "To be confirmed"
+msgstr ""
+
+#: admin/class-pnfw-admin-tokens.php:206
+msgid "Send test notification"
+msgstr ""
+
+#: admin/class-pnfw-admin-tokens.php:213
+msgid "No tokens were found."
+msgstr ""
+
+#: admin/class-pnfw-admin.php:64 admin/class-pnfw-admin.php:65
+#: push-notifications-for-wordpress.php:443
+#: push-notifications-for-posts.php:332
+#: push-notifications-for-wordpress-lite.php:334
+msgid "Push Notifications"
+msgstr ""
+
+#: admin/class-pnfw-admin.php:254 push-notifications-for-wordpress.php:467
+#: admin/class-pnfw-admin.php:220 push-notifications-for-posts.php:356
+#: admin/class-pnfw-admin.php:217
+#: push-notifications-for-wordpress-lite.php:358
+msgid "Send and make visible only to"
+msgstr ""
+
+#: admin/class-pnfw-admin.php:255 admin/class-pnfw-admin.php:221
+#: admin/class-pnfw-admin.php:218
+msgid "Make visible only to"
+msgstr ""
+
+#: admin/class-pnfw-admin.php:467 admin/class-pnfw-admin.php:289
+#: admin/class-pnfw-admin.php:286
+msgid "Email"
+msgstr ""
+
+#: includes/am/admin/class-wc-api-manager-menu.php:31
+#: includes/am/admin/class-wc-api-manager-menu.php:32
+msgid "License"
+msgstr ""
+
+#: includes/am/admin/class-wc-api-manager-menu.php:65
+#: includes/am/admin/class-wc-api-manager-menu.php:69
+msgid "Save Changes"
+msgstr ""
+
+#: includes/am/admin/class-wc-api-manager-menu.php:84
+msgid "API License Activation"
+msgstr ""
+
+#: includes/am/admin/class-wc-api-manager-menu.php:85
+msgid "API License Key Status"
+msgstr ""
+
+#: includes/am/admin/class-wc-api-manager-menu.php:86
+msgid "API License Key"
+msgstr ""
+
+#: includes/am/admin/class-wc-api-manager-menu.php:87
+msgid "API License email"
+msgstr ""
+
+#: includes/am/admin/class-wc-api-manager-menu.php:91
+msgid "API License Deactivation"
+msgstr ""
+
+#: includes/am/admin/class-wc-api-manager-menu.php:92
+msgid "Deactivate API License Key"
+msgstr ""
+
+#: includes/am/admin/class-wc-api-manager-menu.php:98
+msgid ""
+"Login to your <a href=\"%s\">My Account page</a> to find a valid API License "
+"Key."
+msgstr ""
+
+#: includes/am/admin/class-wc-api-manager-menu.php:172
+msgid "Plugin activated. "
+msgstr ""
+
+#: includes/am/admin/class-wc-api-manager-menu.php:178
+msgid "Connection failed to the License Key API server. Try again later."
+msgstr ""
+
+#: includes/am/admin/class-wc-api-manager-menu.php:265
+msgid ""
+"The license could not be deactivated. Use the License Deactivation tab to "
+"manually deactivate the license before activating a new license."
+msgstr ""
+
+#: includes/am/admin/class-wc-api-manager-menu.php:304
+msgid "Plugin license deactivated. "
+msgstr ""
+
+#: includes/am/admin/class-wc-api-manager-menu.php:372
+msgid "Deactivates an API License Key so it can be used on another site."
+msgstr ""
+
+#: includes/am/classes/class-wc-plugin-update.php:364
+msgid ""
+"The license key for %s has expired. You can reactivate or purchase a license "
+"key from your account <a href=\"%s\" target=\"_blank\">dashboard</a>."
+msgstr ""
+
+#: includes/am/classes/class-wc-plugin-update.php:375
+msgid ""
+"The subscription for %s is on-hold. You can reactivate the subscription from "
+"your account <a href=\"%s\" target=\"_blank\">dashboard</a>."
+msgstr ""
+
+#: includes/am/classes/class-wc-plugin-update.php:386
+msgid ""
+"The subscription for %s has been cancelled. You can renew the subscription "
+"from your account <a href=\"%s\" target=\"_blank\">dashboard</a>. A new "
+"license key will be emailed to you after your order has been completed."
+msgstr ""
+
+#: includes/am/classes/class-wc-plugin-update.php:397
+msgid ""
+"The subscription for %s has expired. You can reactivate the subscription "
+"from your account <a href=\"%s\" target=\"_blank\">dashboard</a>."
+msgstr ""
+
+#: includes/am/classes/class-wc-plugin-update.php:408
+msgid ""
+"The subscription for %s has been suspended. You can reactivate the "
+"subscription from your account <a href=\"%s\" target=\"_blank\">dashboard</"
+"a>."
+msgstr ""
+
+#: includes/am/classes/class-wc-plugin-update.php:419
+msgid ""
+"The subscription for %s is still pending. You can check on the status of the "
+"subscription from your account <a href=\"%s\" target=\"_blank\">dashboard</"
+"a>."
+msgstr ""
+
+#: includes/am/classes/class-wc-plugin-update.php:430
+msgid ""
+"The subscription for %s has been placed in the trash and will be deleted "
+"soon. You can purchase a new subscription from your account <a href=\"%s\" "
+"target=\"_blank\">dashboard</a>."
+msgstr ""
+
+#: includes/am/classes/class-wc-plugin-update.php:441
+msgid ""
+"A subscription for %s could not be found. You can purchase a subscription "
+"from your account <a href=\"%s\" target=\"_blank\">dashboard</a>."
+msgstr ""
+
+#: includes/am/classes/class-wc-plugin-update.php:452
+msgid ""
+"A license key for %s could not be found. Maybe you forgot to enter a license "
+"key when setting up %s, or the key was deactivated in your account. You can "
+"reactivate or purchase a license key from your account <a href=\"%s\" target="
+"\"_blank\">dashboard</a>."
+msgstr ""
+
+#: includes/am/classes/class-wc-plugin-update.php:463
+msgid ""
+"Download permission for %s has been revoked possibly due to a license key or "
+"subscription expiring. You can reactivate or purchase a license key from "
+"your account <a href=\"%s\" target=\"_blank\">dashboard</a>."
+msgstr ""
+
+#: includes/am/classes/class-wc-plugin-update.php:474
+msgid ""
+"%s has not been activated. Go to the license page and enter the license key "
+"and license email to activate %s."
+msgstr ""
+
+#: includes/am/classes/class-wc-plugin-update.php:485
+msgid ""
+"You changed the subscription for %s, so you will need to enter your new API "
+"License Key in the license page. The License Key should have arrived in your "
+"email inbox, if not you can get it by logging into your account <a href=\"%s"
+"\" target=\"_blank\">dashboard</a>."
+msgstr ""
+
+#: includes/api/class-pnfw-api-activate.php:11
+#: includes/api/class-pnfw-api-activate.php:21
+#: includes/api/class-pnfw-api-activate.php:27
+#: includes/api/class-pnfw-api-activate.php:110
+#: includes/api/class-pnfw-api-activate.php:115
+msgid "We were not able to activate your account. Please contact support."
+msgstr ""
+
+#: includes/api/class-pnfw-api-activate.php:32
+msgid "Thank you for activating your account."
+msgstr ""
+
+#: includes/api/class-pnfw-api-activate.php:44
+msgid "New confirmed app subscriber on your site %s: %s"
+msgstr ""
+
+#: includes/api/class-pnfw-api-activate.php:46
+msgid "[%s] New Confirmed App Subscriber"
+msgstr ""
+
+#: includes/api/class-pnfw-api-activate.php:80
+msgid "Success"
+msgstr ""
+
+#: includes/api/class-pnfw-api-activated.php:12
+msgid ""
+"Your email needs to be verified. Go to your email inbox and find the message "
+"from us asking you to confirm your address. Or make sure your email address "
+"is entered correctly."
+msgstr ""
+
+#: includes/api/class-pnfw-api-categories.php:62
+#: includes/api/class-pnfw-api-posts.php:112
+#: includes/api/class-pnfw-api-user-categories.php:63
+#: includes/api/class-pnfw-api.php:14 includes/api/class-pnfw-api.php:94
+msgid "Invalid HTTP method"
+msgstr ""
+
+#: includes/api/class-pnfw-api-posts.php:121
+msgid "Post not found."
+msgstr ""
+
+#: includes/api/class-pnfw-api-posts.php:125
+msgid "You do not have permission to access this post."
+msgstr ""
+
+#: includes/api/class-pnfw-api-posts.php:160
+msgid "Anonymous"
+msgstr ""
+
+#: includes/api/class-pnfw-api-register.php:28
+#: includes/api/class-pnfw-api-user-categories.php:56
+msgid "User category not found"
+msgstr ""
+
+#: includes/api/class-pnfw-api-register.php:41
+#: includes/api/class-pnfw-api-register.php:28
+msgid "prevToken not found"
+msgstr ""
+
+#: includes/api/class-pnfw-api-register.php:61
+#: includes/notifications/class-pnfw-notifications.php:156
+#: includes/api/class-pnfw-api-register.php:48
+#: includes/notifications/class-pnfw-notifications.php:136
+msgid ""
+"Attempted an update of an %s token equal to a token already present: %s."
+msgstr ""
+
+#: includes/api/class-pnfw-api-register.php:170
+#: includes/api/class-pnfw-api.php:69 includes/api/class-pnfw-api.php:77
+msgid "Invalid %s"
+msgstr ""
+
+#: includes/api/class-pnfw-api-register.php:227
+#: includes/api/class-pnfw-api-register.php:145
+msgid "Reassign %s token %s from user %s to user %s."
+msgstr ""
+
+#: includes/api/class-pnfw-api-register.php:346
+#: includes/api/class-pnfw-api-register.php:264
+msgid "Thank you for joining %s!"
+msgstr ""
+
+#: includes/api/class-pnfw-api-register.php:348
+#: includes/api/class-pnfw-api-register.php:266
+msgid "To confirm your registration, please click on the following link:"
+msgstr ""
+
+#: includes/api/class-pnfw-api-register.php:351
+#: includes/api/class-pnfw-api-register.php:269
+msgid "Welcome to %s"
+msgstr ""
+
+#: includes/api/class-pnfw-api-registered.php:12
+msgid ""
+"Token not registered.\n"
+"To solve the problem please uninstall and reinstall the app."
+msgstr ""
+
+#: includes/api/class-pnfw-api-unregister.php:18
+msgid "Unable to delete token"
+msgstr ""
+
+#: includes/api/class-pnfw-api.php:24
+msgid "os parameter invalid"
+msgstr ""
+
+#: includes/api/class-pnfw-api.php:35
+msgid "lang parameter invalid"
+msgstr ""
+
+#: includes/api/class-pnfw-api.php:49
+msgid "Mandatory parameter %s missing"
+msgstr ""
+
+#: includes/api/class-pnfw-api.php:102
+msgid "Parameter %s is missing"
+msgstr ""
+
+#: includes/api/class-pnfw-api.php:117
+msgid "Failed to sort parameters"
+msgstr ""
+
+#: includes/api/class-pnfw-api.php:131
+msgid "Signature method is invalid"
+msgstr ""
+
+#: includes/api/class-pnfw-api.php:144
+msgid "Provided signature does not match"
+msgstr ""
+
+#: includes/api/class-pnfw-api.php:185
+msgid "Unauthorized"
+msgstr ""
+
+#: includes/api/class-pnfw-api.php:190
+msgid "Not Found"
+msgstr ""
+
+#: includes/api/class-pnfw-api.php:195
+msgid "Internal Server Error"
+msgstr ""
+
+#: includes/api/class-pnfw-api.php:204
+msgid "%s API Error (%s) from IP address %s: %s, %s."
+msgstr ""
+
+#: includes/class-pnfw-api-manager.php:149
+msgid "License Activation"
+msgstr ""
+
+#: includes/class-pnfw-api-manager.php:150
+msgid "License Deactivation"
+msgstr ""
+
+#: includes/class-pnfw-api-manager.php:355
+msgid ""
+"The Push Notifications for WordPress API License Key has not been activated, "
+"so the plugin is inactive! %sClick here%s to activate the license key and "
+"the plugin."
+msgstr ""
+
+#: includes/class-pnfw-api-manager.php:374
+msgid ""
+"<b>Warning!</b> You're blocking external requests which means you won't be "
+"able to get %s updates. Please add %s to %s."
+msgstr ""
+
+#: includes/class-pnfw-ios-feedback-provider.php:17
+msgid "Scheduled Feedback Provider."
+msgstr ""
+
+#: includes/class-pnfw-ios-feedback-provider.php:25
+msgid "Un-scheduled Feedback Provider."
+msgstr ""
+
+#: includes/class-pnfw-ios-feedback-provider.php:40
+msgid "Feedback Provider is running."
+msgstr ""
+
+#: includes/class-pnfw-ios-feedback-provider.php:67
+#: includes/notifications/class-pnfw-notifications-ios.php:46
+msgid "iOS SSL certificate is not correctly set."
+msgstr ""
+
+#: includes/class-pnfw-ios-feedback-provider.php:72
+#: includes/notifications/class-pnfw-notifications-ios.php:51
+msgid "iOS SSL certificate password is not correctly set."
+msgstr ""
+
+#: includes/class-pnfw-ios-feedback-provider.php:77
+#: includes/notifications/class-pnfw-notifications-ios.php:56
+msgid "iOS SSL Certificate does not exists."
+msgstr ""
+
+#: includes/class-pnfw-ios-feedback-provider.php:109
+msgid "The Feedback Provider removed iOS token of user %s: %s."
+msgstr ""
+
+#: includes/class-pnfw-sender-manager.php:41
+#: includes/class-pnfw-sender-manager.php:57
+#: includes/class-pnfw-sender-manager.php:47
+msgid "Notifications for the %s %s deliberately not sent"
+msgstr ""
+
+#: includes/notifications/class-pnfw-notifications-android.php:30
+msgid "Google API Key is not correctly set."
+msgstr ""
+
+#: includes/notifications/class-pnfw-notifications-android.php:92
+msgid "Invalid argument (%s): %s"
+msgstr ""
+
+#: includes/notifications/class-pnfw-notifications-android.php:94
+msgid "Invalid request (%s): %s"
+msgstr ""
+
+#: includes/notifications/class-pnfw-notifications-android.php:96
+msgid "Could not send message (%s): %s"
+msgstr ""
+
+#: includes/notifications/class-pnfw-notifications-kindle.php:24
+msgid ""
+"Can't obtain ADM access token. ADM Client ID or ADM Client Secret are "
+"probably incorrect."
+msgstr ""
+
+#: includes/notifications/class-pnfw-notifications-kindle.php:102
+msgid "ADM Client ID is not correctly set."
+msgstr ""
+
+#: includes/notifications/class-pnfw-notifications-kindle.php:109
+msgid "ADM Client Secret is not correctly set."
+msgstr ""
+
+#: includes/notifications/class-pnfw-notifications.php:163
+#: includes/notifications/class-pnfw-notifications.php:143
+msgid "Updated %s token from %s to %s."
+msgstr ""
+
+#: includes/notifications/class-pnfw-notifications.php:172
+#: includes/notifications/class-pnfw-notifications.php:152
+msgid "Removed invalid %s token: %s."
+msgstr ""
+
+#: push-notifications-for-wordpress.php:18
+msgid ""
+"To activate Push Notifications for WordPress you must first disable Push "
+"Notifications for Posts and Push Notifications for WordPress (Lite)"
+msgstr ""
+
+#: push-notifications-for-wordpress.php:19
+#: push-notifications-for-wordpress.php:119
+#: push-notifications-for-posts.php:17 push-notifications-for-posts.php:86
+#: push-notifications-for-posts.php:99
+#: push-notifications-for-wordpress-lite.php:17
+#: push-notifications-for-wordpress-lite.php:88
+#: push-notifications-for-wordpress-lite.php:101
+msgid "Plugin Activation Error"
+msgstr ""
+
+#: push-notifications-for-wordpress.php:118
+msgid "Push Notifications for WordPress requires PHP version %s or later."
+msgstr ""
+
+#: push-notifications-for-wordpress.php:255
+#: push-notifications-for-posts.php:228
+#: push-notifications-for-wordpress-lite.php:230
+msgid "User Categories"
+msgstr ""
+
+#: push-notifications-for-wordpress.php:256
+#: push-notifications-for-wordpress.php:326
+#: push-notifications-for-posts.php:229
+#: push-notifications-for-wordpress-lite.php:231
+msgid "User Category"
+msgstr ""
+
+#: push-notifications-for-wordpress.php:258
+#: push-notifications-for-posts.php:231
+#: push-notifications-for-wordpress-lite.php:233
+msgid "Search User Categories"
+msgstr ""
+
+#: push-notifications-for-wordpress.php:259
+#: push-notifications-for-posts.php:232
+#: push-notifications-for-wordpress-lite.php:234
+msgid "Popular User Categories"
+msgstr ""
+
+#: push-notifications-for-wordpress.php:260
+#: push-notifications-for-posts.php:233
+#: push-notifications-for-wordpress-lite.php:235
+msgid "All User Categories"
+msgstr ""
+
+#: push-notifications-for-wordpress.php:261
+#: push-notifications-for-posts.php:234
+#: push-notifications-for-wordpress-lite.php:236
+msgid "Edit User Category"
+msgstr ""
+
+#: push-notifications-for-wordpress.php:262
+#: push-notifications-for-posts.php:235
+#: push-notifications-for-wordpress-lite.php:237
+msgid "Update User Category"
+msgstr ""
+
+#: push-notifications-for-wordpress.php:263
+#: push-notifications-for-posts.php:236
+#: push-notifications-for-wordpress-lite.php:238
+msgid "Add New User Category"
+msgstr ""
+
+#: push-notifications-for-wordpress.php:264
+#: push-notifications-for-posts.php:237
+#: push-notifications-for-wordpress-lite.php:239
+msgid "New User Category Name"
+msgstr ""
+
+#: push-notifications-for-wordpress.php:265
+#: push-notifications-for-posts.php:238
+#: push-notifications-for-wordpress-lite.php:240
+msgid "Separate user categories with commas"
+msgstr ""
+
+#: push-notifications-for-wordpress.php:266
+#: push-notifications-for-posts.php:239
+#: push-notifications-for-wordpress-lite.php:241
+msgid "Add or remove user categories"
+msgstr ""
+
+#: push-notifications-for-wordpress.php:267
+#: push-notifications-for-posts.php:240
+#: push-notifications-for-wordpress-lite.php:242
+msgid "Choose from the most popular user categories"
+msgstr ""
+
+#: push-notifications-for-wordpress.php:314
+msgid "Users"
+msgstr ""
+
+#: push-notifications-for-wordpress.php:329
+msgid "Select User Category"
+msgstr ""
+
+#: push-notifications-for-wordpress.php:337
+msgid "There are no user categories available."
+msgstr ""
+
+#: push-notifications-for-wordpress.php:460
+#: push-notifications-for-posts.php:349
+#: push-notifications-for-wordpress-lite.php:351
+msgid "Do not send for this %s"
+msgstr ""
+
+#: push-notifications-for-wordpress.php:471
+#: push-notifications-for-posts.php:360
+#: push-notifications-for-wordpress-lite.php:362
+msgid "All"
+msgstr ""
+
+#: push-notifications-for-wordpress.php:476
+#: push-notifications-for-posts.php:365
+#: push-notifications-for-wordpress-lite.php:367
+msgid "Anonymous users"
+msgstr ""
+
+#: push-notifications-for-wordpress.php:481
+#: push-notifications-for-posts.php:370
+#: push-notifications-for-wordpress-lite.php:372
+msgid "Registered users"
+msgstr ""
+
+#: push-notifications-for-wordpress.php:553
+#: push-notifications-for-posts.php:433
+#: push-notifications-for-wordpress-lite.php:435
+msgid "Automatically deleted the tokens for user %s."
+msgstr ""
+
+#: push-notifications-for-wordpress.php:571
+#: push-notifications-for-posts.php:451
+#: push-notifications-for-wordpress-lite.php:453
+msgid "Automatically deleted excluded category %d."
+msgstr ""
+
+#: push-notifications-for-wordpress.php:591
+#: push-notifications-for-posts.php:471
+#: push-notifications-for-wordpress-lite.php:473
+msgid "Upgrading from version %d."
+msgstr ""
+
+#: push-notifications-for-wordpress.php:691
+#: push-notifications-for-posts.php:571
+#: push-notifications-for-wordpress-lite.php:573
+msgid "Db version %d upgraded."
+msgstr ""
+
+#: push-notifications-for-wordpress.php:706
+msgid "Sending notifications..."
+msgstr ""
+
+#: admin/class-pnfw-admin-settings.php:205
+msgid "Push Notifications for WordPress"
+msgstr ""
+
+#: admin/class-pnfw-admin-settings.php:208
+msgid ""
+"This is our basic solution for small personal blogs. We also offer a full-"
+"featured plugin, Push Notifications for WordPress, designed for all the "
+"other websites."
+msgstr ""
+
+#: admin/class-pnfw-admin-settings.php:210
+msgid "More info"
+msgstr ""
+
+#: admin/class-pnfw-admin-settings.php:211
+msgid "Differences"
+msgstr ""
+
+#: admin/class-pnfw-admin-settings.php:302
+msgid "Do you want to support custom post types?"
+msgstr ""
+
+#: admin/class-pnfw-admin-settings.php:304 admin/class-pnfw-admin-stats.php:29
+#: push-notifications-for-posts.php:379 admin/class-pnfw-admin-stats.php:17
+#: push-notifications-for-wordpress-lite.php:381
+msgid "Upgrade now to Push Notifications for WordPress"
+msgstr ""
+
+#: admin/class-pnfw-admin-stats.php:27
+msgid "Do you want to see more stats?"
+msgstr ""
+
+#: includes/notifications/class-pnfw-notifications.php:82
+msgid ""
+"This plugin allows you to send push notifications to up to %d tokens per "
+"platform. To send more notifications, please upgrade to <a href=\"http://www."
+"delitestudio.com/wordpress/push-notifications-for-wordpress/\">Push "
+"Notifications for Wordpress</a>."
+msgstr ""
+
+#: push-notifications-for-posts.php:16
+msgid ""
+"To activate Push Notifications for Posts you must first disable Push "
+"Notifications for WordPress and Push Notifications for WordPress (Lite)"
+msgstr ""
+
+#: push-notifications-for-posts.php:85
+msgid "Push Notifications for Posts requires PHP version %s or later."
+msgstr ""
+
+#: push-notifications-for-posts.php:98
+msgid "Push Notifications for Posts is incompatible with WordPress Multisite."
+msgstr ""
+
+#: push-notifications-for-posts.php:377
+#: push-notifications-for-wordpress-lite.php:379
+msgid "Do you want to create user groups?"
+msgstr ""
+
+#: admin/class-pnfw-admin-stats.php:15
+msgid "Do you want to see the stats?"
+msgstr ""
+
+#: push-notifications-for-wordpress-lite.php:16
+msgid ""
+"To activate Push Notifications for WordPress (Lite) you must first disable "
+"Push Notifications for Posts and Push Notifications for WordPress"
+msgstr ""
+
+#: push-notifications-for-wordpress-lite.php:87
+msgid ""
+"Push Notifications for WordPress (Lite) requires PHP version %s or later."
+msgstr ""
+
+#: push-notifications-for-wordpress-lite.php:100
+msgid ""
+"Push Notifications for WordPress (Lite) is incompatible with WordPress "
+"Multisite."
+msgstr ""
