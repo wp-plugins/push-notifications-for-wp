@@ -76,7 +76,8 @@ class PNFW_API_Register extends PNFW_API {
 
    // Following code should not be accessed simultaneously by different threads
    $push_logs = $wpdb->get_blog_prefix().'push_logs';
-   $wpdb->query("LOCK TABLES $push_tokens WRITE, $push_logs WRITE;");
+   $wp_options = $wpdb->options;
+   $wpdb->query("LOCK TABLES $push_tokens WRITE, $push_logs WRITE, $wp_options READ;");
 
    $active = empty($this->email);
 
