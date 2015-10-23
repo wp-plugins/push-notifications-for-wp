@@ -43,7 +43,7 @@ Push Notifications for WordPress (Lite) natively supports:
 
 **Android and iOS libraries.** Save hours of work by using our [Android](http://www.delitestudio.com/wordpress/push-notifications-for-wordpress/push-notifications-library-for-android/) and [iOS](http://www.delitestudio.com/wordpress/push-notifications-for-wordpress/push-notifications-library-for-ios/) libraries in your apps.
 
-**Works with native apps, Cordova, Ionic, PhoneGap, and more frameworks.** Build beautiful and interactive mobile apps using your preferred technology.
+**Works with native apps, Cordova, Ionic, PhoneGap, and more frameworks.** Build beautiful and interactive mobile apps using your preferred technology. We suggest [WordPress Hybrid Client](http://wphc.julienrenaux.fr) to build amazing applications effortless.
 
 **Localization ready.** Thanks to the presence of the POT (Portable Object Template) file, it’s really easy for you to provide your own translation files, with English and Italian translation out of the box.
 
@@ -267,7 +267,7 @@ Push Notifications for WordPress (Lite) requires:
 * WordPress 3.5 or later with “pretty” permalinks.
 * PHP 5.3 or later.
 * Inbound and outbound TCP packets over ports 2195 and 2196 (for iOS notifications).
-* PHP’s cURL support (for Kindle notifications).
+* PHP’s cURL support (for Android and Kindle notifications).
 
 To begin using this plugin, you first need an app that uses one of the supported push notification services: APNs (Apple Push Notification service), GCM (Google Cloud Messaging), or ADM (Amazon Device Messaging).
 
